@@ -6,7 +6,12 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 import { connectDB } from "./config/db";
-import { tourRoutes } from "./routes/tours";
+import {
+  categoryRoutes,
+  landscapeRoutes,
+  productRoutes,
+  tourRoutes,
+} from "./routes";
 
 const app = express();
 const PORT = process.env.PORT;
@@ -19,6 +24,9 @@ connectDB();
 
 // Routes
 app.use("/api/tours", tourRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/landscapes", landscapeRoutes);
+app.use("/api/products", productRoutes);
 
 // Start the server
 app.listen(PORT, () => {

@@ -39,3 +39,10 @@ coverage/
 # Misc
 *.tgz
 .cache/
+
+
+
+features/
+        login/
+            actions.ts
+            selectors.ts
