@@ -1,0 +1,209 @@
+{
+    "tours": [
+        {
+            "imageSrc": "https://cdn.pixabay.com/photo/2017/09/16/18/04/bike-2756269_960_720.jpg",
+            "name": "Mountain Hotel",
+            "city": "Denver",
+            "description": "A thrilling adventure in the mountains.",
+            "price": "399",
+            "duration": "3",
+            "startDate": "2025-05-21",
+            "endDate": "2025-06-03",
+            "facilities": [
+                "Guide",
+                "Meals",
+                "Accommodation"
+            ],
+            "images": [
+                "https://cdn.pixabay.com/photo/2024/12/29/11/24/mountains-9297805_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg",
+                "https://cdn.pixabay.com/photo/2017/04/13/23/16/tour-2228933_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2019/05/20/11/59/nature-4216505_960_720.jpg",
+                "https://cdn.pixabay.com/photo/2020/02/21/20/44/nature-4868678_960_720.jpg"
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Beach Escape",
+            "imageSrc": "https://media.istockphoto.com/id/526388083/photo/dinosaur-skeleton.webp?s=2048x2048&w=is&k=20&c=6ZOdumOzfr3Opt5XB-ZoU84t8Lj34mUBE1uC8iGlAb0=",
+            "city": "Miami",
+            "description": "Relax on the sunny beaches of Miami.",
+            "price": "199",
+            "duration": "2",
+            "startDate": "2024-12-10",
+            "endDate": "2024-12-11",
+            "facilities": [
+                "Beach Umbrella",
+                "Snacks"
+            ],
+            "images": [
+                "https://media.istockphoto.com/id/219315829",
+                "https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg",
+                "https://media.istockphoto.com/id/2144889464/vector/abstract-colorful-background-grainy-background-style.webp?s=2048x2048&w=is&k=20&c=Lce-BCWhpVOttpRraJWjEVo5orLxlO5AiyIWhQVCdP4=",
+                "https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg",
+                "https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262229_1280.jpg"
+            ]
+        },
+        {
+            "id": "3",
+            "imageSrc": "https://media.istockphoto.com/id/490555601/photo/dinosaur-t-rex-skeleton.webp?s=2048x2048&w=is&k=20&c=GJ7aVwhitjlTC3kdU9FbTPi_a1M652oktyaXGw32XRg=",
+            "name": "Grand Hotel",
+            "city": "Miami",
+            "description": "A thrilling adventure in the mountains.",
+            "price": "599",
+            "duration": "5",
+            "startDate": "2025-05-21",
+            "endDate": "2025-07-03",
+            "facilities": [
+                "Guide",
+                "Meals",
+                "Accommodation"
+            ],
+            "images": [
+                "https://media.istockphoto.com/id/219315829",
+                "https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg",
+                "https://media.istockphoto.com/id/2144889464/vector/abstract-colorful-background-grainy-background-style.webp?s=2048x2048&w=is&k=20&c=Lce-BCWhpVOttpRraJWjEVo5orLxlO5AiyIWhQVCdP4=",
+                "https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg",
+                "https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262229_1280.jpg"
+            ]
+        },
+        {
+            "id": "4",
+            "imageSrc": "https://media.istockphoto.com/id/949118068/photo/books.webp?s=2048x2048&w=is&k=20&c=84QzSRpNc21wzXu5K7t7z0lSUQ93qIFZOmS84JKdvnI=",
+            "name": "PC Hotel",
+            "city": "Berlin",
+            "description": "A thrilling in the mountains.",
+            "price": "699",
+            "duration": "5",
+            "startDate": "2025-05-21",
+            "endDate": "2025-07-03",
+            "facilities": [
+                "Guide",
+                "Meals",
+                "Accommodation"
+            ],
+            "images": [
+                "https://media.istockphoto.com/id/219315829",
+                "https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg",
+                "https://media.istockphoto.com/id/2144889464/vector/abstract-colorful-background-grainy-background-style.webp?s=2048x2048&w=is&k=20&c=Lce-BCWhpVOttpRraJWjEVo5orLxlO5AiyIWhQVCdP4=",
+                "https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg",
+                "https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262229_1280.jpg"
+            ]
+        },
+        {
+            "id": "5",
+            "imageSrc": "https://media.istockphoto.com/id/949118068/photo/books.webp?s=2048x2048&w=is&k=20&c=84QzSRpNc21wzXu5K7t7z0lSUQ93qIFZOmS84JKdvnI=",
+            "name": "PC Hotel",
+            "city": "Miami",
+            "description": "A thrilling in the mountains.",
+            "price": "299",
+            "duration": "3",
+            "startDate": "2025-05-21",
+            "endDate": "2025-07-03",
+            "facilities": [
+                "Guide",
+                "Meals",
+                "Accommodation"
+            ],
+            "images": [
+                "https://media.istockphoto.com/id/219315829",
+                "https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg",
+                "https://media.istockphoto.com/id/2144889464/vector/abstract-colorful-background-grainy-background-style.webp?s=2048x2048&w=is&k=20&c=Lce-BCWhpVOttpRraJWjEVo5orLxlO5AiyIWhQVCdP4=",
+                "https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg",
+                "https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262229_1280.jpg"
+            ]
+        },
+        {
+            "id": "6",
+            "imageSrc": "https://media.istockphoto.com/id/949118068/photo/books.webp?s=2048x2048&w=is&k=20&c=84QzSRpNc21wzXu5K7t7z0lSUQ93qIFZOmS84JKdvnI=",
+            "name": "PC Hotel",
+            "city": "Berlin",
+            "description": "A thrilling in the mountains.",
+            "price": "299",
+            "duration": "11",
+            "startDate": "2025-05-21",
+            "endDate": "2025-07-03",
+            "facilities": [
+                "Guide",
+                "Meals",
+                "Accommodation"
+            ],
+            "images": [
+                "https://media.istockphoto.com/id/219315829",
+                "https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg",
+                "https://media.istockphoto.com/id/2144889464/vector/abstract-colorful-background-grainy-background-style.webp?s=2048x2048&w=is&k=20&c=Lce-BCWhpVOttpRraJWjEVo5orLxlO5AiyIWhQVCdP4=",
+                "https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg",
+                "https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262229_1280.jpg"
+            ]
+        },
+        {
+            "id": "7",
+            "imageSrc": "https://media.istockphoto.com/id/949118068/photo/books.webp?s=2048x2048&w=is&k=20&c=84QzSRpNc21wzXu5K7t7z0lSUQ93qIFZOmS84JKdvnI=",
+            "name": "PC Hotel",
+            "city": "Denver",
+            "description": "A thrilling in the mountains.",
+            "price": "799",
+            "duration": "3",
+            "startDate": "2025-05-21",
+            "endDate": "2025-07-03",
+            "facilities": [
+                "Guide",
+                "Meals",
+                "Accommodation"
+            ],
+            "images": [
+                "https://media.istockphoto.com/id/219315829",
+                "https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg",
+                "https://media.istockphoto.com/id/2144889464/vector/abstract-colorful-background-grainy-background-style.webp?s=2048x2048&w=is&k=20&c=Lce-BCWhpVOttpRraJWjEVo5orLxlO5AiyIWhQVCdP4=",
+                "https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg",
+                "https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262229_1280.jpg"
+            ]
+        },
+        {
+            "id": "8",
+            "imageSrc": "https://media.istockphoto.com/id/949118068/photo/books.webp?s=2048x2048&w=is&k=20&c=84QzSRpNc21wzXu5K7t7z0lSUQ93qIFZOmS84JKdvnI=",
+            "name": "PC Hotel",
+            "city": "Berlin",
+            "description": "A thrilling in the mountains.",
+            "price": "299",
+            "duration": "3",
+            "startDate": "2025-05-21",
+            "endDate": "2025-07-03",
+            "facilities": [
+                "Guide",
+                "Meals",
+                "Accommodation"
+            ],
+            "images": [
+                "https://media.istockphoto.com/id/219315829",
+                "https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg",
+                "https://media.istockphoto.com/id/2144889464/vector/abstract-colorful-background-grainy-background-style.webp?s=2048x2048&w=is&k=20&c=Lce-BCWhpVOttpRraJWjEVo5orLxlO5AiyIWhQVCdP4=",
+                "https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg",
+                "https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262229_1280.jpg"
+            ]
+        },
+        {
+            "id": "9",
+            "imageSrc": "https://media.istockphoto.com/id/949118068/photo/books.webp?s=2048x2048&w=is&k=20&c=84QzSRpNc21wzXu5K7t7z0lSUQ93qIFZOmS84JKdvnI=",
+            "name": "PC Hotel",
+            "city": "Berlin",
+            "description": "A thrilling in the mountains.",
+            "price": "299",
+            "duration": "3",
+            "startDate": "2025-05-21",
+            "endDate": "2025-07-03",
+            "facilities": [
+                "Guide",
+                "Meals",
+                "Accommodation"
+            ],
+            "images": [
+                "https://media.istockphoto.com/id/219315829",
+                "https://cdn.pixabay.com/photo/2025/04/02/18/48/background-9509852_1280.jpg",
+                "https://media.istockphoto.com/id/2144889464/vector/abstract-colorful-background-grainy-background-style.webp?s=2048x2048&w=is&k=20&c=Lce-BCWhpVOttpRraJWjEVo5orLxlO5AiyIWhQVCdP4=",
+                "https://cdn.pixabay.com/photo/2016/09/29/14/06/background-1702930_1280.jpg",
+                "https://cdn.pixabay.com/photo/2022/06/14/15/26/background-7262229_1280.jpg"
+            ]
+        }
+    ]
+}
