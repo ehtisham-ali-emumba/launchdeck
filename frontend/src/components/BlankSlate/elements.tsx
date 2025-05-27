@@ -1,15 +1,13 @@
 import styled from "styled-components";
 import { Typography } from "antd";
 
-const { Title } = Typography;
+const { Text } = Typography;
 
-export const BlankSlateTitle = styled((props) => (
-  <Title level={3} {...props} />
-))`
+export const BlankSlateTitle = styled((props) => <Text {...props} />)`
   &.ant-typography {
     font-weight: 400;
     color: #797c9a;
-    margin-top: 20px;
+    font-size: 18px;
   }
 `;
 export const BlankSlateWrapper = styled.div`

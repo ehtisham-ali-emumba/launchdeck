@@ -1,3 +1,1 @@
-export type HeaderProps = {
-  hideExplore?: boolean;
-};
+export type HeaderProps = {};

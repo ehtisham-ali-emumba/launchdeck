@@ -16,6 +16,6 @@ export const CenteredWrapper = styled.div<{
 
 export const OrangeSpin = styled(Spin)`
   .ant-spin-dot-item {
-    background-color: ${colors.accentOrange};
+    background-color: ${colors.primary};
   }
 `;

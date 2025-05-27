@@ -103,4 +103,5 @@ export const uiStrings = {
   // launchdeck
   products: "Products",
   landscapes: "Landscapes",
+  noDataFound: "Sorry, We didn’t found any data right now",
 };

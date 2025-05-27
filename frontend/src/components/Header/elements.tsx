@@ -2,7 +2,6 @@ import { Layout } from "antd";
 import styled, { css } from "styled-components";
 import { colors } from "../../constants";
 import { sizeTablet, zIndex } from "../../utils";
-import { Button } from "../Button";
 import { Link } from "react-router-dom";
 
 export const StyledHeader = styled(Layout.Header)`
@@ -32,18 +31,6 @@ export const NavMenu = styled.div`
   #active-button {
     color: ${colors.accentOrange};
   }
-`;
-
-export const ExploreButton = styled((props) => (
-  <Button variant="primary" {...props} />
-))`
-  padding: 0 16px;
-  border-radius: 8px;
-  cursor: pointer;
-
-  ${sizeTablet(css`
-    display: none; /* Hide desktop menu on mobile */
-  `)}
 `;
 
 export const HamburgerMenu = styled.div`

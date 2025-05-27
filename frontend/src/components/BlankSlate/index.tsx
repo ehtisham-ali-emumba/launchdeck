@@ -4,7 +4,7 @@ import { BlankSlateTitle, BlankSlateWrapper } from "./elements";
 import type { BlankSlateType } from "./type";
 
 export const BlankSlate: React.FC<BlankSlateType> = ({
-  message = uiStrings.noToursMessage,
+  message = uiStrings.noDataFound,
 }) => {
   return (
     <BlankSlateWrapper>

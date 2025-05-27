@@ -2,7 +2,6 @@ import { Space } from "antd";
 import {
   StyledHeader,
   NavMenu,
-  ExploreButton,
   HamburgerMenu,
   MobileMenu,
   LogoLink,
@@ -16,7 +15,7 @@ import { LogoSvg } from "../../assets";
 import { useIsActiveRoute } from "../../hooks/useIsActiveRoute";
 import type { HeaderProps } from "./type";
 
-export const Header: React.FC<HeaderProps> = ({ hideExplore }) => {
+export const Header: React.FC<HeaderProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isRouteActive } = useIsActiveRoute();
 
@@ -60,15 +59,7 @@ export const Header: React.FC<HeaderProps> = ({ hideExplore }) => {
           </Link>
         </Space>
       </NavMenu>
-
-      {/* Explore Button */}
-      {hideExplore ? (
-        <div />
-      ) : (
-        <Link to="/explore">
-          <ExploreButton type="primary">{uiStrings.exploreNews}</ExploreButton>
-        </Link>
-      )}
+      <div />
 
       {/* Hamburger Menu for Mobile */}
       <HamburgerMenu onClick={toggleMobileMenu}>
@@ -116,15 +107,6 @@ export const Header: React.FC<HeaderProps> = ({ hideExplore }) => {
           >
             {uiStrings.myTours}
           </Link>
-          {!hideExplore && (
-            <Link
-              to="/explore"
-              onClick={toggleMobileMenu}
-              id={getActiveButtonClass("/explore")}
-            >
-              {uiStrings.exploreNews}
-            </Link>
-          )}
         </div>
       </MobileMenu>
     </StyledHeader>
