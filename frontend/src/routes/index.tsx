@@ -40,7 +40,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/virtualization",
+    path: "/landscapes",
     element: (
       <MainLayout>
         <UserList />
@@ -48,7 +48,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/brands",
+    path: "/products",
     element: (
       <MainLayout>
         <Brands />

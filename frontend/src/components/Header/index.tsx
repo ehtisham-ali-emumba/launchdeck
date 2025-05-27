@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import { uiStrings } from "../../constants/uiStrings";
-import { TourLogoSvg } from "../../assets";
+import { LogoSvg } from "../../assets";
 import { useIsActiveRoute } from "../../hooks/useIsActiveRoute";
 import type { HeaderProps } from "./type";
 
@@ -31,21 +31,21 @@ export const Header: React.FC<HeaderProps> = ({ hideExplore }) => {
   return (
     <StyledHeader>
       <LogoLink to="/">
-        <TourLogoSvg />
+        <LogoSvg />
       </LogoLink>
       <NavMenu>
         <Space size={36}>
-          <Link to="/brands">
-            <Button variant="secondary" id={getActiveButtonClass("/brands")}>
-              {uiStrings.brands}
-            </Button>
-          </Link>
-          <Link to="/virtualization">
+          <Link to="/landscapes">
             <Button
               variant="secondary"
-              id={getActiveButtonClass("/virtualization")}
+              id={getActiveButtonClass("/landscapes")}
             >
-              {uiStrings.virtualization}
+              {uiStrings.landscapes}
+            </Button>
+          </Link>
+          <Link to="/products">
+            <Button variant="secondary" id={getActiveButtonClass("/products")}>
+              {uiStrings.products}
             </Button>
           </Link>
           <Link to="/tours">
@@ -81,7 +81,7 @@ export const Header: React.FC<HeaderProps> = ({ hideExplore }) => {
       <MobileMenu isOpen={isMobileMenuOpen}>
         <div className="menu-header">
           <LogoLink to="/">
-            <TourLogoSvg />
+            <LogoSvg />
           </LogoLink>
           <Button variant="icon-transparent" onClick={toggleMobileMenu}>
             <CloseOutlined />
@@ -89,18 +89,18 @@ export const Header: React.FC<HeaderProps> = ({ hideExplore }) => {
         </div>
         <div className="menu-links">
           <Link
-            to="/brands"
+            to="/landscapes"
             onClick={toggleMobileMenu}
-            id={getActiveButtonClass("/brands")}
+            id={getActiveButtonClass("/landscapes")}
           >
-            {uiStrings.brands}
+            {uiStrings.landscapes}
           </Link>
           <Link
-            to="/virtualization"
+            to="/products"
             onClick={toggleMobileMenu}
-            id={getActiveButtonClass("/virtualization")}
+            id={getActiveButtonClass("/products")}
           >
-            {uiStrings.virtualization}
+            {uiStrings.products}
           </Link>
           <Link
             to="/tours"

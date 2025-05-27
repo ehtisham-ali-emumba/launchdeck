@@ -99,4 +99,8 @@ export const uiStrings = {
   city: "City",
   country: "Country",
   close: "Close",
+
+  // launchdeck
+  products: "Products",
+  landscapes: "Landscapes",
 };
