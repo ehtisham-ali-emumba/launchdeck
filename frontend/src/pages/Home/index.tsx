@@ -1,6 +1,6 @@
 import { HomeContainer } from "./elements";
-import { Spacer } from "../../components";
-import { ContentWrapper } from "../../styles";
+import { Spacer } from "~/components";
+import { ContentWrapper } from "~/styles";
 import { WelcomeBanner } from "./WelcomeBanner";
 import { ProductList } from "./ProductList";
 
