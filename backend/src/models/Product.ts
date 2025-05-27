@@ -9,6 +9,7 @@ export interface IProduct extends Document {
   tags: string[];
   website: string;
   votesCount: number;
+  launchDate: { type: Date; required: true };
   createdAt: Date;
   updatedAt: Date;
 }
@@ -27,6 +28,7 @@ const ProductSchema = new Schema<IProduct>(
     tags: [{ type: String }],
     website: { type: String },
     votesCount: { type: Number, default: 0 },
+    launchDate: { type: Date, required: true },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
   },
