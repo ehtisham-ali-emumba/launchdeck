@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Wrapper } from "../../styles";
+import { Wrapper } from "../../../styles";
 import { Typography } from "antd";
 
 export const Container = styled(Wrapper)`

@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 import styled from "styled-components";
-import { colors } from "../../../constants";
+import { colors } from "../../../../constants";
 
 export const { Title, Paragraph, Text } = Typography;
 

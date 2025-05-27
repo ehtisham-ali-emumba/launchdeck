@@ -6,7 +6,7 @@ import {
   GlobalOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { truncate } from "../../../utils";
+import { truncate } from "../../../../utils";
 import {
   UserInfoContainer,
   UserMetaInfo,

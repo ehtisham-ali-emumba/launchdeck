@@ -3,7 +3,7 @@ import { Home } from "../pages/Home";
 import { Explore } from "../pages/Explore";
 import { MainLayout } from "../layout/MainLayout";
 import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
-import { LandscapePage } from "../pages/Landscape";
+import { LandscapePage } from "../pages/Product/Landscape";
 import { Brands, AutoDetails, Autos } from "../pages/Vehicles";
 
 const routes: RouteObject[] = [
