@@ -1,5 +1,4 @@
 export * from "./Button";
-export * from "./Header";
 export * from "./FormInput/Input";
 export * from "./DatePickers";
 export * from "./Spacer";

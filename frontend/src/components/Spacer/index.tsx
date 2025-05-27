@@ -10,6 +10,7 @@ export const Spacer = styled.div<SpacerProps>`
   padding-bottom: ${(props) => props.paddingBottom || "0"};
   padding-left: ${(props) => props.paddingLeft || "0"};
   padding-right: ${(props) => props.paddingRight || "0"};
+  height: ${(props) => props.top || "0"};
 `;
 
 export const InlineSpacer = styled.span<SpacerProps>`
@@ -21,4 +22,5 @@ export const InlineSpacer = styled.span<SpacerProps>`
   padding-bottom: ${(props) => props.paddingBottom || "0"};
   padding-left: ${(props) => props.paddingLeft || "0"};
   padding-right: ${(props) => props.paddingRight || "0"};
+  height: ${(props) => props.top || "0"};
 `;

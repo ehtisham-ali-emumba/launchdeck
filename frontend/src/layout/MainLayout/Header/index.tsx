@@ -6,13 +6,13 @@ import {
   MobileMenu,
   LogoLink,
 } from "./elements";
-import { Button } from "../Button";
+import { Button } from "../../../components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { CloseOutlined } from "@ant-design/icons";
-import { uiStrings } from "../../constants/uiStrings";
-import { LogoSvg } from "../../assets";
-import { useIsActiveRoute } from "../../hooks/useIsActiveRoute";
+import { uiStrings } from "../../../constants/uiStrings";
+import { LogoSvg } from "../../../assets";
+import { useIsActiveRoute } from "../../../hooks/useIsActiveRoute";
 import type { HeaderProps } from "./type";
 
 export const Header: React.FC<HeaderProps> = () => {

@@ -7,4 +7,5 @@ export type SpacerProps = {
   paddingBottom?: string;
   paddingLeft?: string;
   paddingRight?: string;
+  top?: string;
 };
