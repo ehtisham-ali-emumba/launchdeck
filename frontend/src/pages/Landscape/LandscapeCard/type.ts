@@ -1,4 +1,4 @@
-export interface UserCardProps {
+export interface LandscapeCardProps {
   fullName: string;
   userName: string;
   imageSrc: string;

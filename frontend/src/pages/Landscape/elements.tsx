@@ -53,3 +53,37 @@ export const UserDetailsContainer = styled.div`
   min-width: 320px;
   text-align: center;
 `;
+
+// landscape
+
+export const LandscapeHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 30px 0;
+`;
+
+export const LandscapeTitle = styled.h1`
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a202c; /* Dark gray */
+  margin-bottom: 8px;
+  text-align: left;
+`;
+
+export const LandscapeDivider = styled.hr`
+  width: 100%;
+  border: none;
+  border-top: 2px solid #e2e8f0; /* Light gray */
+  margin: 8px 0 16px 0;
+`;
+
+export const LandscapeSubtitle = styled.p`
+  font-size: 20px;
+  font-weight: 400;
+  color: #4a5568; /* Medium gray */
+  margin: 0;
+`;
+export const ContentBox = styled.div`
+  margin-top: -10px;
+`;

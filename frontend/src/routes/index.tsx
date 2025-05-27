@@ -3,7 +3,7 @@ import { Home } from "../pages/Home";
 import { Explore } from "../pages/Explore";
 import { MainLayout } from "../layout/MainLayout";
 import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
-import { UserList } from "../pages/UserList";
+import { LandscapePage } from "../pages/Landscape";
 import { Brands, AutoDetails, Autos } from "../pages/Vehicles";
 
 const routes: RouteObject[] = [
@@ -18,7 +18,7 @@ const routes: RouteObject[] = [
   {
     path: "/explore",
     element: (
-      <MainLayout hideExplore>
+      <MainLayout>
         <Explore />
       </MainLayout>
     ),
@@ -43,7 +43,7 @@ const routes: RouteObject[] = [
     path: "/landscapes",
     element: (
       <MainLayout>
-        <UserList />
+        <LandscapePage />
       </MainLayout>
     ),
   },
@@ -74,7 +74,7 @@ const routes: RouteObject[] = [
   {
     path: "/tour/:tourId",
     element: (
-      <MainLayout hideExplore>
+      <MainLayout>
         <TourDetails />
       </MainLayout>
     ),
@@ -82,7 +82,7 @@ const routes: RouteObject[] = [
   {
     path: "/book/tour/:tourId",
     element: (
-      <MainLayout hideExplore>
+      <MainLayout>
         <BookTour />
       </MainLayout>
     ),

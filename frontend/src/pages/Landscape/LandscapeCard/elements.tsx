@@ -19,7 +19,7 @@ export const UserMetaInfo = styled.div`
   gap: 8px;
 `;
 export const UserMetaText = styled(Text)`
-  color: ${colors.text.light};
+  color: ${colors.text.primary};
   font-size: 14px;
   font-weight: 500;
 `;
