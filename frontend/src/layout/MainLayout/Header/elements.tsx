@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { colors } from "../../../constants";
 import { sizeTablet, zIndex } from "../../../utils";
+import { Button } from "~/components";
 
 export const StyledHeader = styled(Layout.Header)`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: transparent;
   height: 80px;
   position: absolute;
   left: 0;
   right: 0;
+  border-bottom: 2px solid ${colors.lightborder};
   z-index: ${zIndex.navBar};
 `;
 
@@ -93,4 +93,9 @@ export const MobileMenu = styled.div<{ isOpen: boolean }>`
       }
     }
   }
+`;
+
+export const SubmitButton = styled(Button)`
+  border-radius: 24px;
+  height: 42px;
 `;

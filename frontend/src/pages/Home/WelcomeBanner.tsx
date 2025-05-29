@@ -69,7 +69,7 @@ export const WelcomeBanner = () => {
         <HeartOutlined />
       </IconBox>
       <BannerContent>
-        <BannerTitle>Welcome to Product Hunt!</BannerTitle>
+        <BannerTitle>Welcome to Launch Deck!</BannerTitle>
         <BannerSubtitle>
           The place to launch and discover new tech products.
           <TourLink>Take a tour.</TourLink>

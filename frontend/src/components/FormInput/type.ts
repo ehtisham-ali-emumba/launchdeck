@@ -11,4 +11,5 @@ export interface FormInputProps<T extends FieldValues> {
   control: UseFormReturn<T>["control"];
   inputProps?: InputType["inputProps"];
   label?: string;
+  required?: boolean;
 }

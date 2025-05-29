@@ -19,3 +19,8 @@ export const BaseLink = styled(Link)`
     text-decoration: none;
   }
 `;
+
+export const RequiredInputStar = styled.span`
+  color: red;
+  margin-left: 1px;
+`;

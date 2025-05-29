@@ -1,16 +1,9 @@
-import {
-  LandscapeHeader,
-  LandscapeTitle,
-  LandscapeDivider,
-  LandscapeSubtitle,
-} from "./elements";
+import { LandscapeHeader, LandscapeTitle } from "./elements";
 
 export const LandscapeHeaderBar = () => {
   return (
     <LandscapeHeader>
-      <LandscapeTitle>Product Categories</LandscapeTitle>
-      <LandscapeDivider />
-      <LandscapeSubtitle>Product Landscape Overviews</LandscapeSubtitle>
+      <LandscapeTitle>Product Landscape Overviews</LandscapeTitle>
     </LandscapeHeader>
   );
 };

@@ -31,12 +31,15 @@ export const Header = styled(Header_)`
 
 export const Flex1 = styled(Flex)`
   flex: 1;
+  width: 550px;
+  margin: 0 auto;
   ${sizeLg(css`
     margin-top: 20px;
-  `)}
-  ${sizeMobile(css`
+    width: 450px;
+  `)} ${sizeMobile(css`
     flex-direction: column;
-  `)}
+    width: 300px;
+  `)};
 `;
 
 export const ContentWrapper = styled.div`
@@ -44,3 +47,15 @@ export const ContentWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
 `;
+
+export const Container = styled(Wrapper)`
+  justify-content: flex-start;
+  height: calc(100vh - 90px);
+`;
+
+export const ColBox = styled.div({
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+});

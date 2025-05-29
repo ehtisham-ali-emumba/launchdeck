@@ -5,15 +5,21 @@ import {
   HamburgerMenu,
   MobileMenu,
   LogoLink,
+  SubmitButton,
 } from "./elements";
 import { Button } from "../../../components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { CloseOutlined } from "@ant-design/icons";
+import {
+  CloseOutlined,
+  PlusCircleOutlined,
+  PlusOutlined,
+} from "@ant-design/icons";
 import { uiStrings } from "../../../constants/uiStrings";
 import { LogoSvg } from "../../../assets";
 import { useIsActiveRoute } from "../../../hooks/useIsActiveRoute";
 import type { HeaderProps } from "./type";
+import { ContentWrapper } from "~/styles";
 
 export const Header: React.FC<HeaderProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,86 +35,91 @@ export const Header: React.FC<HeaderProps> = () => {
 
   return (
     <StyledHeader>
-      <LogoLink to="/">
-        <LogoSvg />
-      </LogoLink>
-      <NavMenu>
-        <Space size={36}>
-          <Link to="/landscapes">
-            <Button
-              variant="secondary"
+      <ContentWrapper
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <LogoLink to="/">
+          <LogoSvg />
+        </LogoLink>
+        <NavMenu>
+          <Space size={36}>
+            <Link to="/landscapes">
+              <Button
+                variant="secondary"
+                id={getActiveButtonClass("/landscapes")}
+              >
+                {uiStrings.landscapes}
+              </Button>
+            </Link>
+            <Link to="/categories/dummy">
+              <Button
+                variant="secondary"
+                id={getActiveButtonClass("/categories/dummy")}
+              >
+                {uiStrings.products}
+              </Button>
+            </Link>
+          </Space>
+        </NavMenu>
+        <Link to="/products/create">
+          <SubmitButton variant="outlined">
+            <PlusCircleOutlined /> {uiStrings.submit}
+          </SubmitButton>
+        </Link>
+
+        {/* Hamburger Menu for Mobile */}
+        <HamburgerMenu onClick={toggleMobileMenu}>
+          <span />
+          <span />
+          <span />
+        </HamburgerMenu>
+
+        {/* Mobile Menu Modal */}
+        <MobileMenu isOpen={isMobileMenuOpen}>
+          <div className="menu-header">
+            <LogoLink to="/">
+              <LogoSvg />
+            </LogoLink>
+            <Button variant="icon-transparent" onClick={toggleMobileMenu}>
+              <CloseOutlined />
+            </Button>
+          </div>
+          <div className="menu-links">
+            <Link
+              to="/landscapes"
+              onClick={toggleMobileMenu}
               id={getActiveButtonClass("/landscapes")}
             >
               {uiStrings.landscapes}
-            </Button>
-          </Link>
-          <Link to="/products">
-            <Button variant="secondary" id={getActiveButtonClass("/products")}>
+            </Link>
+            <Link
+              to="/categories/dummy"
+              onClick={toggleMobileMenu}
+              id={getActiveButtonClass("/categories/dummy")}
+            >
               {uiStrings.products}
-            </Button>
-          </Link>
-          <Link to="/tours">
-            <Button variant="secondary" id={getActiveButtonClass("/tours")}>
+            </Link>
+            <Link
+              to="/tours"
+              onClick={toggleMobileMenu}
+              id={getActiveButtonClass("/tours")}
+            >
               {uiStrings.bookTour}
-            </Button>
-          </Link>
-          <Link to="/my-tours">
-            <Button variant="secondary" id={getActiveButtonClass("/my-tours")}>
+            </Link>
+            <Link
+              to="/my-tours"
+              onClick={toggleMobileMenu}
+              id={getActiveButtonClass("/my-tours")}
+            >
               {uiStrings.myTours}
-            </Button>
-          </Link>
-        </Space>
-      </NavMenu>
-      <div />
-
-      {/* Hamburger Menu for Mobile */}
-      <HamburgerMenu onClick={toggleMobileMenu}>
-        <span />
-        <span />
-        <span />
-      </HamburgerMenu>
-
-      {/* Mobile Menu Modal */}
-      <MobileMenu isOpen={isMobileMenuOpen}>
-        <div className="menu-header">
-          <LogoLink to="/">
-            <LogoSvg />
-          </LogoLink>
-          <Button variant="icon-transparent" onClick={toggleMobileMenu}>
-            <CloseOutlined />
-          </Button>
-        </div>
-        <div className="menu-links">
-          <Link
-            to="/landscapes"
-            onClick={toggleMobileMenu}
-            id={getActiveButtonClass("/landscapes")}
-          >
-            {uiStrings.landscapes}
-          </Link>
-          <Link
-            to="/products"
-            onClick={toggleMobileMenu}
-            id={getActiveButtonClass("/products")}
-          >
-            {uiStrings.products}
-          </Link>
-          <Link
-            to="/tours"
-            onClick={toggleMobileMenu}
-            id={getActiveButtonClass("/tours")}
-          >
-            {uiStrings.bookTour}
-          </Link>
-          <Link
-            to="/my-tours"
-            onClick={toggleMobileMenu}
-            id={getActiveButtonClass("/my-tours")}
-          >
-            {uiStrings.myTours}
-          </Link>
-        </div>
-      </MobileMenu>
+            </Link>
+          </div>
+        </MobileMenu>
+      </ContentWrapper>
     </StyledHeader>
   );
 };

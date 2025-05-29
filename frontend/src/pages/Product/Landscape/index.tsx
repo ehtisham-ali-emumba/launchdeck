@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { FixedSizeGrid, FixedSizeGrid as Grid } from "react-window";
 import { useInfiniteUsers, type RandomUser } from "~/hooks/useRandomUsers";
-import { Loader, Spacer } from "~/components";
+import { Loader } from "~/components";
 import ErrorContainer from "~/components/ErrorContainer";
 import { BlankSlate } from "~/components/BlankSlate";
 import { useHandleResize } from "~/hooks/useHandleResize";
@@ -89,7 +89,6 @@ export const LandscapePage = () => {
     <Container>
       <ContentWrapper>
         <Box>
-          <Spacer top="60px" />
           <LandscapeHeaderBar />
           <ListContainer ref={gridContainerRef}>
             {isLoading && !users.length ? (

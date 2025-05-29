@@ -6,6 +6,7 @@ export type FormSelectProps<T extends FieldValues> = {
   control: UseFormReturn<T>["control"];
   selectProps?: SelectType["selectProps"];
   label?: string;
+  required?: boolean;
 };
 
 export type SelectType = {

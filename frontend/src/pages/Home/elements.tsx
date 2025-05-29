@@ -3,6 +3,7 @@ import { sizeLg, sizeMobile } from "../../utils";
 import { Wrapper } from "../../styles";
 import { images_png } from "../../assets";
 import { colors } from "../../constants";
+import { Link } from "react-router-dom";
 
 export const SignInContainer = styled.div`
   max-width: 420px;
@@ -69,7 +70,6 @@ export const Input = styled.input`
 `;
 
 export const HomeContainer = styled(Wrapper)`
-  padding-top: 80px;
   ${sizeLg(css`
     flex-direction: column;
   `)};
@@ -293,4 +293,8 @@ export const ProductListingSectionTitle = styled.h2`
   font-weight: 700;
   margin: 32px 0 16px 0;
   color: #232629;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
 `;

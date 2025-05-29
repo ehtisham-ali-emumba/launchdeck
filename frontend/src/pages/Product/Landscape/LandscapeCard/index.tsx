@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  MailOutlined,
-  PhoneOutlined,
-  EnvironmentOutlined,
-  GlobalOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 import { truncate } from "../../../../utils";
 import {
   UserInfoContainer,
@@ -55,7 +49,7 @@ export const LandscapeCard: React.FC<LandscapeCardProps> = ({
             {description && (
               <UserMetaInfo>
                 <UserMetaText style={{ fontWeight: "400" }}>
-                  {truncate(descriptionMeta, 110, "...")}
+                  {truncate(descriptionMeta, 65, "...")}
                 </UserMetaText>
               </UserMetaInfo>
             )}

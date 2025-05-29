@@ -1,5 +1,5 @@
 import { Controller, type FieldValues } from "react-hook-form";
-import { FieldLabel } from "../elements";
+import { FieldLabel, RequiredInputStar } from "../elements";
 import { ErrorText } from "./elements";
 import type { FormInputProps } from "./type";
 import { Input } from "./Input";
@@ -9,6 +9,7 @@ export const FormInput = <T extends FieldValues>({
   control,
   inputProps,
   label = name,
+  required,
 }: FormInputProps<T>) => {
   return (
     <div>
@@ -17,7 +18,10 @@ export const FormInput = <T extends FieldValues>({
         control={control}
         render={({ field, fieldState: { error } }) => (
           <>
-            <FieldLabel>{label}</FieldLabel>
+            <FieldLabel>
+              {label}
+              {required && <RequiredInputStar>*</RequiredInputStar>}
+            </FieldLabel>
             <Input
               inputProps={{
                 ...field,

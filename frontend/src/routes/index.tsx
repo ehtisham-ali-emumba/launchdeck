@@ -4,13 +4,16 @@ import { Explore } from "../pages/Explore";
 import { MainLayout } from "../layout/MainLayout";
 import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
 import { LandscapePage } from "../pages/Product/Landscape";
-import { Brands, AutoDetails, Autos } from "../pages/Vehicles";
+import { AutoDetails, Autos } from "../pages/Vehicles";
+import { CategoriesPage } from "~/pages/Product/Categories";
+import { ProductDetailsPage } from "~/pages/Product/ProductDetails";
+import { CreateProductPage } from "~/pages/Product/CreateProduct";
 
 const routes: RouteObject[] = [
   {
     path: "/",
     element: (
-      <MainLayout>
+      <MainLayout showFooter>
         <Home />
       </MainLayout>
     ),
@@ -48,10 +51,26 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/products",
+    path: "/categories/:categoryId",
     element: (
       <MainLayout>
-        <Brands />
+        <CategoriesPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/products/create",
+    element: (
+      <MainLayout showFooter>
+        <CreateProductPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/products/:productId",
+    element: (
+      <MainLayout showFooter>
+        <ProductDetailsPage />
       </MainLayout>
     ),
   },

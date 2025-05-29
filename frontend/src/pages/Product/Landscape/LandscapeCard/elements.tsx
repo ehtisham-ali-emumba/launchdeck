@@ -14,7 +14,7 @@ export const UserMetaInfo = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 2px 16px;
+  padding: 2px 8px;
   border-radius: 100px;
   gap: 8px;
 `;

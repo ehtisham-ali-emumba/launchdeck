@@ -4,7 +4,7 @@ import { Typography } from "antd";
 
 export const Container = styled(Wrapper)`
   justify-content: flex-start;
-  height: 100vh;
+  height: calc(100vh - 90px);
 `;
 
 export const Box = styled.div({
@@ -60,14 +60,14 @@ export const LandscapeHeader = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 30px 0;
+  margin-bottom: 20px;
 `;
 
 export const LandscapeTitle = styled.h1`
   font-size: 30px;
   font-weight: 700;
   color: #1a202c; /* Dark gray */
-  margin-bottom: 8px;
+  margin-bottom: 0px;
   text-align: left;
 `;
 

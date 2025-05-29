@@ -37,7 +37,7 @@ export const StyledBaseCard = styled(Card)<StyledBaseCardType>`
     height: ${({ imageHeight }) => imageHeight}px;
   }
   .ant-card-body {
-    padding: 8px 16px;
+    padding: 8px;
   }
 `;
 

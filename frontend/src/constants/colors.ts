@@ -25,4 +25,6 @@ export const colors = {
     outlined: "#fff8f6",
   },
   disabledColor: "#e0e0e0",
+  lightborder: "#EAECF0",
+  lightBG: "#F9FAFB",
 };
