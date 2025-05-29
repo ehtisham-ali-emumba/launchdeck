@@ -1,6 +1,5 @@
 import { type RouteObject } from "react-router-dom";
 import { Home } from "../pages/Home";
-import { Explore } from "../pages/Explore";
 import { MainLayout } from "../layout/MainLayout";
 import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
 import { LandscapePage } from "../pages/Product/Landscape";
@@ -15,14 +14,6 @@ const routes: RouteObject[] = [
     element: (
       <MainLayout showFooter>
         <Home />
-      </MainLayout>
-    ),
-  },
-  {
-    path: "/explore",
-    element: (
-      <MainLayout>
-        <Explore />
       </MainLayout>
     ),
   },

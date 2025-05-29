@@ -13,7 +13,7 @@ export class ApiClient {
     if (ApiClient._singleton) return ApiClient._singleton;
 
     const DEFAULT_API_URL =
-      import.meta.env.VITE_APP_API_BASE_URL || "http://localhost:3003/api";
+      import.meta.env.VITE_APP_API_BASE_URL || "http://localhost:3002/api";
 
     ApiClient._axiosInstance = axios.create({
       baseURL: DEFAULT_API_URL,

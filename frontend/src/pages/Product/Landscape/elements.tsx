@@ -64,8 +64,8 @@ export const LandscapeHeader = styled.div`
 `;
 
 export const LandscapeTitle = styled.h1`
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 400;
   color: #1a202c; /* Dark gray */
   margin-bottom: 0px;
   text-align: left;

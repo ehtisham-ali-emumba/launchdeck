@@ -1,37 +1,50 @@
-import { useEffect, useState } from "react";
 import { ProductListRow } from "./ProductListRow";
-import type { ProductListFilterType, ProductListItem } from "./type";
+import type { ProductListFilterType } from "./type";
 import { ProductListingSectionTitle } from "./elements";
-import { productListDummyData, sectionTitles } from "./utils";
+import { sectionTitles } from "./utils";
 import { BlankSlate, Loader } from "../../components";
+import { useProductQuery } from "~/hooks/queries/useProductQuery";
 
 export const ProductList = ({ filter }: { filter: ProductListFilterType }) => {
-  const [products, setProducts] = useState<ProductListItem[]>([]);
-  const [loading, setLoading] = useState(true);
+  const pageSize = getPageSize(filter);
 
-  useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setProducts(productListDummyData[filter]);
-      setLoading(false);
-    }, 700);
-    return () => clearTimeout(timer);
-  }, [filter]);
+  const { data, isLoading } = useProductQuery({
+    page: pageSize,
+    limit: 5,
+  });
 
+  const products = data?.data ?? [];
   return (
     <div>
       <ProductListingSectionTitle>
         {sectionTitles[filter]}
       </ProductListingSectionTitle>
-      {loading && products.length === 0 ? (
+      {isLoading && products.length === 0 ? (
         <Loader />
-      ) : !loading && products.length > 0 ? (
-        products.map((product) => (
-          <ProductListRow key={product.index} {...product} />
+      ) : !isLoading && products.length > 0 ? (
+        products.map((product, key) => (
+          <ProductListRow index={key + 1} key={key} product={product} />
         ))
       ) : (
         <BlankSlate />
       )}
     </div>
   );
+};
+
+const getPageSize = (filter: ProductListFilterType) => {
+  switch (filter) {
+    case "today":
+      return 1;
+    case "lastWeek":
+      return 2;
+    case "nextWeek":
+      return 3;
+    case "lastMonth":
+      return 4;
+    case "nextMonth":
+      return 5;
+    default:
+      return 1;
+  }
 };

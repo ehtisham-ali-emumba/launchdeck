@@ -13,41 +13,37 @@ import {
   StatBox,
   StyledLink,
 } from "./elements";
+export const ProductListRow = (props: ProductListRowProps) => {
+  const { index, product } = props;
+  const { _id, name, description, tags, image } = product;
 
-export const ProductListRow = ({
-  index,
-  icon,
-  title,
-  description,
-  tags,
-  comments,
-  upvotes,
-}: ProductListRowProps) => (
-  <StyledLink to={"/products/productId"}>
-    <Row>
-      <AppIcon src={icon} alt={title} />
-      <Info>
-        <TitleProductRow>
-          <Index>{index}.</Index>
-          {title}
-        </TitleProductRow>
-        <Description>{description}</Description>
-        <Tags>
-          {tags.map((tag, i) => (
-            <Tag key={i}>{tag}</Tag>
-          ))}
-        </Tags>
-      </Info>
-      <Stats>
-        <StatBox>
-          <MessageOutlined style={{ fontSize: 18, color: "#8c8c8c" }} />
-          {comments}
-        </StatBox>
-        <StatBox>
-          <UpOutlined style={{ fontSize: 18, color: "#8c8c8c" }} />
-          {upvotes}
-        </StatBox>
-      </Stats>
-    </Row>
-  </StyledLink>
-);
+  return (
+    <StyledLink to={`/products/${_id}`}>
+      <Row>
+        <AppIcon src={image} alt={name} />
+        <Info>
+          <TitleProductRow>
+            <Index>{index}.</Index>
+            {name}
+          </TitleProductRow>
+          <Description>{description}</Description>
+          <Tags>
+            {tags.map((tag, i) => (
+              <Tag key={i}>{tag}</Tag>
+            ))}
+          </Tags>
+        </Info>
+        <Stats>
+          <StatBox>
+            <MessageOutlined style={{ fontSize: 18, color: "#8c8c8c" }} />
+            {4}
+          </StatBox>
+          <StatBox>
+            <UpOutlined style={{ fontSize: 18, color: "#8c8c8c" }} />
+            {12}
+          </StatBox>
+        </Stats>
+      </Row>
+    </StyledLink>
+  );
+};

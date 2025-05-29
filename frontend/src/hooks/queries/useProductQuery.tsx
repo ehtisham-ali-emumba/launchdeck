@@ -1,0 +1,21 @@
+import { useQuery } from "@tanstack/react-query";
+import type { GetProductsResponse, ToursResponse } from "../../types";
+import { QUERY_KEYS } from "../../constants/reactQueryKeys";
+import { getProducts } from "../../api/services";
+
+interface QueryOptions {
+  enabled?: boolean;
+  onSuccess?: (data: ToursResponse) => void;
+  onError?: (error: Error) => void;
+  page?: number;
+  limit?: number;
+}
+
+export const useProductQuery = (options: QueryOptions = {}) => {
+  const { page, limit } = options;
+  return useQuery<GetProductsResponse, Error>({
+    queryKey: [QUERY_KEYS.PRODUCTS],
+    queryFn: () => getProducts({ page, limit }),
+    ...options,
+  });
+};

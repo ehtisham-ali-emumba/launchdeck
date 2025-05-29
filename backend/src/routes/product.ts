@@ -17,7 +17,7 @@ productRoutes.post("/", async (req: Request, res: Response) => {
 productRoutes.get("/", async (req: Request, res: Response) => {
   try {
     const page = parseInt(req.query.page as string, 10) || 1;
-    const limit = 16;
+    const limit = (req.query.limit ?? 16) as number;
     const skip = (page - 1) * limit;
 
     const [products, total] = await Promise.all([
