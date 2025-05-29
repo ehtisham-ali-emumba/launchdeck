@@ -18,6 +18,7 @@ import { useIsActiveRoute } from "../../../hooks/useIsActiveRoute";
 import type { HeaderProps } from "./type";
 import { ContentWrapper } from "~/styles";
 import { SearchBar } from "./SearchBar";
+import { ProductsDropdown } from "./ProductsDropdown";
 
 export const Header: React.FC<HeaderProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -57,14 +58,7 @@ export const Header: React.FC<HeaderProps> = () => {
                 {uiStrings.landscapes}
               </Button>
             </Link>
-            <Link to="/categories/dummy">
-              <Button
-                variant="secondary"
-                id={getActiveButtonClass("/categories/dummy")}
-              >
-                {uiStrings.products}
-              </Button>
-            </Link>
+            <ProductsDropdown />
           </Space>
         </NavMenu>
         <Link to="/products/create">
