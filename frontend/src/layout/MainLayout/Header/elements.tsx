@@ -99,3 +99,9 @@ export const SubmitButton = styled(Button)`
   border-radius: 24px;
   height: 42px;
 `;
+
+export const Row = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 32px;
+`;

@@ -6,20 +6,18 @@ import {
   MobileMenu,
   LogoLink,
   SubmitButton,
+  Row,
 } from "./elements";
 import { Button } from "../../../components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import {
-  CloseOutlined,
-  PlusCircleOutlined,
-  PlusOutlined,
-} from "@ant-design/icons";
+import { CloseOutlined, PlusCircleOutlined } from "@ant-design/icons";
 import { uiStrings } from "../../../constants/uiStrings";
 import { LogoSvg } from "../../../assets";
 import { useIsActiveRoute } from "../../../hooks/useIsActiveRoute";
 import type { HeaderProps } from "./type";
 import { ContentWrapper } from "~/styles";
+import { SearchBar } from "./SearchBar";
 
 export const Header: React.FC<HeaderProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,9 +40,13 @@ export const Header: React.FC<HeaderProps> = () => {
           justifyContent: "space-between",
         }}
       >
-        <LogoLink to="/">
-          <LogoSvg />
-        </LogoLink>
+        <Row>
+          <LogoLink to="/">
+            <LogoSvg />
+          </LogoLink>
+          {/* search bar in header here right beside logo */}
+          <SearchBar />
+        </Row>
         <NavMenu>
           <Space size={36}>
             <Link to="/landscapes">
