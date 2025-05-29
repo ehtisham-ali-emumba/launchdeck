@@ -5,6 +5,7 @@ import {
   BellOutlined,
   ClockCircleOutlined,
 } from "@ant-design/icons";
+import type { RecentLaunchesType } from "./type";
 
 const { Text } = Typography;
 
@@ -101,16 +102,16 @@ const Badge = styled.div`
   margin-right: 16px;
 `;
 
-export function RecentLaunches() {
+export const RecentLaunches: React.FC<RecentLaunchesType> = ({ product }) => {
   return (
     <Section>
-      <Text style={{ fontSize: 20 }}>Recent Figma Launches</Text>
+      <Text style={{ fontSize: 20 }}>Recent {product.name} Launches</Text>
       <LaunchList>
         <LaunchRow>
           <LaunchInfo>
             <LaunchIcon src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" />
             <LaunchText>
-              <LaunchTitle>Figma Buzz</LaunchTitle>
+              <LaunchTitle>{product.name} Buzz</LaunchTitle>
               <LaunchDesc>Asset production made easy.</LaunchDesc>
               <LaunchDate>
                 <ClockCircleOutlined /> Launched on May 8th, 2025
@@ -128,15 +129,15 @@ export function RecentLaunches() {
             </StatBox>
           </LaunchStats>
         </LaunchRow>
-        {/* Figma */}
+        {/* {product.name} */}
         <LaunchRow>
           <LaunchInfo>
             <LaunchIcon
               src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
-              alt="Figma"
+              alt="{product.name}"
             />
             <LaunchText>
-              <LaunchTitle>Figma</LaunchTitle>
+              <LaunchTitle>{product.name}</LaunchTitle>
               <LaunchDesc>The collaborative interface design tool</LaunchDesc>
               <LaunchDate>
                 <ClockCircleOutlined /> Launched on March 21st, 2025
@@ -154,15 +155,15 @@ export function RecentLaunches() {
             </StatBox>
           </LaunchStats>
         </LaunchRow>
-        {/* Figma Slides */}
+        {/* {product.name} Slides */}
         <LaunchRow>
           <LaunchInfo>
             <LaunchIcon
               src="https://cdn-icons-png.flaticon.com/512/1160/1160358.png"
-              alt="Figma Slides"
+              alt="{product.name} Slides"
             />
             <LaunchText>
-              <LaunchTitle>Figma Slides</LaunchTitle>
+              <LaunchTitle>{product.name} Slides</LaunchTitle>
               <LaunchDesc>
                 Create presentations & slides for every occasion
               </LaunchDesc>
@@ -193,4 +194,4 @@ export function RecentLaunches() {
       </LaunchList>
     </Section>
   );
-}
+};

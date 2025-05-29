@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { images_png } from "~/assets";
-import { Button } from "~/components";
+import type { ProductCardType } from "./type";
 
 const Container = styled.div`
   padding: 8px;
@@ -20,19 +19,20 @@ const ProductHeader = styled.div`
 const ProductIcon = styled.div`
   width: 52px;
   height: 52px;
-  background: linear-gradient(135deg, #000000, #333333);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+  background: #f3f4f6;
+`;
 
-  &::after {
-    content: "▲";
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-  }
+const ProductIconImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 `;
 
 const ProductInfo = styled.div`
@@ -192,12 +192,6 @@ const Tag = styled.span`
   }
 `;
 
-const ViewDetailsButton: typeof Button = styled((props) => (
-  <Button variant="outlined" size="small" {...props} />
-))`
-  margin-top: 8px;
-`;
-
 const ImageGrid = styled.div`
   display: flex;
   gap: 24px;
@@ -223,25 +217,27 @@ const CardImg = styled.img`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  margin: 0 auto;
 `;
-export function ProductCard() {
+export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
+  const { name, description, image, tags, _id } = product;
   const [activeTab, setActiveTab] = useState("Overview");
 
   const tabs = ["Overview", "Shoutouts", "Reviews", "Launches"];
 
   return (
-    <StyledLink to={"/products/productId"}>
+    <StyledLink to={`/products/${_id}`}>
       <Container>
         <ProductHeader>
-          <ProductIcon />
+          <ProductIcon>
+            <ProductIconImg src={image} alt={name} />
+          </ProductIcon>
           <ProductInfo>
             <ProductTitle>
-              <ProductNumber>1.</ProductNumber>
-              <span>Vercel</span>
+              <ProductNumber>{index}.</ProductNumber>
+              <span>{name}</span>
               <span>—</span>
-              <CompanyName>
-                The frontend cloud. Creators of Next.js.
-              </CompanyName>
+              <CompanyName>{description}</CompanyName>
             </ProductTitle>
 
             <RatingContainer>
@@ -294,29 +290,21 @@ export function ProductCard() {
             ))}
           </TabList>
         </TabContainer>
-
-        <Description>
-          Vercel provides the developer tools and cloud infrastructure to build,
-          scale, and secure a faster, more personalized web.
-        </Description>
-
+        <Description>{description}</Description>
         <ImageGrid>
-          <ImageCard>
-            <CardImg src={images_png.homeMain2} />
-          </ImageCard>
-          <ImageCard>
-            <CardImg src={images_png.homeMain2} />
-          </ImageCard>
-          <ImageCard>
-            <CardImg src={images_png.homeMain2} />
-          </ImageCard>
+          {[1, 2, 3].map((item) => (
+            <ImageCard key={item}>
+              <CardImg src={image} />
+            </ImageCard>
+          ))}
         </ImageGrid>
 
         <TagContainer>
-          <Tag>Static site generators</Tag>
-          <Tag>Cloud Computing Platforms</Tag>
+          {tags?.map?.((item) => (
+            <Tag key={item}>{item}</Tag>
+          ))}
         </TagContainer>
       </Container>
     </StyledLink>
   );
-}
+};

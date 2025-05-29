@@ -70,6 +70,7 @@ export const Input = styled.input`
 `;
 
 export const HomeContainer = styled(Wrapper)`
+  min-height: calc(100vh - 60px);
   ${sizeLg(css`
     flex-direction: column;
   `)};

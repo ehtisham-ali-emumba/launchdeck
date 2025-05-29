@@ -46,7 +46,7 @@ landscapeRoutes.get("/", async (req: Request, res: Response) => {
         ) || null,
     }));
 
-    await delay(3000);
+    await delay(2000);
     res.json({
       data: landscapesWithCategory,
       page,

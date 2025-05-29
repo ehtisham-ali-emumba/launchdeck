@@ -4,14 +4,21 @@ import { apiEndpoints } from "../endpoints";
 
 const apiClient = ApiClient.getAxios();
 
+type GetProductDataType = {
+  page?: number;
+  limit?: number;
+  categoryId?: string;
+};
+
 export const getProducts = async ({
   page = 1,
   limit = 16,
-}): Promise<GetProductsResponse> => {
+  categoryId,
+}: GetProductDataType): Promise<GetProductsResponse> => {
   const response = await apiClient.get<GetProductsResponse>(
     apiEndpoints.products,
     {
-      params: { page, limit },
+      params: { page, limit, categoryId },
     }
   );
   return response.data;

@@ -116,4 +116,6 @@ export const uiStrings = {
   selectProductTags: "Select Product Tags",
   tags: "Tags",
   allLandscapesLoaded: (num: number) => `All ${num} landscapes loaded`,
+  allProductsLoaded: (num: number) =>
+    `All ${num} product${num > 1 ? "s" : ""} loaded`,
 };

@@ -1,10 +1,9 @@
-import { useState } from "react";
 import styled from "styled-components";
-import { Typography, Button, Tabs, Avatar, Tag } from "antd";
+import { Typography, Button, Tabs, Avatar } from "antd";
 import { colors } from "~/constants";
-import { images_png } from "~/assets";
 import { Spacer } from "~/components";
 import { RecentLaunches } from "./RecentLaunches";
+import type { ProductDetailsCardType } from "./type";
 const { Title, Text } = Typography;
 
 const CardContainer = styled.div`
@@ -121,25 +120,41 @@ const TagsRow = styled.div`
   gap: 12px;
 `;
 
-export function ProductDetailsCard() {
-  const [activeTab, setActiveTab] = useState("Overview");
+const Tag = styled.span`
+  background: #f3f4f6;
+  color: #374151;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 
-  const tabs = ["Overview", "Shoutouts", "Reviews", "Launches"];
+  &::before {
+    content: "🏷️";
+    font-size: 12px;
+    margin-top: 4px;
+    margin-right: 2px;
+  }
+`;
+
+export const ProductDetailsCard: React.FC<ProductDetailsCardType> = ({
+  product,
+}) => {
+  console.log("🚀 ~ product:", product);
+  const { image, name, description, tags } = product;
 
   return (
     <>
       <CardContainer>
         <HeaderRow>
-          <Logo
-            src="https://ph-files.imgix.net/76710619-0e0c-4456-918d-f5f2cb58e1cc.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=64&h=64&fit=crop&frame=1&dpr=2"
-            alt="Next.js"
-          />
+          <Logo src={image} alt="Next.js" />
           <HeaderInfo>
             <Title level={3} style={{ marginBottom: 0 }}>
-              Next.js
+              {name}
             </Title>
             <Text type="secondary" style={{ fontSize: 17 }}>
-              Create web applications with the power of React components
+              {description}
             </Text>
             <StatsRow>
               <span>⭐ 85 reviews</span>
@@ -161,21 +176,13 @@ export function ProductDetailsCard() {
             { key: "overview", label: "Overview" },
             { key: "launches", label: "Launches" },
             { key: "forums", label: "Forums" },
-            { key: "shoutouts", label: "Shoutouts" },
             { key: "reviews", label: "Reviews" },
-            { key: "team", label: "Team" },
-            { key: "awards", label: "Awards" },
-            { key: "more", label: "More" },
           ]}
         />
 
         <Section>
-          <DescriptionHeading level={4}>What is Next.js?</DescriptionHeading>
-          <DescriptionText>
-            The React framework for production. Next.js provides
-            zero-configuration automatic code splitting, filesystem based
-            routing, hot code reloading and universal rendering.
-          </DescriptionText>
+          <DescriptionHeading level={4}>What is {name}?</DescriptionHeading>
+          <DescriptionText>{description}</DescriptionText>
         </Section>
 
         <AvatarsRow>
@@ -192,23 +199,25 @@ export function ProductDetailsCard() {
         </AvatarsRow>
 
         <ScrollGallery>
-          <GalleryImage src={images_png.homeMain3} alt="Gallery 1" />
-          <GalleryImage src={images_png.homeMain3} alt="Gallery 2" />
-          <GalleryImage src={images_png.homeMain3} alt="Gallery 3" />
-          <GalleryImage src={images_png.homeMain3} alt="Gallery 2" />
-          <GalleryImage src={images_png.homeMain3} alt="Gallery 3" />
-          <GalleryImage src={images_png.homeMain3} alt="Gallery 2" />
-          <GalleryImage src={images_png.homeMain3} alt="Gallery 3" />
+          <GalleryImage src={image} alt="Gallery 1" />
+          <GalleryImage src={image} alt="Gallery 2" />
+          <GalleryImage src={image} alt="Gallery 3" />
+          <GalleryImage src={image} alt="Gallery 2" />
+          <GalleryImage src={image} alt="Gallery 3" />
+          <GalleryImage src={image} alt="Gallery 2" />
+          <GalleryImage src={image} alt="Gallery 3" />
         </ScrollGallery>
 
         <TagsRow>
-          <Tag color="blue">Engineering & Development</Tag>
-          <Tag color="geekblue">Static site generators</Tag>
-          <Tag color="purple">UI frameworks</Tag>
+          {tags?.map?.((item) => (
+            <Tag color="purple" key={item}>
+              {item}
+            </Tag>
+          ))}
         </TagsRow>
       </CardContainer>
       <Spacer marginTop="60px" />
-      <RecentLaunches />
+      <RecentLaunches product={product} />
     </>
   );
-}
+};
