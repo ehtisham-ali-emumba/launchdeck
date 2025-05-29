@@ -3,4 +3,5 @@ export const QUERY_KEYS = {
   TOUR_BY_ID: "tourById",
   RANDOM_USERS: "randomUsers",
   PRODUCTS: "products",
+  LANDSCAPES: "landscapes",
 } as const;

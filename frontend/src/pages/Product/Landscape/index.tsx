@@ -6,22 +6,22 @@ import React, {
   useMemo,
 } from "react";
 import { FixedSizeGrid, FixedSizeGrid as Grid } from "react-window";
-import { useInfiniteUsers, type RandomUser } from "~/hooks/useRandomUsers";
 import { Loader } from "~/components";
 import ErrorContainer from "~/components/ErrorContainer";
 import { BlankSlate } from "~/components/BlankSlate";
 import { useHandleResize } from "~/hooks/useHandleResize";
 import { ContentWrapper } from "~/styles";
-import { COLUMN_WIDTH, flattenUsers, gridStyles, ROW_HEIGHT } from "./utils";
+import { COLUMN_WIDTH, gridStyles, ROW_HEIGHT } from "./utils";
 import { LandscapeCard } from "./LandscapeCard";
 import { LandscapeHeaderBar } from "./LandscapeHeader";
 import { Box, Container, GridWrapper, ListContainer } from "./elements";
+import { useLandscapeQuery } from "~/hooks/queries";
+import { uiStrings } from "~/constants";
 
 export const LandscapePage = () => {
   const listRef = useRef<FixedSizeGrid>(null);
   const gridContainerRef = useRef<HTMLDivElement>(null);
   const [numColumns, setNumColumns] = useState(1);
-
   const [gridHeight, setGridHeight] = useState(580);
 
   const {
@@ -29,12 +29,20 @@ export const LandscapePage = () => {
     isLoading,
     isError,
     error,
-    isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useInfiniteUsers();
+    isFetchingNextPage,
+  } = useLandscapeQuery({
+    limit: 16,
+  });
 
-  const users: RandomUser[] = useMemo(() => flattenUsers(data), [data]);
+  // Derived state
+  const landscapes = useMemo(() => {
+    return data?.pages.flatMap((page) => page.data) || [];
+  }, [data]);
+
+  const totalCount = data?.pages[0]?.total || 0;
+  const rowCount = Math.ceil(landscapes.length / numColumns);
 
   const handleResize = () => {
     if (gridContainerRef.current) {
@@ -48,13 +56,20 @@ export const LandscapePage = () => {
   useHandleResize(handleResize);
   useEffect(handleResize, []);
 
-  const rowCount = Math.ceil(users.length / numColumns);
   const handleItemsRendered = useCallback(
     ({ visibleRowStopIndex }: { visibleRowStopIndex: number }) => {
-      if (!isFetchingNextPage && visibleRowStopIndex >= rowCount - 1)
+      // Load more data when reaching near the end and there's more data available
+      const threshold = Math.max(1, rowCount - 1); // Load when 2 rows from bottom
+
+      if (
+        visibleRowStopIndex >= threshold &&
+        hasNextPage &&
+        !isFetchingNextPage
+      ) {
         fetchNextPage();
+      }
     },
-    [hasNextPage, isFetchingNextPage, fetchNextPage, rowCount]
+    [rowCount, hasNextPage, isFetchingNextPage, fetchNextPage]
   );
 
   const Cell = ({
@@ -66,24 +81,23 @@ export const LandscapePage = () => {
     rowIndex: number;
     style: React.CSSProperties;
   }) => {
-    const userIndex = rowIndex * numColumns + columnIndex;
-    const user = users[userIndex];
-    if (!user) return null;
+    const landscapeIndex = rowIndex * numColumns + columnIndex;
+    const landscape = landscapes[landscapeIndex];
+
+    if (!landscape) return null;
+
     return (
       <div style={style}>
-        <LandscapeCard
-          key={user.login.uuid}
-          imageSrc={user.picture.large}
-          fullName={`${user.name.first} ${user.name.last}`}
-          userName={user.login.username}
-          email={user.email}
-          phone={user.phone}
-          country={user.location.country}
-          city={user.location.city}
-        />
+        <LandscapeCard landscape={landscape} />
       </div>
     );
   };
+
+  const isInitialLoading = isLoading && !landscapes.length;
+  const hasData = landscapes.length > 0;
+  const isEmptyState = !isLoading && !isFetchingNextPage && !hasData;
+  const showEndMessage = !hasNextPage && hasData;
+  const showLoadingMore = isFetchingNextPage && hasData;
 
   return (
     <Container>
@@ -91,11 +105,11 @@ export const LandscapePage = () => {
         <Box>
           <LandscapeHeaderBar />
           <ListContainer ref={gridContainerRef}>
-            {isLoading && !users.length ? (
+            {isInitialLoading ? (
               <Loader />
             ) : isError ? (
               <ErrorContainer message={`Error: ${(error as Error).message}`} />
-            ) : users.length ? (
+            ) : hasData ? (
               <>
                 <GridWrapper width={numColumns * COLUMN_WIDTH}>
                   <Grid
@@ -112,11 +126,25 @@ export const LandscapePage = () => {
                     {Cell}
                   </Grid>
                 </GridWrapper>
-                {isFetchingNextPage && <Loader paddingTop={"0px"} />}
               </>
             ) : (
-              !isLoading && !users.length && <BlankSlate />
+              isEmptyState && <BlankSlate />
             )}
+
+            {showEndMessage && (
+              <div
+                style={{
+                  padding: "20px",
+                  textAlign: "center",
+                  color: "#8c8c8c",
+                  fontSize: "14px",
+                }}
+              >
+                {uiStrings.allLandscapesLoaded(totalCount)}
+              </div>
+            )}
+
+            {showLoadingMore && <Loader paddingTop={"10px"} />}
           </ListContainer>
         </Box>
       </ContentWrapper>

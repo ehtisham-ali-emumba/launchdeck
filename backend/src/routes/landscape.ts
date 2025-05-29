@@ -1,6 +1,7 @@
 import express, { Request, Response } from "express";
 import Landscape from "../models/Landscape";
 import Category from "../models/Category";
+import { delay } from "../utils";
 
 export const landscapeRoutes = express.Router();
 
@@ -45,6 +46,7 @@ landscapeRoutes.get("/", async (req: Request, res: Response) => {
         ) || null,
     }));
 
+    await delay(3000);
     res.json({
       data: landscapesWithCategory,
       page,

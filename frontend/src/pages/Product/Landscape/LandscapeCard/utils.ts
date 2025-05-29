@@ -1,7 +1,7 @@
 export const imageStyles = {
-  objectFit: "contain",
-  height: 120,
-  width: 120,
+  objectFit: "cover",
+  height: 110,
+  width: 110,
   borderRadius: "50%",
 } as const;
 export const cardDimensions = { width: 280, height: 350 };

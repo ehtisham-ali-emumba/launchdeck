@@ -13,36 +13,30 @@ import { Card } from "~/components";
 import { ContentBox } from "../elements";
 
 const descriptionMeta = `The US spends about $4.9T on healthcare last year, much of it due to administrative waste or preventable chronic illness.`;
-export const LandscapeCard: React.FC<LandscapeCardProps> = ({
-  userName: categoryName,
-  imageSrc,
-  phone: description,
-  email: designation,
-  onClick,
-  fullName: userName,
-}) => {
+export const LandscapeCard: React.FC<LandscapeCardProps> = ({ landscape }) => {
+  const { categoryId, description, user, image, name } = landscape;
+
   return (
     <Card
-      url={`/categories/${categoryName}`}
-      onClick={onClick}
+      url={`/categories/${categoryId}`}
       dimensions={cardDimensions}
       imageHeight={160}
-      imageSrc={imageSrc}
+      imageSrc={image}
       imageStyles={imageStyles}
       renderContent={() => (
         <ContentBox>
-          <UserNameText>{truncate(categoryName, 18, "...")}</UserNameText>
+          <UserNameText>{truncate(name, 18, "...")}</UserNameText>
           <UserInfoContainer>
-            {userName && (
+            {user?.name && (
               <UserMetaInfo>
                 <UserOutlined />
-                <UserMetaText>{truncate(userName, 25, "...")}</UserMetaText>
+                <UserMetaText>{truncate(user.name, 25, "...")}</UserMetaText>
               </UserMetaInfo>
             )}
-            {designation && (
+            {user?.designation && (
               <UserMetaInfo>
                 <UserMetaText>
-                  {truncate(`Cofounder at ${designation}`, 22, "...")}
+                  {truncate(`Cofounder at ${user.designation}`, 22, "...")}
                 </UserMetaText>
               </UserMetaInfo>
             )}
