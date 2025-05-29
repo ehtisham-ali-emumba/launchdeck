@@ -18,11 +18,17 @@ productRoutes.get("/", async (req: Request, res: Response) => {
   try {
     const page = parseInt(req.query.page as string, 10) || 1;
     const limit = (req.query.limit ?? 16) as number;
+    const categoryId = req.query.categoryId as string;
     const skip = (page - 1) * limit;
 
+    // Build filter object
+    const filter: any = {};
+    if (categoryId) {
+      filter.categoryId = categoryId;
+    }
     const [products, total] = await Promise.all([
-      Product.find().skip(skip).limit(limit).lean(),
-      Product.countDocuments(),
+      Product.find(filter).skip(skip).limit(limit).lean(),
+      Product.countDocuments(filter),
     ]);
 
     const categoryIds = products.map((p) => p.categoryId);
