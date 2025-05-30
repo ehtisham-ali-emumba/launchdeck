@@ -118,4 +118,5 @@ export const uiStrings = {
   allLandscapesLoaded: (num: number) => `All ${num} landscapes loaded`,
   allProductsLoaded: (num: number) =>
     `All ${num} product${num > 1 ? "s" : ""} loaded`,
+  failedToLoadCategories: "Failed to load categories",
 };

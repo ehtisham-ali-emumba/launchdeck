@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Button } from "~/components";
+import { Loader } from "~/components";
+import ErrorContainer from "~/components/ErrorContainer";
 import { uiStrings } from "~/constants";
 import { useIsActiveRoute } from "~/hooks/useIsActiveRoute";
 import {
@@ -10,13 +12,19 @@ import {
 } from "./elements";
 import { CategoryItem } from "./CategoryItem";
 import { SubCategoryItem } from "./SubCategoryItem";
-import { categoriesData } from "./utils";
-import type { Category } from "./types";
+import { useCategoryQuery } from "~/hooks/queries/useCategoryQuery";
+import type { Category } from "~/types";
 
-export const ProductsDropdown = () => {
+export const ProductsDropdown = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
   const { isRouteActive } = useIsActiveRoute();
+  const {
+    data: categories = [],
+    isLoading,
+    isError,
+    error,
+  } = useCategoryQuery();
 
   const getActiveButtonClass = (path: string) => {
     return isRouteActive(path) ? "active-button" : "";
@@ -46,29 +54,39 @@ export const ProductsDropdown = () => {
 
       {isOpen && (
         <DropdownMenu>
-          <CategoryList>
-            {categoriesData.map((category) => (
-              <CategoryItem
-                key={category.id}
-                category={category}
-                isActive={activeCategory?.id === category.id}
-                onHover={() => handleCategoryHover(category)}
-              />
-            ))}
-          </CategoryList>
+          {isLoading ? (
+            <Loader />
+          ) : isError ? (
+            <ErrorContainer
+              message={error?.message || uiStrings.failedToLoadCategories}
+            />
+          ) : (
+            <>
+              <CategoryList>
+                {categories.map((category) => (
+                  <CategoryItem
+                    key={category._id}
+                    category={category}
+                    isActive={activeCategory?._id === category._id}
+                    onHover={() => handleCategoryHover(category)}
+                  />
+                ))}
+              </CategoryList>
 
-          {activeCategory && (
-            <SubCategoryList>
-              {activeCategory.subCategories.map((subCategory) => (
-                <SubCategoryItem
-                  key={subCategory.id}
-                  subCategory={subCategory}
-                />
-              ))}
-            </SubCategoryList>
+              {activeCategory && (
+                <SubCategoryList>
+                  {activeCategory.subCategories?.map?.((subCategory) => (
+                    <SubCategoryItem
+                      key={subCategory._id}
+                      subCategory={subCategory}
+                    />
+                  ))}
+                </SubCategoryList>
+              )}
+            </>
           )}
         </DropdownMenu>
       )}
     </DropdownContainer>
   );
-};
+});

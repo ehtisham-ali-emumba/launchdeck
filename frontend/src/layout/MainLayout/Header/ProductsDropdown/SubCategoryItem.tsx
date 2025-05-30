@@ -9,7 +9,7 @@ export const SubCategoryItem: React.FC<SubCategoryItemProps> = ({
   subCategory,
 }) => {
   return (
-    <SubCategoryItemContainer to={`/categories/${subCategory.slug}`}>
+    <SubCategoryItemContainer to={`/categories/${subCategory._id}`}>
       <SubCategoryTitle>{subCategory.name}</SubCategoryTitle>
     </SubCategoryItemContainer>
   );

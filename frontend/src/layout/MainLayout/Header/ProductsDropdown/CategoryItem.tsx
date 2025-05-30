@@ -1,5 +1,5 @@
+import type { Category } from "~/types";
 import { CategoryItemContainer, CategoryTitle } from "./elements";
-import type { Category } from "./types";
 
 interface CategoryItemProps {
   category: Category;
@@ -13,10 +13,7 @@ export const CategoryItem: React.FC<CategoryItemProps> = ({
   onHover,
 }) => {
   return (
-    <CategoryItemContainer
-      to={`/categories/${category.id}`}
-      onMouseEnter={onHover}
-    >
+    <CategoryItemContainer onMouseEnter={onHover}>
       <CategoryTitle isActive={isActive} onMouseEnter={onHover}>
         {category.name}
       </CategoryTitle>

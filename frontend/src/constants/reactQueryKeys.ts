@@ -4,4 +4,5 @@ export const QUERY_KEYS = {
   RANDOM_USERS: "randomUsers",
   PRODUCTS: "products",
   LANDSCAPES: "landscapes",
+  CATEGORY: "category",
 } as const;

@@ -37,9 +37,10 @@ export const SubCategoryList = styled.div`
   padding: 4px 8px;
 `;
 
-export const CategoryItemContainer = styled(Link)`
+export const CategoryItemContainer = styled.div`
   display: block;
   color: inherit;
+  cursor: pointer;
 `;
 export const CategoryTitle = styled.span<{ isActive: boolean }>`
   font-size: 14px;
