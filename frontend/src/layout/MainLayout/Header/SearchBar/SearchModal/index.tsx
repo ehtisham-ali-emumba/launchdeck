@@ -64,8 +64,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
       <div style={{ padding: "20px" }}>
         <ModalSearchInput
           inputProps={{
-            placeholder:
-              "Search: 'health products', 'recent launches', 'popular tools'...",
+            placeholder: "Search: 'health', 'code', 'ai tools'...",
             prefix: <SearchOutlined style={{ marginRight: "4px" }} />,
             value: searchQuery,
             onChange: (e) => setSearchQuery(e.target.value),
