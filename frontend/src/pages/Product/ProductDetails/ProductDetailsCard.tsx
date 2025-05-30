@@ -141,7 +141,6 @@ const Tag = styled.span`
 export const ProductDetailsCard: React.FC<ProductDetailsCardType> = ({
   product,
 }) => {
-  console.log("🚀 ~ product:", product);
   const { image, name, description, tags } = product;
 
   return (
@@ -175,7 +174,7 @@ export const ProductDetailsCard: React.FC<ProductDetailsCardType> = ({
           items={[
             { key: "overview", label: "Overview" },
             { key: "launches", label: "Launches" },
-            { key: "forums", label: "Forums" },
+            { key: "comments", label: "Comments" },
             { key: "reviews", label: "Reviews" },
           ]}
         />

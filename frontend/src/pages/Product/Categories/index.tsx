@@ -71,7 +71,7 @@ export const CategoriesPage = () => {
               fontWeight: "500",
             }}
           >
-            The best to try in 2024
+            {uiStrings.theBestToTryIn2024}
           </Text>
 
           {isInitialLoading ? (

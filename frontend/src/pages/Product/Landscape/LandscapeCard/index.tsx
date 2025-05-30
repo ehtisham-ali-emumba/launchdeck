@@ -8,11 +8,11 @@ import {
   UserNameText,
 } from "./elements";
 import type { LandscapeCardProps } from "./type";
-import { cardDimensions, imageStyles } from "./utils";
+import { cardDimensions, descriptionMeta, imageStyles } from "./utils";
 import { Card } from "~/components";
 import { ContentBox } from "../elements";
+import { uiStrings } from "~/constants";
 
-const descriptionMeta = `The US spends about $4.9T on healthcare last year, much of it due to administrative waste or preventable chronic illness.`;
 export const LandscapeCard: React.FC<LandscapeCardProps> = ({ landscape }) => {
   const { categoryId, description, user, image, name } = landscape;
 
@@ -36,7 +36,11 @@ export const LandscapeCard: React.FC<LandscapeCardProps> = ({ landscape }) => {
             {user?.designation && (
               <UserMetaInfo>
                 <UserMetaText>
-                  {truncate(`Cofounder at ${user.designation}`, 22, "...")}
+                  {truncate(
+                    `${uiStrings.cofounderAt} ${user.designation}`,
+                    22,
+                    "..."
+                  )}
                 </UserMetaText>
               </UserMetaInfo>
             )}

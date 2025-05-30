@@ -22,11 +22,7 @@ export const ProductSubmitForm: React.FC<ProductSubmitFormComponent> = ({
     defaultValues: formDefaultValues,
     resolver: yupResolver(submitProductFormValidationSchema),
   });
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = formMethods;
+  const { control, handleSubmit } = formMethods;
 
   const onSubmit = (productFormData: ProductSubmitFormType) => {
     console.log("🚀 ~ onSubmit ~ productFormData:", productFormData);

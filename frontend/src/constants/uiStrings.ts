@@ -119,4 +119,6 @@ export const uiStrings = {
   allProductsLoaded: (num: number) =>
     `All ${num} product${num > 1 ? "s" : ""} loaded`,
   failedToLoadCategories: "Failed to load categories",
+  theBestToTryIn2024: "The best to try in 2024",
+  cofounderAt: "Cofounder at",
 };
