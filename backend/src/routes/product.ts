@@ -5,6 +5,7 @@ import {
   getAllProducts,
   getProductById,
   updateProductById,
+  searchProducts, // Add this new controller
 } from "../controllers/productController";
 
 export const productRoutes = express.Router();
@@ -12,6 +13,8 @@ export const productRoutes = express.Router();
 productRoutes.post("/", createProduct);
 
 productRoutes.get("/", getAllProducts);
+
+productRoutes.post("/search", searchProducts);
 
 productRoutes.get("/:id", getProductById);
 

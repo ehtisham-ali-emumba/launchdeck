@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import Product from "../models/Product";
 import Category from "../models/Category";
+import { generateMongoQuery } from "../services/groqService";
 
 export const createProduct = async (req: Request, res: Response) => {
   try {
@@ -96,5 +97,58 @@ export const deleteProductById = async (req: Request, res: Response) => {
     res.json({ message: "Product deleted" });
   } catch (err) {
     res.status(500).json({ error: (err as Error).message });
+  }
+};
+
+export const searchProducts = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { query } = req.query;
+
+    if (!query || typeof query !== "string") {
+      res.status(400).json({ error: "Search query is required" });
+      return;
+    }
+
+    // Get MongoDB filter from Groq AI
+    const aiFilter = await generateMongoQuery(query);
+
+    let mongoFilter = aiFilter;
+
+    // Handle category lookup if needed
+    if (aiFilter.needsCategoryLookup && aiFilter.categoryName) {
+      const category = await Category.findOne({
+        name: { $regex: aiFilter.categoryName, $options: "i" },
+      });
+
+      if (category) {
+        mongoFilter = { categoryId: category._id };
+      } else {
+        mongoFilter = {};
+      }
+    }
+
+    // Remove our custom fields
+    delete mongoFilter.needsCategoryLookup;
+    delete mongoFilter.categoryName;
+
+    console.log("🚀 Generated MongoDB filter:", mongoFilter);
+
+    const [products, total] = await Promise.all([
+      Product.find(mongoFilter).populate("categoryId", "name").limit(5).lean(),
+      Product.countDocuments(mongoFilter),
+    ]);
+
+    res.json({
+      data: products,
+      total,
+      query: query,
+      filter: mongoFilter,
+    });
+  } catch (error) {
+    console.error("Search error:", error);
+    res.status(500).json({ error: "Search failed" });
   }
 };
