@@ -16,27 +16,29 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [hasSearched, setHasSearched] = useState(false);
 
-  // Use mutation for search
   const { mutate: searchProducts, isPending: isLoading } =
     useLLMProductSearch();
 
-  // Perform search with debouncing
   useEffect(() => {
     if (!searchQuery.trim()) {
       setSearchResults([]);
+      setHasSearched(false);
       return;
     }
 
+    setHasSearched(false);
     const debounceTimer = setTimeout(() => {
       searchProducts(searchQuery, {
         onSuccess: (data) => {
-          console.log("🚀 ~ Search results:", data);
           setSearchResults(data?.data || []);
+          setHasSearched(true);
         },
         onError: (error) => {
           console.error("Search error:", error);
           setSearchResults([]);
+          setHasSearched(true);
         },
       });
     }, 500);
@@ -47,6 +49,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   const handleModalClose = () => {
     setSearchQuery("");
     setSearchResults([]);
+    setHasSearched(false);
     onClose();
   };
 
@@ -74,7 +77,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
           <div style={{ padding: "20px", textAlign: "center" }}>
             🤖 AI is searching...
           </div>
-        ) : searchQuery && searchResults.length === 0 ? (
+        ) : hasSearched && searchQuery && searchResults.length === 0 ? (
           <NoResults>No results found for "{searchQuery}"</NoResults>
         ) : (
           <SearchResultsList
