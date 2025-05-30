@@ -31,6 +31,13 @@ export const getProductById = async (id: string): Promise<Product> => {
   return response.data;
 };
 
+export const doLLMProductSearch = async (search: string): Promise<Product> => {
+  const response = await apiClient.post<Product>(
+    `${apiEndpoints.productSearch}/?query=${search}`
+  );
+  return response.data;
+};
+
 export const createProduct = async (
   productData: Omit<Product, "id">
 ): Promise<Product> => {

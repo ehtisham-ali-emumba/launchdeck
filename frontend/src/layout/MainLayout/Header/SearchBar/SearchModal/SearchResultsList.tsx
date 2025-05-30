@@ -10,7 +10,7 @@ import {
 } from "./elements";
 
 interface SearchResult {
-  id: number;
+  _id: number;
   name: string;
   description: string;
   image: string;
@@ -32,8 +32,8 @@ export const SearchResultsList: React.FC<SearchResultsListProps> = ({
     <ResultsList>
       {results.map((result) => (
         <Link
-          key={result.id}
-          to={`/products/${result.id}`}
+          key={result._id}
+          to={`/products/${result._id}`}
           onClick={onItemClick}
           style={{ textDecoration: "none" }}
         >

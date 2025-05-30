@@ -5,4 +5,5 @@ export const QUERY_KEYS = {
   PRODUCTS: "products",
   LANDSCAPES: "landscapes",
   CATEGORY: "category",
+  LLM_PRODUCT_SEARCH: "llmProductSearch",
 } as const;
