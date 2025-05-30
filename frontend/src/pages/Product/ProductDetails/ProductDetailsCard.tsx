@@ -192,7 +192,7 @@ export const ProductDetailsCard: React.FC<ProductDetailsCardType> = ({
             <Avatar src="https://randomuser.me/api/portraits/women/46.jpg" />
           </Avatar.Group>
           <Text style={{ marginLeft: 8, fontSize: 15 }}>
-            you and 8,031 others use Next.js
+            you and 8,031 others use {name}
           </Text>
           <StatusBadge>In my stack</StatusBadge>
         </AvatarsRow>
