@@ -1,12 +1,10 @@
 import Groq from "groq-sdk";
 
-const groq = new Groq({
-  apiKey:
-    process.env.GROQ_API_KEY ||
-    "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",
-});
-
 export const generateMongoQuery = async (userInput: string) => {
+  const groq = new Groq({
+    apiKey: process.env.GROQ_API_KEY,
+  });
+
   const prompt = `You are a MongoDB query generator. Convert the user's natural language query into a MongoDB filter object.
 
 Product Schema:
