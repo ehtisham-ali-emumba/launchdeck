@@ -17,7 +17,6 @@ import { CardWrapper } from "../common/TourCard/elements";
 import { Box, Heading, MyTourContainer } from "./elements";
 import { filterTours } from "./utils";
 
-
 export const MyTours = () => {
   const navigate = useNavigate();
   const { data: tours, isLoading, error } = useTourQuery();

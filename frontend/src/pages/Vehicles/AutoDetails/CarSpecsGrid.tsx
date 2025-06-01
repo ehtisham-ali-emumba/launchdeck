@@ -17,7 +17,6 @@ import {
 import type { CarSpecsGridType } from "./type";
 import { deleteIconStyle, editIconStyle, getAutoSpecs } from "./utils";
 
-
 export const CarSpecsGrid: React.FC<CarSpecsGridType> = ({
   auto,
   handleAddEditClick,

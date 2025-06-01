@@ -17,9 +17,6 @@ import {
   ROW_HEIGHT,
 } from "./utils";
 
-
-
-
 export const CarGrid = memo(
   ({ handleEditClick, handleDeleteClick, autos }: CarGridProps) => {
     const { brandId } = useParams<{ brandId: string }>();

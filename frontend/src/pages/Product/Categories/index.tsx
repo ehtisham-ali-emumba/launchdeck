@@ -15,7 +15,6 @@ import { Container, ContentWrapper } from "~/styles";
 import { Box } from "./elements";
 import { ProductCard } from "./ProductCard";
 
-
 const { Text } = Typography;
 
 export const CategoriesPage = () => {

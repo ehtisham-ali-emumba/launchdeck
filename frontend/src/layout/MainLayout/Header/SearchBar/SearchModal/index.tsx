@@ -8,7 +8,6 @@ import { useLLMProductSearch } from "~/hooks/queries/useLLMProductSearch";
 import { ModalSearchInput, NoResults } from "./elements";
 import { SearchResultsList } from "./SearchResultsList";
 
-
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;

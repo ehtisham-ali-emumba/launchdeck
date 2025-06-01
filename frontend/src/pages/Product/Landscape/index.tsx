@@ -21,7 +21,6 @@ import { LandscapeCard } from "./LandscapeCard";
 import { LandscapeHeaderBar } from "./LandscapeHeader";
 import { COLUMN_WIDTH, gridStyles, ROW_HEIGHT } from "./utils";
 
-
 export const LandscapePage = () => {
   const listRef = useRef<FixedSizeGrid>(null);
   const gridContainerRef = useRef<HTMLDivElement>(null);

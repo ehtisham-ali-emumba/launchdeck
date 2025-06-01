@@ -10,7 +10,6 @@ import { LandscapePage } from "../pages/Product/Landscape";
 import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
 import { AutoDetails, Autos } from "../pages/Vehicles";
 
-
 const routes: RouteObject[] = [
   {
     path: "/",

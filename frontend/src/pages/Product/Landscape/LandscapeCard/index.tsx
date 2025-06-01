@@ -17,7 +17,6 @@ import {
 import type { LandscapeCardProps } from "./type";
 import { cardDimensions, descriptionMeta, imageStyles } from "./utils";
 
-
 export const LandscapeCard: React.FC<LandscapeCardProps> = ({ landscape }) => {
   const { categoryId, description, user, image, name } = landscape;
 

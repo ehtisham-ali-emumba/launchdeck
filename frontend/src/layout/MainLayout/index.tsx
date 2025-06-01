@@ -7,7 +7,6 @@ import { Footer } from "./Footer";
 import { Header } from "./Header";
 import type { MainLayoutProps } from "./type";
 
-
 export const MainLayout: React.FC<MainLayoutProps> = ({
   children,
   showFooter,

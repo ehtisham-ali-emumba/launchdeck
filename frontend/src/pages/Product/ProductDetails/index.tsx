@@ -8,8 +8,6 @@ import { Container, ContentWrapper } from "~/styles";
 import { Box } from "./elements";
 import { ProductDetailsCard } from "./ProductDetailsCard";
 
-
-
 export const ProductDetailsPage = () => {
   const { productId } = useParams<{ productId: string }>();
   const { data, isLoading, isError, error } = useProductDetailsQuery({

@@ -11,7 +11,6 @@ import { GridWrapper, ListContainer } from "./elements";
 import type { BrandGridProps } from "./type";
 import { COLUMN_WIDTH, gridStyles, ROW_HEIGHT } from "./utils";
 
-
 export const BrandsGrid = memo(
   ({ handleEditClick, handleDeleteClick, brands }: BrandGridProps) => {
     const [numColumns, setNumColumns] = useState(1);

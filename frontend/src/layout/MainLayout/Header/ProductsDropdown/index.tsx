@@ -17,7 +17,6 @@ import {
 } from "./elements";
 import { SubCategoryItem } from "./SubCategoryItem";
 
-
 export const ProductsDropdown = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<Category | null>(null);
