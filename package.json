@@ -17,9 +17,9 @@
     "dev:frontend": "cd frontend && npm run dev"
   },
   "lint-staged": {
-    "frontend/**/*": [
-      "cd frontend && npm run lint:fix",
-      "cd frontend && npm run format"
+    "frontend/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix:frontend",
+      "npm run format:frontend"
     ]
   },
   "keywords": [],

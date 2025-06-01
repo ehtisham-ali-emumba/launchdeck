@@ -15,7 +15,7 @@ export default tseslint.config(
       globals: globals.browser,
       parser: tseslint.parser,
       parserOptions: {
-        project: "./tsconfig.app.json",
+        project: "./tsconfig.json",
       },
     },
     plugins: {
@@ -116,7 +116,7 @@ export default tseslint.config(
     settings: {
       "import/resolver": {
         typescript: {
-          project: "./tsconfig.app.json",
+          project: "./tsconfig.json",
         },
       },
     },

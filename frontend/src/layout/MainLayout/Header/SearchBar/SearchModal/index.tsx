@@ -4,6 +4,7 @@ import { SearchOutlined } from "@ant-design/icons";
 import { Modal } from "antd";
 
 import { useLLMProductSearch } from "~/hooks/queries/useLLMProductSearch";
+import type { TSFixMe } from "~/types";
 
 import { ModalSearchInput, NoResults } from "./elements";
 import { SearchResultsList } from "./SearchResultsList";
@@ -34,7 +35,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
     setHasSearched(false);
     const debounceTimer = setTimeout(() => {
       searchProducts(searchQuery, {
-        onSuccess: data => {
+        onSuccess: (data: TSFixMe) => {
           setSearchResults(data?.data || []);
           setHasSearched(true);
         },

@@ -12,7 +12,8 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css,md}\"",
     "type-check": "tsc --noEmit",
     "preview": "vite preview",
-    "backend": "json-server --watch ../backend/db.json --port 3001"
+    "backend": "json-server --watch ../backend/db.json --port 3001",
+    "ts-compile-check": "tsc --noEmit"
   },
   "dependencies": {
     "@ant-design/icons": "^5.6.1",
