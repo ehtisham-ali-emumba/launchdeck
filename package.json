@@ -13,6 +13,7 @@
     "lint:frontend": "cd frontend && npm run lint",
     "lint:fix:frontend": "cd frontend && npm run lint:fix",
     "format:frontend": "cd frontend && npm run format",
+    "type-check:frontend": "cd frontend && npm run type-check",
     "dev:frontend": "cd frontend && npm run dev"
   },
   "lint-staged": {
