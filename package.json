@@ -19,8 +19,7 @@
   "lint-staged": {
     "frontend/**/*.{ts,tsx}": [
       "cd frontend && npm run lint:fix",
-      "cd frontend && npm run format",
-      "git add"
+      "cd frontend && npm run format"
     ],
     "frontend/**/*.{json,css,md}": [
       "cd frontend && npm run format"
