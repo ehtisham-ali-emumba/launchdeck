@@ -7,8 +7,6 @@ import { ProductListRow } from "./ProductListRow";
 import type { ProductListFilterType } from "./type";
 import { sectionTitles } from "./utils";
 
-
-
 export const ProductList = ({ filter }: { filter: ProductListFilterType }) => {
   const pageSize = getPageSize(filter);
 
@@ -21,7 +19,7 @@ export const ProductList = ({ filter }: { filter: ProductListFilterType }) => {
   return (
     <div>
       <ProductListingSectionTitle>
-        {sectionTitles[filter]}
+        {sectionTitles[filter].sd}
       </ProductListingSectionTitle>
       {isLoading && products.length === 0 ? (
         <Loader />
