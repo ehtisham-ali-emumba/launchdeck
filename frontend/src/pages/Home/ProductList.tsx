@@ -19,7 +19,7 @@ export const ProductList = ({ filter }: { filter: ProductListFilterType }) => {
   return (
     <div>
       <ProductListingSectionTitle>
-        {sectionTitles[filter]}
+        {sectionTitles[filter].asdf}
       </ProductListingSectionTitle>
       {isLoading && products.length === 0 ? (
         <Loader />
