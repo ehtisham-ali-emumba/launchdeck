@@ -9,7 +9,7 @@ import ErrorContainer from "~/components/ErrorContainer";
 export const ProductDetailsPage = () => {
   const { productId } = useParams<{ productId: string }>();
   const { data, isLoading, isError, error } = useProductDetailsQuery({
-    productId: productId,
+    productId: productId || "",
   });
 
   const hasData = !!data && !isLoading && !isError;
