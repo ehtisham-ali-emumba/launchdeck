@@ -1,5 +1,6 @@
-import { BlankSlate, Loader } from "../../components";
 import { useProductQuery } from "~/hooks/queries/useProductQuery";
+
+import { BlankSlate, Loader } from "../../components";
 
 import { ProductListingSectionTitle } from "./elements";
 import { ProductListRow } from "./ProductListRow";
