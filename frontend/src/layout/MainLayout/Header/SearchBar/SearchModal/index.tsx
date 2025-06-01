@@ -15,7 +15,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   onClose,
 }) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchResults, setSearchResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
 
   const { mutate: searchProducts, isPending: isLoading } =
