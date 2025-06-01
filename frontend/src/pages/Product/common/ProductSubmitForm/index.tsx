@@ -25,7 +25,6 @@ export const ProductSubmitForm: React.FC<ProductSubmitFormComponent> = ({
   const { control, handleSubmit } = formMethods;
 
   const onSubmit = (productFormData: ProductSubmitFormType) => {
-    console.log("🚀 ~ onSubmit ~ productFormData:", productFormData);
     notifee.showSuccessNotification("Success", "Product submitted!");
     onSubmitCallback(productFormData);
   };

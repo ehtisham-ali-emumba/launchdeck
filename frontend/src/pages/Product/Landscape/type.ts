@@ -1,4 +1,4 @@
-import type { RandomUser } from "../../../hooks/useRandomUsers";
+import type { RandomUser } from "~/types";
 
 export type InfiniteUsersData = {
   pages: { users: RandomUser[] }[];

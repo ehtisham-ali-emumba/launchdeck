@@ -1,4 +1,4 @@
-import type { RandomUser } from "../../../hooks/useRandomUsers";
+import type { RandomUser } from "~/types";
 import type { InfiniteUsersData } from "./type";
 
 export const COLUMN_WIDTH = 300;
