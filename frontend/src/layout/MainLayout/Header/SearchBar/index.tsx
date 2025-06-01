@@ -1,8 +1,11 @@
 import { useState } from "react";
+
 import { SearchOutlined } from "@ant-design/icons";
+
+import { colors } from "~/constants";
+
 import { AbsoluteDiv, SearchBarContainer, SearchInput } from "./elements";
 import { SearchModal } from "./SearchModal";
-import { colors } from "~/constants";
 
 export const SearchBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

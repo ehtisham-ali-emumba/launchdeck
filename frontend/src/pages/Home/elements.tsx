@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 import styled, { css } from "styled-components";
-import { sizeLg, sizeMobile } from "../../utils";
-import { Wrapper } from "../../styles";
+
 import { images_png } from "../../assets";
 import { colors } from "../../constants";
-import { Link } from "react-router-dom";
+import { Wrapper } from "../../styles";
+import { sizeLg, sizeMobile } from "../../utils";
 
 export const SignInContainer = styled.div`
   max-width: 420px;

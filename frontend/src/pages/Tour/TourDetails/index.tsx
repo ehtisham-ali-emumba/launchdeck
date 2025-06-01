@@ -1,14 +1,19 @@
-import { Flex } from "antd";
+import { Link, useParams } from "react-router-dom";
+
 import {
   EnvironmentOutlined,
   ClockCircleOutlined,
   DollarOutlined,
 } from "@ant-design/icons";
-import { ContentWrapper, Header, Layout } from "../../../styles";
-import { ImageGallery } from "./ImageGallery";
+import { Flex } from "antd";
+
+import { Loader } from "../../../components";
+import ErrorContainer from "../../../components/ErrorContainer";
 import { Spacer } from "../../../components/Spacer";
-import { WhatsIncluded } from "./WhatsIncluded";
-import { Link, useParams } from "react-router-dom";
+import { uiStrings } from "../../../constants/uiStrings";
+import { useTourQueryById } from "../../../hooks/queries";
+import { ContentWrapper, Header, Layout } from "../../../styles";
+import { getPriceLabel } from "../../../utils/priceUtils";
 
 import {
   Container2,
@@ -23,13 +28,10 @@ import {
   InfoBox,
   BookNowButton,
 } from "./elements";
-import { useTourQueryById } from "../../../hooks/queries";
-import { Loader } from "../../../components";
-import ErrorContainer from "../../../components/ErrorContainer";
-import { getPriceLabel } from "../../../utils/priceUtils";
+import { ImageGallery } from "./ImageGallery";
 import { ItinerarySchedule } from "./ItinerarySchedule";
-import { uiStrings } from "../../../constants/uiStrings";
 import type { HeaderTextType } from "./type";
+import { WhatsIncluded } from "./WhatsIncluded";
 
 const HeaderTexts = ({ tour }: HeaderTextType) => {
   return (

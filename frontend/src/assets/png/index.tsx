@@ -1,7 +1,7 @@
+import exploreBanner from "./explore_banner.png";
 import homeMain1 from "./home_main_1.png";
 import homeMain2 from "./home_main_2.png";
 import homeMain3 from "./home_main_3.png";
-import exploreBanner from "./explore_banner.png";
 import lineExploreText from "./line_explore_text.png";
 
 export const images_png = {

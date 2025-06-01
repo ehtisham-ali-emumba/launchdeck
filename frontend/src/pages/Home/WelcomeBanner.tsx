@@ -1,8 +1,10 @@
+import { useState } from "react";
+
 import { CloseOutlined, HeartOutlined } from "@ant-design/icons";
 import styled from "styled-components";
+
 import { Button } from "../../components";
 import { colors } from "../../constants";
-import { useState } from "react";
 
 const BannerWrapper = styled.div`
   display: flex;

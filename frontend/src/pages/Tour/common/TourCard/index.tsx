@@ -1,4 +1,7 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
+
 import {
   DollarOutlined,
   ClockCircleOutlined,
@@ -6,11 +9,14 @@ import {
   EyeOutlined,
   EditOutlined,
 } from "@ant-design/icons";
+
 import { Button } from "../../../../components";
-import { getPriceLabel } from "../../../../utils/priceUtils";
 import { ConfirmationModal } from "../../../../components";
+import { Card } from "../../../../components/Card";
 import { uiStrings } from "../../../../constants";
 import { truncate } from "../../../../utils";
+import { getPriceLabel } from "../../../../utils/priceUtils";
+
 import {
   CardTitle,
   CardDescription,
@@ -21,8 +27,6 @@ import {
   BookingActionsContainer,
 } from "./elements";
 import type { TourCardProps } from "./type";
-import { Link } from "react-router-dom";
-import { Card } from "../../../../components/Card";
 import { buttonIconStyles, cardDimensions, metaInfoIconStyles } from "./utils";
 
 const TourCard: React.FC<TourCardProps> = ({

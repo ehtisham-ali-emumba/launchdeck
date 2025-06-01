@@ -1,7 +1,9 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { QUERY_KEYS } from "../../constants/reactQueryKeys";
+
 import { getLandscapes } from "~/api/services/landscapeService";
 import type { GetLandscapesResponse } from "~/types/landscape";
+
+import { QUERY_KEYS } from "../../constants/reactQueryKeys";
 
 interface QueryOptions {
   enabled?: boolean;

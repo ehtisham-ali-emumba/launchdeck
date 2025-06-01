@@ -1,18 +1,24 @@
 import React, { memo, useEffect, useMemo, useRef, useState } from "react";
-import { FixedSizeGrid as Grid } from "react-window";
-import { BlankSlate } from "../../../components/BlankSlate";
-import { GridWrapper, ListContainer } from "./elements";
-import { useHandleResize } from "../../../hooks/useHandleResize";
+
 import { useParams } from "react-router-dom";
+import { FixedSizeGrid as Grid } from "react-window";
+
+import { BlankSlate } from "../../../components/BlankSlate";
+import { uiStrings } from "../../../constants";
+import { useHandleResize } from "../../../hooks/useHandleResize";
+import { AutoCard } from "../common/AutoCard";
+
+import { GridWrapper, ListContainer } from "./elements";
+import type { CarGridProps } from "./type";
 import {
   COLUMN_WIDTH,
   filterAutosByBrandId,
   gridStyles,
   ROW_HEIGHT,
 } from "./utils";
-import { uiStrings } from "../../../constants";
-import type { CarGridProps } from "./type";
-import { AutoCard } from "../common/AutoCard";
+
+
+
 
 export const CarGrid = memo(
   ({ handleEditClick, handleDeleteClick, autos }: CarGridProps) => {

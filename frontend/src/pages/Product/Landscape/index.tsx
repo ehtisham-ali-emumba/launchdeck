@@ -5,18 +5,22 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
+
 import { FixedSizeGrid, FixedSizeGrid as Grid } from "react-window";
+
 import { Loader } from "~/components";
-import ErrorContainer from "~/components/ErrorContainer";
 import { BlankSlate } from "~/components/BlankSlate";
+import ErrorContainer from "~/components/ErrorContainer";
+import { uiStrings } from "~/constants";
+import { useLandscapeQuery } from "~/hooks/queries";
 import { useHandleResize } from "~/hooks/useHandleResize";
 import { ContentWrapper } from "~/styles";
-import { COLUMN_WIDTH, gridStyles, ROW_HEIGHT } from "./utils";
+
+import { Box, Container, GridWrapper, ListContainer } from "./elements";
 import { LandscapeCard } from "./LandscapeCard";
 import { LandscapeHeaderBar } from "./LandscapeHeader";
-import { Box, Container, GridWrapper, ListContainer } from "./elements";
-import { useLandscapeQuery } from "~/hooks/queries";
-import { uiStrings } from "~/constants";
+import { COLUMN_WIDTH, gridStyles, ROW_HEIGHT } from "./utils";
+
 
 export const LandscapePage = () => {
   const listRef = useRef<FixedSizeGrid>(null);

@@ -1,10 +1,14 @@
-import { Container, ContentWrapper } from "~/styles";
-import { Box } from "./elements";
-import { BlankSlate, Loader, Spacer } from "~/components";
-import { ProductDetailsCard } from "./ProductDetailsCard";
 import { useParams } from "react-router-dom";
-import { useProductDetailsQuery } from "~/hooks/queries/useProductDetailsQuery";
+
+import { BlankSlate, Loader, Spacer } from "~/components";
 import ErrorContainer from "~/components/ErrorContainer";
+import { useProductDetailsQuery } from "~/hooks/queries/useProductDetailsQuery";
+import { Container, ContentWrapper } from "~/styles";
+
+import { Box } from "./elements";
+import { ProductDetailsCard } from "./ProductDetailsCard";
+
+
 
 export const ProductDetailsPage = () => {
   const { productId } = useParams<{ productId: string }>();

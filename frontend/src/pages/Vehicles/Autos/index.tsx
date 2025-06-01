@@ -1,24 +1,28 @@
 import React, { useCallback, useMemo, useState } from "react";
-import { Button, Input, Select, Spacer } from "../../../components";
-import { uiStrings } from "../../../constants/uiStrings";
-import { ActionWrapper, Box, Container, InputContainer } from "./elements";
-import { PlusOutlined } from "@ant-design/icons";
-import { colors } from "../../../constants";
-import { useAutosAtom } from "../../../hooks/atoms/useAutosAtom";
-import { CarUpdateModal } from "./CarUpdateModal";
-import { CarGrid } from "./CarGrid";
-import { ConfirmationModal } from "../../../components/ConfirmationModal";
+
 import { useParams } from "react-router-dom";
+
+import { PlusOutlined } from "@ant-design/icons";
+
+import { Button, Input, Select, Spacer } from "../../../components";
+import { ConfirmationModal } from "../../../components/ConfirmationModal";
+import ErrorContainer from "../../../components/ErrorContainer";
+import { colors } from "../../../constants";
+import { uiStrings } from "../../../constants/uiStrings";
+import { useAutosAtom } from "../../../hooks/atoms/useAutosAtom";
 import { useBrandsAtom } from "../../../hooks/atoms/useBrandsAtom";
 import { checkBrandExists } from "../Brands/utils";
-import ErrorContainer from "../../../components/ErrorContainer";
+
+import { CarGrid } from "./CarGrid";
+import { CarUpdateModal } from "./CarUpdateModal";
+import { ActionWrapper, Box, Container, InputContainer } from "./elements";
+import type { CarUpdateFormValues } from "./type";
 import {
   colorOptions,
   colorSelectStyles,
   inputSearchStyles,
   searchAutosByFilters,
 } from "./utils";
-import type { CarUpdateFormValues } from "./type";
 
 export const Autos = () => {
   const { brandId } = useParams<{ brandId: string }>();

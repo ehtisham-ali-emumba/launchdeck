@@ -1,7 +1,8 @@
 import { Flex, Image } from "antd";
 import styled, { css } from "styled-components";
-import { sizeTablet } from "../../../utils";
+
 import { Flex1 } from "../../../styles";
+import { sizeTablet } from "../../../utils";
 
 export const Box = styled.div`
   margin-top: 100px;

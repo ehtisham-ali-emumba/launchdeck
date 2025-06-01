@@ -1,8 +1,10 @@
 import { Controller, type FieldValues } from "react-hook-form";
+
 import { FieldLabel, RequiredInputStar } from "../elements";
+
 import { ErrorText } from "./elements";
-import type { FormInputProps } from "./type";
 import { Input } from "./Input";
+import type { FormInputProps } from "./type";
 
 export const FormInput = <T extends FieldValues>({
   name,

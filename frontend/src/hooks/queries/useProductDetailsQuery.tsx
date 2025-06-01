@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import type { Product, ToursResponse } from "../../types";
-import { QUERY_KEYS } from "../../constants/reactQueryKeys";
+
 import { getProductById } from "../../api/services";
+import { QUERY_KEYS } from "../../constants/reactQueryKeys";
+import type { Product, ToursResponse } from "../../types";
 
 interface QueryOptions {
   enabled?: boolean;

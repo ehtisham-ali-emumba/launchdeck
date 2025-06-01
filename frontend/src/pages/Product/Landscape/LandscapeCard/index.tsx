@@ -1,6 +1,13 @@
 import React from "react";
+
 import { UserOutlined } from "@ant-design/icons";
+
+import { Card } from "~/components";
+import { uiStrings } from "~/constants";
+
 import { truncate } from "../../../../utils";
+import { ContentBox } from "../elements";
+
 import {
   UserInfoContainer,
   UserMetaInfo,
@@ -9,9 +16,7 @@ import {
 } from "./elements";
 import type { LandscapeCardProps } from "./type";
 import { cardDimensions, descriptionMeta, imageStyles } from "./utils";
-import { Card } from "~/components";
-import { ContentBox } from "../elements";
-import { uiStrings } from "~/constants";
+
 
 export const LandscapeCard: React.FC<LandscapeCardProps> = ({ landscape }) => {
   const { categoryId, description, user, image, name } = landscape;

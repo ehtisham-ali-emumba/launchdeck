@@ -1,16 +1,19 @@
 import { useForm, FormProvider } from "react-hook-form";
+
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Typography } from "antd";
+
 import { Button, FormInput, FormSelect, Spacer } from "~/components";
-import { notifee } from "~/services";
 import { uiStrings } from "~/constants";
+import { notifee } from "~/services";
+
 import { FormWrapper } from "./elements";
+import type { ProductSubmitFormComponent, ProductSubmitFormType } from "./type";
 import {
   submitProductFormValidationSchema,
   formDefaultValues,
   paymentMethodsStyle,
 } from "./utils";
-import type { ProductSubmitFormComponent, ProductSubmitFormType } from "./type";
 
 const { Title } = Typography;
 

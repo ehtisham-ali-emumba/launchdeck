@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+
 import { Modal, Typography } from "antd";
-import { Button } from "../Button";
+
 import { uiStrings } from "../../constants";
-import type { ConfirmationModalProps } from "./type";
+import { Button } from "../Button";
+
 import { ButtonContainer, ErrorHeading } from "./elements";
+import type { ConfirmationModalProps } from "./type";
 
 const { Text } = Typography;
 

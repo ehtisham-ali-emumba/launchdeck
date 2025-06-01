@@ -1,9 +1,13 @@
+import { useProductQuery } from "~/hooks/queries/useProductQuery";
+
+import { BlankSlate, Loader } from "../../components";
+
+import { ProductListingSectionTitle } from "./elements";
 import { ProductListRow } from "./ProductListRow";
 import type { ProductListFilterType } from "./type";
-import { ProductListingSectionTitle } from "./elements";
 import { sectionTitles } from "./utils";
-import { BlankSlate, Loader } from "../../components";
-import { useProductQuery } from "~/hooks/queries/useProductQuery";
+
+
 
 export const ProductList = ({ filter }: { filter: ProductListFilterType }) => {
   const pageSize = getPageSize(filter);

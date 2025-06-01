@@ -1,16 +1,20 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { useTourQuery } from "../../../hooks/queries";
-import { Loader } from "../../../components";
-import ErrorContainer from "../../../components/ErrorContainer";
-import { useAtom } from "jotai";
-import { bookingAtom } from "../../../atoms/bookingAtom";
 import { useMemo } from "react";
-import { useDeleteBooking } from "../../../hooks/atoms/useDeleteBooking";
+
+import { useNavigate, useLocation } from "react-router-dom";
+
+import { useAtom } from "jotai";
+
+import { bookingAtom } from "../../../atoms/bookingAtom";
+import { Loader } from "../../../components";
 import { BlankSlate } from "../../../components";
+import ErrorContainer from "../../../components/ErrorContainer";
 import { uiStrings } from "../../../constants";
-import { Box, Container, ContentTitle } from "./elements";
-import { CardWrapper } from "../common/TourCard/elements";
+import { useDeleteBooking } from "../../../hooks/atoms/useDeleteBooking";
+import { useTourQuery } from "../../../hooks/queries";
 import { TourCard } from "../common/TourCard";
+import { CardWrapper } from "../common/TourCard/elements";
+
+import { Box, Container, ContentTitle } from "./elements";
 import { filterTours, parsePriceRange } from "./utils";
 
 export const Tours = () => {

@@ -1,4 +1,5 @@
 import { Input as InputField } from "antd";
+
 import type { InputType } from "./type";
 
 export const Input: React.FC<InputType> = ({ inputProps }) => {

@@ -1,5 +1,7 @@
-import { useAtom } from "jotai";
 import { useCallback } from "react";
+
+import { useAtom } from "jotai";
+
 import { autosAtom, type Auto } from "../../atoms/autosAtom";
 import { autosMoreData } from "../../pages/Vehicles/Autos/utils";
 

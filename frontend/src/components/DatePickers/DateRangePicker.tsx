@@ -1,9 +1,12 @@
-import { DatePicker } from "antd";
 import { useState } from "react";
-import { Button } from "../Button";
+
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
-import { InlineSpacer } from "../Spacer";
+import { DatePicker } from "antd";
+
 import { uiStrings } from "../../constants";
+import { Button } from "../Button";
+import { InlineSpacer } from "../Spacer";
+
 import { CustomText, datePickerStyles, iconStyles } from "./elements";
 import type { DatePickerOnChangeType, DateType } from "./type";
 

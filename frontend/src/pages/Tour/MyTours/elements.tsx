@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { Wrapper } from "../../../styles";
 
 export const MyTourContainer = styled(Wrapper)`

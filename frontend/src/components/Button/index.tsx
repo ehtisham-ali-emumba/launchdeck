@@ -1,6 +1,8 @@
 import { Button as AntdButton } from "antd";
 import styled, { css } from "styled-components";
+
 import { colors } from "../../constants";
+
 import type { StyledButtonProps } from "./type";
 
 const getSizeStyles = (size = "medium") => {

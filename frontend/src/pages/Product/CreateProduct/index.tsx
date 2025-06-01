@@ -1,6 +1,8 @@
-import { Flex1, Layout, ContentWrapper as RootWrapper } from "~/styles";
 import { Spacer } from "~/components/Spacer";
+import { Flex1, Layout, ContentWrapper as RootWrapper } from "~/styles";
+
 import { ProductSubmitForm } from "../common";
+
 import { ContentWrapper } from "./elements";
 
 export const CreateProductPage = () => {

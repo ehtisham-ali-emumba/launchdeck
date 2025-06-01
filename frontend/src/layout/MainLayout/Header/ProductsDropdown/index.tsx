@@ -1,19 +1,22 @@
 import { memo, useState } from "react";
+
 import { Button } from "~/components";
 import { Loader } from "~/components";
 import ErrorContainer from "~/components/ErrorContainer";
 import { uiStrings } from "~/constants";
+import { useCategoryQuery } from "~/hooks/queries/useCategoryQuery";
 import { useIsActiveRoute } from "~/hooks/useIsActiveRoute";
+import type { Category } from "~/types";
+
+import { CategoryItem } from "./CategoryItem";
 import {
   DropdownContainer,
   DropdownMenu,
   CategoryList,
   SubCategoryList,
 } from "./elements";
-import { CategoryItem } from "./CategoryItem";
 import { SubCategoryItem } from "./SubCategoryItem";
-import { useCategoryQuery } from "~/hooks/queries/useCategoryQuery";
-import type { Category } from "~/types";
+
 
 export const ProductsDropdown = memo(() => {
   const [isOpen, setIsOpen] = useState(false);

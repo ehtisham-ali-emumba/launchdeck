@@ -1,6 +1,9 @@
-import { useAtom } from "jotai";
 import { useCallback } from "react";
+
+import { useAtom } from "jotai";
+
 import { brandsAtom, type BrandType } from "../../atoms/brandsAtom";
+
 import { useAutosAtom } from "./useAutosAtom";
 
 const brandSample = {

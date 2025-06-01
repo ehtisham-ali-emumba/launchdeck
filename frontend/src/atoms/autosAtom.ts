@@ -1,4 +1,5 @@
 import { atomWithStorage } from "jotai/utils";
+
 import { autosArray } from "../pages/Vehicles/Autos/utils";
 
 export type Auto = {

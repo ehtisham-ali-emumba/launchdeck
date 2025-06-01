@@ -1,9 +1,12 @@
-import { Layout } from "antd";
 import { Link } from "react-router-dom";
+
+import { Layout } from "antd";
 import styled, { css } from "styled-components";
+
+import { Button } from "~/components";
+
 import { colors } from "../../../constants";
 import { sizeTablet, zIndex } from "../../../utils";
-import { Button } from "~/components";
 
 export const StyledHeader = styled(Layout.Header)`
   display: flex;

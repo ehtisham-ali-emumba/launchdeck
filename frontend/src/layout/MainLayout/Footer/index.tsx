@@ -1,4 +1,5 @@
 import { Spacer } from "../../../components";
+
 import { FooterWrapper } from "./elements";
 
 export const Footer = () => (

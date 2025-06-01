@@ -1,5 +1,5 @@
-import type { MenuProps } from "antd";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import type { MenuProps } from "antd";
 
 export const actionItems: MenuProps["items"] = [
   {

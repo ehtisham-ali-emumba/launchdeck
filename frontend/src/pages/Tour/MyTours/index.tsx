@@ -1,17 +1,22 @@
+import { useMemo } from "react";
+
 import { useNavigate } from "react-router-dom";
+
+import { useAtom } from "jotai";
+
+import { bookingAtom } from "../../../atoms/bookingAtom";
 import { BlankSlate } from "../../../components";
-import { useTourQuery } from "../../../hooks/queries";
 import { Loader } from "../../../components";
 import ErrorContainer from "../../../components/ErrorContainer";
-import { useAtom } from "jotai";
-import { bookingAtom } from "../../../atoms/bookingAtom";
-import { useMemo } from "react";
-import { useDeleteBooking } from "../../../hooks/atoms/useDeleteBooking";
 import { uiStrings } from "../../../constants/uiStrings";
+import { useDeleteBooking } from "../../../hooks/atoms/useDeleteBooking";
+import { useTourQuery } from "../../../hooks/queries";
+import { TourCard } from "../common/TourCard";
+import { CardWrapper } from "../common/TourCard/elements";
+
 import { Box, Heading, MyTourContainer } from "./elements";
 import { filterTours } from "./utils";
-import { CardWrapper } from "../common/TourCard/elements";
-import { TourCard } from "../common/TourCard";
+
 
 export const MyTours = () => {
   const navigate = useNavigate();

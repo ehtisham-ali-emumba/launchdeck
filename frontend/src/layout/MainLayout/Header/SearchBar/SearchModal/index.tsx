@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
-import { Modal } from "antd";
+
 import { SearchOutlined } from "@ant-design/icons";
-import { SearchResultsList } from "./SearchResultsList";
-import { ModalSearchInput, NoResults } from "./elements";
+import { Modal } from "antd";
+
 import { useLLMProductSearch } from "~/hooks/queries/useLLMProductSearch";
+
+import { ModalSearchInput, NoResults } from "./elements";
+import { SearchResultsList } from "./SearchResultsList";
+
 
 interface SearchModalProps {
   isOpen: boolean;

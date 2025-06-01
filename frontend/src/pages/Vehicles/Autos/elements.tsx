@@ -1,5 +1,6 @@
 import { Modal, Form, Typography } from "antd";
 import styled, { css } from "styled-components";
+
 import { Wrapper } from "../../../styles";
 import { sizeMobile } from "../../../utils";
 

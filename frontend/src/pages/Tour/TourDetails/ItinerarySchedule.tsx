@@ -1,6 +1,7 @@
 import { Typography } from "antd";
+
 import { uiStrings } from "../../../constants/uiStrings";
-import { itineraryData } from "./utils";
+
 import {
   ItinearyContainer,
   ScrollContainer,
@@ -11,6 +12,7 @@ import {
   TextWeather,
   TextDetail,
 } from "./elements";
+import { itineraryData } from "./utils";
 
 const { Title } = Typography;
 

@@ -1,15 +1,20 @@
 import { useEffect, useMemo } from "react";
-import { Typography } from "antd";
+
 import { useParams } from "react-router-dom";
+
+import { Typography } from "antd";
+
 import { Loader } from "~/components";
-import ErrorContainer from "~/components/ErrorContainer";
-import { BlankSlate } from "~/components/BlankSlate";
-import { Container, ContentWrapper } from "~/styles";
-import { Box } from "./elements";
 import { Spacer } from "~/components";
-import { ProductCard } from "./ProductCard";
-import { useInfiniteProductQuery } from "~/hooks/queries/useInfiniteProductQuery";
+import { BlankSlate } from "~/components/BlankSlate";
+import ErrorContainer from "~/components/ErrorContainer";
 import { uiStrings } from "~/constants";
+import { useInfiniteProductQuery } from "~/hooks/queries/useInfiniteProductQuery";
+import { Container, ContentWrapper } from "~/styles";
+
+import { Box } from "./elements";
+import { ProductCard } from "./ProductCard";
+
 
 const { Text } = Typography;
 

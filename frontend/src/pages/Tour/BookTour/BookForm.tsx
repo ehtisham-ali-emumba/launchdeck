@@ -1,8 +1,14 @@
-import { useAtom } from "jotai";
-import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+
 import { useForm, FormProvider } from "react-hook-form";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Typography, Row, Col } from "antd";
+import { useAtom } from "jotai";
+
+import { bookingAtom } from "../../../atoms/bookingAtom";
 import {
   Button,
   FormInput,
@@ -10,6 +16,11 @@ import {
   FormSelect,
   Spacer,
 } from "../../../components";
+import { uiStrings } from "../../../constants";
+import { notifee } from "../../../services";
+
+import { FormWrapper } from "./elements";
+import type { BookFormDataType } from "./type";
 import {
   bookFormValidationSchema,
   formDefaultValues,
@@ -18,13 +29,6 @@ import {
   paymentMethodsStyle,
   removeBookingByTourId,
 } from "./utils";
-import { FormWrapper } from "./elements";
-import { bookingAtom } from "../../../atoms/bookingAtom";
-import { useEffect } from "react";
-import { notifee } from "../../../services";
-import { useNavigate } from "react-router-dom";
-import { uiStrings } from "../../../constants";
-import type { BookFormDataType } from "./type";
 
 const { Title } = Typography;
 

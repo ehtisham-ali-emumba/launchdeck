@@ -1,6 +1,8 @@
-import { Select as Select_ } from "antd";
 import { useState } from "react";
+
 import { DownOutlined, UpOutlined } from "@ant-design/icons";
+import { Select as Select_ } from "antd";
+
 import type { SelectType } from "./type";
 
 export const Select = (props: SelectType) => {

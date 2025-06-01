@@ -1,4 +1,5 @@
 import { useAtom } from "jotai";
+
 import { bookingAtom } from "../../atoms/bookingAtom";
 
 export const useDeleteBooking = () => {

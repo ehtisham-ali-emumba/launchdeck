@@ -1,4 +1,12 @@
+import {
+  FixedSizeList as List,
+  type ListChildComponentProps,
+} from "react-window";
+
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+
+import { uiStrings } from "../../../constants";
+
 import {
   SpecItem,
   SpecLabel,
@@ -6,13 +14,9 @@ import {
   SpecActions,
   Divider,
 } from "./elements";
-import { deleteIconStyle, editIconStyle, getAutoSpecs } from "./utils";
-import {
-  FixedSizeList as List,
-  type ListChildComponentProps,
-} from "react-window";
-import { uiStrings } from "../../../constants";
 import type { CarSpecsGridType } from "./type";
+import { deleteIconStyle, editIconStyle, getAutoSpecs } from "./utils";
+
 
 export const CarSpecsGrid: React.FC<CarSpecsGridType> = ({
   auto,

@@ -1,12 +1,15 @@
 import React, { useCallback, useState } from "react";
-import { Button, Spacer } from "../../../components";
+
 import { PlusOutlined } from "@ant-design/icons";
-import { colors, uiStrings } from "../../../constants";
-import { CarSpecsContainer, SpecsTitle, Row } from "./elements";
-import { useAutoDetailsAtom } from "../../../hooks/atoms";
-import { ModifyCarSpecModal } from "./ModifyCarSpecModal";
+
+import { Button, Spacer } from "../../../components";
 import { ConfirmationModal } from "../../../components/ConfirmationModal";
+import { colors, uiStrings } from "../../../constants";
+import { useAutoDetailsAtom } from "../../../hooks/atoms";
+
 import { CarSpecsGrid } from "./CarSpecsGrid";
+import { CarSpecsContainer, SpecsTitle, Row } from "./elements";
+import { ModifyCarSpecModal } from "./ModifyCarSpecModal";
 import type { CarSpecsType } from "./type";
 
 export const CarSpecifications: React.FC<CarSpecsType> = ({ auto }) => {

@@ -1,8 +1,9 @@
-import { HomeContainer } from "./elements";
 import { Spacer } from "~/components";
 import { ContentWrapper } from "~/styles";
-import { WelcomeBanner } from "./WelcomeBanner";
+
+import { HomeContainer } from "./elements";
 import { ProductList } from "./ProductList";
+import { WelcomeBanner } from "./WelcomeBanner";
 
 export const Home = () => {
   return (

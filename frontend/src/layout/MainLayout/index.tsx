@@ -1,9 +1,12 @@
 import React from "react";
-import { Header } from "./Header";
-import { RelativeDiv } from "./elements";
-import type { MainLayoutProps } from "./type";
-import { Footer } from "./Footer";
+
 import { Spacer } from "~/components";
+
+import { RelativeDiv } from "./elements";
+import { Footer } from "./Footer";
+import { Header } from "./Header";
+import type { MainLayoutProps } from "./type";
+
 
 export const MainLayout: React.FC<MainLayoutProps> = ({
   children,

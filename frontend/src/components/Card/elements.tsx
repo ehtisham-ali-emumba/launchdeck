@@ -1,6 +1,8 @@
 import { Card, Typography } from "antd";
 import styled, { css } from "styled-components";
+
 import { colors } from "../../constants";
+
 import type { StyledBaseCardType } from "./type";
 
 export const { Title, Paragraph, Text } = Typography;

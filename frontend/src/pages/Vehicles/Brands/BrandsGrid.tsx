@@ -1,12 +1,16 @@
 import React, { memo, useEffect, useRef, useState } from "react";
+
 import { FixedSizeGrid as Grid } from "react-window";
+
 import { BlankSlate } from "../../../components/BlankSlate";
-import { GridWrapper, ListContainer } from "./elements";
-import { useHandleResize } from "../../../hooks/useHandleResize";
 import { uiStrings } from "../../../constants";
+import { useHandleResize } from "../../../hooks/useHandleResize";
+import { BrandCard } from "../common/BrandCard";
+
+import { GridWrapper, ListContainer } from "./elements";
 import type { BrandGridProps } from "./type";
 import { COLUMN_WIDTH, gridStyles, ROW_HEIGHT } from "./utils";
-import { BrandCard } from "../common/BrandCard";
+
 
 export const BrandsGrid = memo(
   ({ handleEditClick, handleDeleteClick, brands }: BrandGridProps) => {

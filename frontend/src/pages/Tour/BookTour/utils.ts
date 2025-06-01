@@ -1,4 +1,5 @@
 import * as Yup from "yup";
+
 import type { Booking } from "../../../atoms/bookingAtom";
 
 export const bookFormValidationSchema = Yup.object().shape({

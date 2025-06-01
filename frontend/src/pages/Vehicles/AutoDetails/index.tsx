@@ -1,15 +1,18 @@
-import { Spacer } from "../../../components";
-import { ContentWrapper } from "../../../styles";
-import { uiStrings } from "../../../constants";
-import { Box, Container } from "./elements";
-import { useParams } from "react-router-dom";
-import ErrorContainer from "../../../components/ErrorContainer";
-import { useAutoDetailsAtom } from "../../../hooks/atoms";
-import { CarSpecifications } from "./CarSpecifications";
 import { useMemo } from "react";
+
+import { useParams } from "react-router-dom";
+
+import { Spacer } from "../../../components";
+import ErrorContainer from "../../../components/ErrorContainer";
+import { uiStrings } from "../../../constants";
+import { useAutoDetailsAtom } from "../../../hooks/atoms";
 import { useBrandsAtom } from "../../../hooks/atoms/useBrandsAtom";
+import { ContentWrapper } from "../../../styles";
 import { checkBrandExists } from "../Brands/utils";
+
 import { CarHeader } from "./CarHeader";
+import { CarSpecifications } from "./CarSpecifications";
+import { Box, Container } from "./elements";
 
 export const AutoDetails = () => {
   const { autoId, brandId } = useParams<{ autoId: string; brandId: string }>();

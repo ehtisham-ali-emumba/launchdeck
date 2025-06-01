@@ -1,4 +1,5 @@
 import type { Category } from "~/types";
+
 import { CategoryItemContainer, CategoryTitle } from "./elements";
 
 interface CategoryItemProps {

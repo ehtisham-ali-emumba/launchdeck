@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import type { ToursResponse } from "../../types";
-import { QUERY_KEYS } from "../../constants/reactQueryKeys";
+
 import { getTours } from "../../api/services";
+import { QUERY_KEYS } from "../../constants/reactQueryKeys";
+import type { ToursResponse } from "../../types";
 
 interface UseToursQueryOptions {
   enabled?: boolean;

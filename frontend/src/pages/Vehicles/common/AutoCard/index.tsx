@@ -1,7 +1,10 @@
 import React, { useCallback } from "react";
+
 import { Dropdown, type MenuProps } from "antd";
-import { truncate } from "../../../../utils";
+
 import { Card } from "../../../../components";
+import { truncate } from "../../../../utils";
+
 import {
   AutoCardTitle,
   AutoCardDescription,

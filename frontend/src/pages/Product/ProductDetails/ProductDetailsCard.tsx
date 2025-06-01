@@ -1,7 +1,9 @@
-import styled from "styled-components";
 import { Typography, Button, Tabs, Avatar } from "antd";
-import { colors } from "~/constants";
+import styled from "styled-components";
+
 import { Spacer } from "~/components";
+import { colors } from "~/constants";
+
 import { RecentLaunches } from "./RecentLaunches";
 import type { ProductDetailsCardType } from "./type";
 const { Title, Text } = Typography;

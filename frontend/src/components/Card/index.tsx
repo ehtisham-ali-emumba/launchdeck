@@ -1,4 +1,7 @@
 import React from "react";
+
+import { BaseLink } from "../elements";
+
 import {
   StyledBaseCard,
   BaseCardImageWrapper,
@@ -8,9 +11,8 @@ import {
   BaseCardUpperRight,
   FooterWrapper,
 } from "./elements";
-import { BaseLink } from "../elements";
-import { cardDimensions } from "./utils";
 import type { CardProps } from "./type";
+import { cardDimensions } from "./utils";
 
 export const Card: React.FC<CardProps> = ({
   imageSrc,

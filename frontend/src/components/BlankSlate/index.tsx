@@ -1,5 +1,6 @@
 import { PlaceholderSvg } from "../../assets";
 import { uiStrings } from "../../constants";
+
 import { BlankSlateTitle, BlankSlateWrapper } from "./elements";
 import type { BlankSlateType } from "./type";
 

@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import { Wrapper } from "../../../styles";
 import { Typography } from "antd";
+import styled from "styled-components";
+
+import { Wrapper } from "../../../styles";
 
 export const Container = styled(Wrapper)`
   justify-content: flex-start;

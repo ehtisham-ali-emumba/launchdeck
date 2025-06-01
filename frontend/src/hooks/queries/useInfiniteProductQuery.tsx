@@ -1,6 +1,7 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { QUERY_KEYS } from "../../constants/reactQueryKeys";
+
 import { getProducts } from "../../api/services";
+import { QUERY_KEYS } from "../../constants/reactQueryKeys";
 import type { GetProductsResponse } from "../../types";
 
 interface QueryOptions {

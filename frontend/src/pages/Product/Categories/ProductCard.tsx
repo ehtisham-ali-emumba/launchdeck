@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { ProductCardType } from "./type";
+
 import {
   StyledLink,
   Container,
@@ -30,6 +30,7 @@ import {
   TagContainer,
   Tag,
 } from "./elements";
+import type { ProductCardType } from "./type";
 
 export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
   const { name, description, image, tags, _id } = product;

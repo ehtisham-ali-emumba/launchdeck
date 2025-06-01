@@ -1,5 +1,5 @@
 import { MessageOutlined, UpOutlined } from "@ant-design/icons";
-import type { ProductListRowProps } from "./type";
+
 import {
   Row,
   Index,
@@ -13,6 +13,7 @@ import {
   StatBox,
   StyledLink,
 } from "./elements";
+import type { ProductListRowProps } from "./type";
 export const ProductListRow = (props: ProductListRowProps) => {
   const { index, product } = props;
   const { _id, name, description, tags, image } = product;

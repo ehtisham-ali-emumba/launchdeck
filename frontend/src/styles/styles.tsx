@@ -1,7 +1,7 @@
 import { Flex, Layout as Layout_ } from "antd";
-
 import { Header as Header_ } from "antd/es/layout/layout";
 import styled, { css } from "styled-components";
+
 import { sizeLg, sizeMobile } from "../utils";
 
 export const Wrapper = styled.div`

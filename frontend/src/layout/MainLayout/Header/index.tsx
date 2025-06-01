@@ -1,4 +1,17 @@
+import { useState } from "react";
+
+import { Link } from "react-router-dom";
+
+import { CloseOutlined, PlusCircleOutlined } from "@ant-design/icons";
 import { Space } from "antd";
+
+import { ContentWrapper } from "~/styles";
+
+import { LogoSvg } from "../../../assets";
+import { Button } from "../../../components";
+import { uiStrings } from "../../../constants/uiStrings";
+import { useIsActiveRoute } from "../../../hooks/useIsActiveRoute";
+
 import {
   StyledHeader,
   NavMenu,
@@ -8,17 +21,9 @@ import {
   SubmitButton,
   Row,
 } from "./elements";
-import { Button } from "../../../components";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { CloseOutlined, PlusCircleOutlined } from "@ant-design/icons";
-import { uiStrings } from "../../../constants/uiStrings";
-import { LogoSvg } from "../../../assets";
-import { useIsActiveRoute } from "../../../hooks/useIsActiveRoute";
-import type { HeaderProps } from "./type";
-import { ContentWrapper } from "~/styles";
-import { SearchBar } from "./SearchBar";
 import { ProductsDropdown } from "./ProductsDropdown";
+import { SearchBar } from "./SearchBar";
+import type { HeaderProps } from "./type";
 
 export const Header: React.FC<HeaderProps> = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

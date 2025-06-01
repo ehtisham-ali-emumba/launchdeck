@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import type { SpacerProps } from "./type";
 
 export const Spacer = styled.div<SpacerProps>`

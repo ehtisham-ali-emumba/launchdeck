@@ -1,5 +1,7 @@
 import { Typography } from "antd";
+
 import { uiStrings } from "../../../constants/uiStrings";
+
 import {
   InfoContainer,
   InfoRowBox,

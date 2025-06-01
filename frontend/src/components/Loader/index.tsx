@@ -1,6 +1,7 @@
 import React from "react";
-import type { LoaderProps } from "./type";
+
 import { CenteredWrapper, OrangeSpin } from "./elements";
+import type { LoaderProps } from "./type";
 
 export const Loader: React.FC<LoaderProps> = ({ marginTop, paddingTop }) => (
   <CenteredWrapper marginTop={marginTop} paddingTop={paddingTop}>

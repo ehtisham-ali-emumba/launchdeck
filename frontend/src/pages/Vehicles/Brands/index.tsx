@@ -1,15 +1,18 @@
 import React, { useCallback, useMemo, useState } from "react";
-import { Button, Input, Spacer } from "../../../components";
-import { uiStrings } from "../../../constants/uiStrings";
-import { Box, Container, InputContainer } from "./elements";
+
 import { PlusOutlined } from "@ant-design/icons";
-import { colors } from "../../../constants";
-import { BrandUpdateModal } from "./BrandUpdateModal";
-import { BrandsGrid } from "./BrandsGrid";
+
+import { Button, Input, Spacer } from "../../../components";
 import { ConfirmationModal } from "../../../components/ConfirmationModal";
+import { colors } from "../../../constants";
+import { uiStrings } from "../../../constants/uiStrings";
 import { useBrandsAtom } from "../../../hooks/atoms/useBrandsAtom";
-import { filterBrandsBySearch, inputSearchStyles } from "./utils";
+
+import { BrandsGrid } from "./BrandsGrid";
+import { BrandUpdateModal } from "./BrandUpdateModal";
+import { Box, Container, InputContainer } from "./elements";
 import type { BrandUpdateFormValues } from "./type";
+import { filterBrandsBySearch, inputSearchStyles } from "./utils";
 
 export const Brands = () => {
   const [search, setSearch] = useState("");

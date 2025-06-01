@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import { colors } from "../../../../constants";
-import { Typography } from "antd";
 import { MoreOutlined } from "@ant-design/icons";
+import { Typography } from "antd";
+import styled from "styled-components";
+
+import { colors } from "../../../../constants";
 
 export const { Title, Paragraph, Text } = Typography;
 

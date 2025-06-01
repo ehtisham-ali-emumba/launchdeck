@@ -1,12 +1,15 @@
 import { type RouteObject } from "react-router-dom";
-import { Home } from "../pages/Home";
-import { MainLayout } from "../layout/MainLayout";
-import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
-import { LandscapePage } from "../pages/Product/Landscape";
-import { AutoDetails, Autos } from "../pages/Vehicles";
+
 import { CategoriesPage } from "~/pages/Product/Categories";
-import { ProductDetailsPage } from "~/pages/Product/ProductDetails";
 import { CreateProductPage } from "~/pages/Product/CreateProduct";
+import { ProductDetailsPage } from "~/pages/Product/ProductDetails";
+
+import { MainLayout } from "../layout/MainLayout";
+import { Home } from "../pages/Home";
+import { LandscapePage } from "../pages/Product/Landscape";
+import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
+import { AutoDetails, Autos } from "../pages/Vehicles";
+
 
 const routes: RouteObject[] = [
   {

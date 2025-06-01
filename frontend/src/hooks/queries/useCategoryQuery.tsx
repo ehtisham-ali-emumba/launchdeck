@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import type { CategoryResponse } from "~/types";
-import { QUERY_KEYS } from "~/constants/reactQueryKeys";
+
 import { getCategories } from "~/api/services/categoryService";
+import { QUERY_KEYS } from "~/constants/reactQueryKeys";
+import type { CategoryResponse } from "~/types";
 
 interface UseCategoriesQueryOptions {
   enabled?: boolean;

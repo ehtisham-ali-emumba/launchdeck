@@ -1,7 +1,9 @@
 import React from "react";
+
 import { Space, Select, Input } from "antd";
-import { countryCodeArray } from "./utils";
+
 import type { PhoneInputProps } from "./type";
+import { countryCodeArray } from "./utils";
 
 const PhoneInput: React.FC<PhoneInputProps> = ({ inputProps, selectProps }) => {
   return (

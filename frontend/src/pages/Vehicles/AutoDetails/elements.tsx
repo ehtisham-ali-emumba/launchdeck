@@ -1,9 +1,11 @@
-import styled, { css } from "styled-components";
-import { Wrapper } from "../../../styles";
-import { Typography } from "antd";
 import { Link } from "react-router-dom";
-import { sizeMobile } from "../../../utils";
+
+import { Typography } from "antd";
+import styled, { css } from "styled-components";
+
 import { colors } from "../../../constants";
+import { Wrapper } from "../../../styles";
+import { sizeMobile } from "../../../utils";
 
 export const { Title, Paragraph, Text } = Typography;
 

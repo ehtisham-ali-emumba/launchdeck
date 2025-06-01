@@ -1,10 +1,11 @@
-import styled from "styled-components";
-import { Typography } from "antd";
 import {
   MessageOutlined,
   BellOutlined,
   ClockCircleOutlined,
 } from "@ant-design/icons";
+import { Typography } from "antd";
+import styled from "styled-components";
+
 import type { RecentLaunchesType } from "./type";
 
 const { Text } = Typography;
