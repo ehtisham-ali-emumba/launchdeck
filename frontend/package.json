@@ -1,5 +1,5 @@
 {
-  "name": "launch-deck",
+  "name": "launchdeck-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -41,6 +41,8 @@
     "@types/react-window": "^1.8.8",
     "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^9.25.0",
+    "eslint-import-resolver-typescript": "^4.4.2",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
