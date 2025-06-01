@@ -30,7 +30,7 @@ export const AutoCard: React.FC<AutoCardProps> = ({
   onDeleteClick,
   brandId,
 }) => {
-  const handleMenuClick: MenuProps["onClick"] = (info) => {
+  const handleMenuClick: MenuProps["onClick"] = info => {
     info.domEvent.preventDefault();
     info.domEvent.stopPropagation();
     if (info.key === "edit") onEditClick?.(id);

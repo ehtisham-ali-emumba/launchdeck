@@ -18,7 +18,7 @@ export const CarUpdateModal: React.FC<CarUpdateModalProps> = ({
 
   useEffect(() => {
     if (open && editingCarId) {
-      const editingCar = autos.find((car) => car.id === editingCarId);
+      const editingCar = autos.find(car => car.id === editingCarId);
       if (editingCar) {
         form.setFieldsValue({ ...editingCar });
       }
@@ -77,7 +77,7 @@ export const CarUpdateModal: React.FC<CarUpdateModalProps> = ({
           <InputNumber
             style={{ width: "100%" }}
             min={0}
-            formatter={(value) =>
+            formatter={value =>
               `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
             }
             placeholder={uiStrings.enterPrice}

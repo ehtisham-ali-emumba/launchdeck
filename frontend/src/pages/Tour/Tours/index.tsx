@@ -27,7 +27,7 @@ export const Tours = () => {
   const { deleteBooking } = useDeleteBooking();
 
   const bookingMap = useMemo(
-    () => new Map(bookings.map((booking) => [booking.tourId, booking])),
+    () => new Map(bookings.map(booking => [booking.tourId, booking])),
     [bookings]
   );
   const [startPrice, endPrice] = useMemo(() => parsePriceRange(price), [price]);
@@ -57,7 +57,7 @@ export const Tours = () => {
         ) : (
           <CardWrapper>
             {filteredTours.length
-              ? filteredTours.map((tour) => {
+              ? filteredTours.map(tour => {
                   const hasBooking = bookingMap.has(tour._id);
                   return (
                     <TourCard

@@ -11,7 +11,7 @@ export const Select = (props: SelectType) => {
     <Select_
       style={{ flex: 1 }}
       open={isOpen}
-      onDropdownVisibleChange={(open) => setIsOpen(open)}
+      onDropdownVisibleChange={open => setIsOpen(open)}
       suffixIcon={isOpen ? <UpOutlined /> : <DownOutlined />}
       {...selectProps}
     />

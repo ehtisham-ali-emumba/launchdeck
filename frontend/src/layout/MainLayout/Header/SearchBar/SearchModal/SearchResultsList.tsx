@@ -30,7 +30,7 @@ export const SearchResultsList: React.FC<SearchResultsListProps> = ({
 
   return (
     <ResultsList>
-      {results.map((result) => (
+      {results.map(result => (
         <Link
           key={result._id}
           to={`/products/${result._id}`}

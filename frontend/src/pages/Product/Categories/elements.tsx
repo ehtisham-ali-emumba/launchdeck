@@ -12,8 +12,8 @@ export const Box = styled.div`
 
 export const Container = styled.div`
   padding: 8px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
 `;
 
 export const ProductHeader = styled.div`
@@ -159,11 +159,11 @@ export const Tab = styled.button<{ active: boolean }>`
   border: none;
   padding: 12px 0;
   font-size: 16px;
-  color: ${(props) => (props.active ? "#171717" : "#666")};
+  color: ${props => (props.active ? "#171717" : "#666")};
   cursor: pointer;
   border-bottom: 2px solid
-    ${(props) => (props.active ? "#171717" : "transparent")};
-  font-weight: ${(props) => (props.active ? "500" : "400")};
+    ${props => (props.active ? "#171717" : "transparent")};
+  font-weight: ${props => (props.active ? "500" : "400")};
 
   &:hover {
     color: #171717;

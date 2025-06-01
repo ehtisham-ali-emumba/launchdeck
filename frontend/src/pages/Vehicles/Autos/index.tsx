@@ -100,7 +100,7 @@ export const Autos = () => {
                 style: colorSelectStyles,
                 value: selectedColor,
                 options: colorOptions,
-                onChange: (value) => setSelectedColor(value),
+                onChange: value => setSelectedColor(value),
                 placeholder: "Color",
                 allowClear: true,
               }}

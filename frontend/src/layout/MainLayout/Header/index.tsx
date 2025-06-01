@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = () => {
   const { isRouteActive } = useIsActiveRoute();
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prev) => !prev);
+    setIsMobileMenuOpen(prev => !prev);
   };
 
   const getActiveButtonClass = (path: string) => {

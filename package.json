@@ -17,6 +17,7 @@
   },
   "lint-staged": {
     "frontend/**/*.{ts,tsx}": [
+      "cd frontend && npm run type-check",
       "cd frontend && npm run lint:fix",
       "cd frontend && npm run format"
     ],

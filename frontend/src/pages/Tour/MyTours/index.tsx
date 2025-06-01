@@ -35,7 +35,7 @@ export const MyTours = () => {
         ) : (
           <CardWrapper>
             {filterMyTours.length
-              ? filterMyTours.map((tour) => {
+              ? filterMyTours.map(tour => {
                   return (
                     <TourCard
                       key={tour._id}

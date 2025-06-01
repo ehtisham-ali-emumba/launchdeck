@@ -26,7 +26,7 @@ export const FormSelect = <T extends FieldValues>({
               {...field}
               selectProps={{
                 ...selectProps,
-                onChange: (value) => {
+                onChange: value => {
                   field.onChange(value);
                 },
                 value: field.value,

@@ -6,6 +6,6 @@ export const filterTours = (
   bookings: Booking[]
 ) => {
   if (!tours || !bookings) return [];
-  const bookingSet = new Set(bookings.map((booking) => booking.tourId));
-  return tours.filter((tour) => bookingSet.has(tour._id));
+  const bookingSet = new Set(bookings.map(booking => booking.tourId));
+  return tours.filter(tour => bookingSet.has(tour._id));
 };

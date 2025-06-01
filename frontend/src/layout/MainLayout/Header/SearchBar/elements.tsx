@@ -14,7 +14,7 @@ export const SearchIcon = styled.div`
   font-size: 16px;
 `;
 
-export const SearchInput = styled((props) => (
+export const SearchInput = styled(props => (
   <Input
     {...props}
     inputProps={{

@@ -18,7 +18,7 @@ export const BrandUpdateModal: React.FC<CarUpdateModalProps> = ({
 
   useEffect(() => {
     if (open && editingBrandId) {
-      const editingBrand = brands.find((brand) => brand.id === editingBrandId);
+      const editingBrand = brands.find(brand => brand.id === editingBrandId);
       if (editingBrand) {
         form.setFieldsValue({ ...editingBrand });
       }

@@ -31,11 +31,11 @@ export const SearchModal: React.FC<SearchModalProps> = ({
     setHasSearched(false);
     const debounceTimer = setTimeout(() => {
       searchProducts(searchQuery, {
-        onSuccess: (data) => {
+        onSuccess: data => {
           setSearchResults(data?.data || []);
           setHasSearched(true);
         },
-        onError: (error) => {
+        onError: error => {
           console.error("Search error:", error);
           setSearchResults([]);
           setHasSearched(true);
@@ -67,7 +67,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             placeholder: "Search: 'health', 'code', 'ai tools'...",
             prefix: <SearchOutlined style={{ marginRight: "4px" }} />,
             value: searchQuery,
-            onChange: (e) => setSearchQuery(e.target.value),
+            onChange: e => setSearchQuery(e.target.value),
             size: "large",
           }}
         />

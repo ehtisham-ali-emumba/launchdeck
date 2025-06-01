@@ -69,8 +69,8 @@ export const CarGrid = memo(
             imageSrc={auto.imageSrc}
             description={auto.description}
             chipText={auto?.chipText}
-            onEditClick={(carId) => handleEditClick(carId)}
-            onDeleteClick={(id) => handleDeleteClick(id)}
+            onEditClick={carId => handleEditClick(carId)}
+            onDeleteClick={id => handleDeleteClick(id)}
           />
         </div>
       );

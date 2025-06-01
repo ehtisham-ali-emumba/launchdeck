@@ -4,7 +4,7 @@ export function parsePriceRange(
   price?: string | null
 ): [number | null, number | null] {
   if (!price) return [null, null];
-  const [start, end] = price.split("-").map((p) => parseFloat(p));
+  const [start, end] = price.split("-").map(p => parseFloat(p));
   return [start, end];
 }
 
@@ -25,13 +25,13 @@ export function filterTours(
   // Filter by city
   if (city) {
     filtered = filtered.filter(
-      (tour) => tour.city.toLowerCase() === city.toLowerCase()
+      tour => tour.city.toLowerCase() === city.toLowerCase()
     );
   }
 
   // Filter by price range
   if (startPrice !== null && endPrice !== null) {
-    filtered = filtered.filter((tour) => {
+    filtered = filtered.filter(tour => {
       const tourPrice = parseFloat(tour.price);
       return tourPrice >= startPrice! && tourPrice <= endPrice!;
     });
@@ -41,7 +41,7 @@ export function filterTours(
   if (start_date && end_date) {
     const filterStartDate = new Date(start_date);
     const filterEndDate = new Date(end_date);
-    filtered = filtered.filter((tour) => {
+    filtered = filtered.filter(tour => {
       const tourStartDate = new Date(tour.startDate);
       const tourEndDate = new Date(tour.endDate);
 

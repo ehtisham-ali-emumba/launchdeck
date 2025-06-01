@@ -208,7 +208,7 @@ export const ProductDetailsCard: React.FC<ProductDetailsCardType> = ({
         </ScrollGallery>
 
         <TagsRow>
-          {tags?.map?.((item) => (
+          {tags?.map?.(item => (
             <Tag color="purple" key={item}>
               {item}
             </Tag>

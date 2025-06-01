@@ -11,7 +11,7 @@ export const CreateProductPage = () => {
         <ContentWrapper>
           <Flex1>
             <ProductSubmitForm
-              onSubmit={(data) => {
+              onSubmit={data => {
                 console.log("data, creatform>", data);
               }}
             />

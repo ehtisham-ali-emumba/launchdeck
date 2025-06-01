@@ -38,7 +38,7 @@ export const LandscapePage = () => {
 
   // Derived state
   const landscapes = useMemo(() => {
-    return data?.pages.flatMap((page) => page.data) || [];
+    return data?.pages.flatMap(page => page.data) || [];
   }, [data]);
 
   const totalCount = data?.pages[0]?.total || 0;

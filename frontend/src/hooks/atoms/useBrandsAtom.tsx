@@ -15,7 +15,7 @@ export const useBrandsAtom = () => {
   const { deleteAutosByBrandId } = useAutosAtom();
 
   const addBrand = useCallback(() => {
-    setBrands((prevBrands) => [
+    setBrands(prevBrands => [
       ...prevBrands,
       { id: prevBrands.length + 1, ...brandSample },
     ]);
@@ -23,16 +23,14 @@ export const useBrandsAtom = () => {
 
   const getBrandById = useCallback(
     (brandId: number) => {
-      return brands.find((brand) => brand.id === brandId);
+      return brands.find(brand => brand.id === brandId);
     },
     [brands]
   );
 
   const removeBrand = useCallback(
     (brandId: number) => {
-      setBrands((prevBrands) =>
-        prevBrands.filter((brand) => brand.id !== brandId)
-      );
+      setBrands(prevBrands => prevBrands.filter(brand => brand.id !== brandId));
       deleteAutosByBrandId(brandId); // Delete all autos of this brand
     },
     [setBrands]
@@ -40,8 +38,8 @@ export const useBrandsAtom = () => {
 
   const updateBrand = useCallback(
     (updatedBrand: Partial<BrandType>) => {
-      setBrands((prevBrands) =>
-        prevBrands.map((brand) =>
+      setBrands(prevBrands =>
+        prevBrands.map(brand =>
           brand.id === updatedBrand?.id ? { ...brand, ...updatedBrand } : brand
         )
       );

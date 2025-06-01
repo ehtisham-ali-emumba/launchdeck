@@ -16,7 +16,7 @@ export const CustomRangePicker: React.FC<DateType> = ({
   const { onChange = () => {} } = dateProps;
 
   const handleToggle = () => {
-    setIsPickerOpen((prev) => !prev);
+    setIsPickerOpen(prev => !prev);
   };
 
   const onChangeHandler: DatePickerOnChangeType = (dates, dateStrings) => {

@@ -53,7 +53,7 @@ const TourLink = styled.span`
   }
 `;
 
-const CloseBtn = styled((props) => (
+const CloseBtn = styled(props => (
   <Button variant="icon-transparent" {...props} />
 ))`
   background: ${colors.white};

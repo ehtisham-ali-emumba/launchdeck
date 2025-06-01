@@ -6,7 +6,7 @@ export const useDeleteBooking = () => {
 
   const deleteBooking = (tourId: string) => {
     const updatedBookings = bookings.filter(
-      (booking) => booking.tourId !== tourId
+      booking => booking.tourId !== tourId
     );
     setBookings(updatedBookings);
   };

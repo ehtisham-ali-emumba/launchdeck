@@ -3,7 +3,7 @@ import { Typography } from "antd";
 
 const { Text } = Typography;
 
-export const BlankSlateTitle = styled((props) => <Text {...props} />)`
+export const BlankSlateTitle = styled(props => <Text {...props} />)`
   &.ant-typography {
     font-weight: 400;
     color: #797c9a;

@@ -11,7 +11,7 @@ export const inputStyles = { maxWidth: "320px" } as const;
 export function filterUsers(users: RandomUser[], search: string): RandomUser[] {
   if (!search) return users;
   const lowerSearch = search.toLowerCase();
-  return users.filter((user) => {
+  return users.filter(user => {
     const fullName = `${user.name.first} ${user.name.last}`.toLowerCase();
     return (
       fullName.includes(lowerSearch) ||
@@ -22,5 +22,5 @@ export function filterUsers(users: RandomUser[], search: string): RandomUser[] {
 }
 
 export function flattenUsers(data?: InfiniteUsersData): RandomUser[] {
-  return data ? data.pages.flatMap((page) => page.users) : [];
+  return data ? data.pages.flatMap(page => page.users) : [];
 }

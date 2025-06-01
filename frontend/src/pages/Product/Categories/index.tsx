@@ -30,7 +30,7 @@ export const CategoriesPage = () => {
   });
 
   const products = useMemo(
-    () => data?.pages.flatMap((page) => page.data) || [],
+    () => data?.pages.flatMap(page => page.data) || [],
     [data]
   );
   const totalCount = data?.pages[0]?.total || 0;

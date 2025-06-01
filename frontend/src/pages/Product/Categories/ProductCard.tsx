@@ -88,11 +88,11 @@ export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
 
         <TabContainer>
           <TabList>
-            {tabs.map((tab) => (
+            {tabs.map(tab => (
               <Tab
                 key={tab}
                 active={activeTab === tab}
-                onClick={(e) => {
+                onClick={e => {
                   e.preventDefault();
                   setActiveTab(tab);
                 }}
@@ -104,7 +104,7 @@ export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
         </TabContainer>
         <Description>{description}</Description>
         <ImageGrid>
-          {[1, 2, 3].map((item) => (
+          {[1, 2, 3].map(item => (
             <ImageCard key={item}>
               <CardImg src={image} />
             </ImageCard>
@@ -112,9 +112,7 @@ export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
         </ImageGrid>
 
         <TagContainer>
-          {tags?.map?.((item) => (
-            <Tag key={item}>{item}</Tag>
-          ))}
+          {tags?.map?.(item => <Tag key={item}>{item}</Tag>)}
         </TagContainer>
       </Container>
     </StyledLink>

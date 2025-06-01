@@ -22,7 +22,7 @@ export const BrandCard: React.FC<BrandCardProps> = ({
   onEditClick,
   onDeleteClick,
 }) => {
-  const handleMenuClick: MenuProps["onClick"] = (info) => {
+  const handleMenuClick: MenuProps["onClick"] = info => {
     info.domEvent.preventDefault();
     info.domEvent.stopPropagation();
     if (info.key === "edit") onEditClick?.(id);

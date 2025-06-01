@@ -7,17 +7,15 @@ export const useAutoDetailsAtom = () => {
 
   const getAutoById = useCallback(
     (autoId: number, brandId: number) => {
-      return autos.find(
-        (auto) => auto.id === autoId && auto.brandId === brandId
-      );
+      return autos.find(auto => auto.id === autoId && auto.brandId === brandId);
     },
     [autos]
   );
 
   const deleteAutoAttribute = useCallback(
     (autoId: number, key: string) => {
-      setAutos((prevAutos) =>
-        prevAutos.map((auto) => {
+      setAutos(prevAutos =>
+        prevAutos.map(auto => {
           if (auto.id !== autoId) return auto;
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const { [key as keyof Auto]: _, ...rest } = auto;
@@ -34,8 +32,8 @@ export const useAutoDetailsAtom = () => {
       key: keyof Auto | (string & {}),
       value: Auto[keyof Auto]
     ) => {
-      setAutos((prevAutos) =>
-        prevAutos.map((auto) => {
+      setAutos(prevAutos =>
+        prevAutos.map(auto => {
           if (auto.id !== autoId) return auto;
           return { ...auto, [key]: value };
         })

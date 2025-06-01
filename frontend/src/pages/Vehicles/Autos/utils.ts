@@ -4,7 +4,7 @@ export const filterAutosByBrandId = (
   hondaAutos: Auto[],
   brandId: number
 ): Auto[] => {
-  return hondaAutos.filter((auto) => auto.brandId === brandId);
+  return hondaAutos.filter(auto => auto.brandId === brandId);
 };
 
 export const searchAutosByFilters = (
@@ -15,7 +15,7 @@ export const searchAutosByFilters = (
   if (!search && !selectedColor) return hondaAutos;
   const lowerCaseSearch = search?.toLowerCase?.();
   return hondaAutos.filter(
-    (auto) =>
+    auto =>
       (auto.name.toLowerCase().includes(lowerCaseSearch) ||
         auto.bodyType?.toLowerCase?.().includes?.(lowerCaseSearch) ||
         auto.modelYear?.toString?.().includes?.(lowerCaseSearch)) &&

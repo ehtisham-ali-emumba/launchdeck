@@ -34,7 +34,7 @@ export const InputContainer = styled.div`
 
 export const GridWrapper = styled.div<{ width?: number }>`
   margin: 0 auto;
-  width: ${(props) => props.width || "100%"};
+  width: ${props => props.width || "100%"};
   height: 100%;
 `;
 

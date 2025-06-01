@@ -63,7 +63,7 @@ export const ProductsDropdown = memo(() => {
           ) : (
             <>
               <CategoryList>
-                {categories.map((category) => (
+                {categories.map(category => (
                   <CategoryItem
                     key={category._id}
                     category={category}
@@ -75,7 +75,7 @@ export const ProductsDropdown = memo(() => {
 
               {activeCategory && (
                 <SubCategoryList>
-                  {activeCategory.subCategories?.map?.((subCategory) => (
+                  {activeCategory.subCategories?.map?.(subCategory => (
                     <SubCategoryItem
                       key={subCategory._id}
                       subCategory={subCategory}

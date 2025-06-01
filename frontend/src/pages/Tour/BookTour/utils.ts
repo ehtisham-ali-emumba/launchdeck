@@ -28,15 +28,15 @@ export const bookFormValidationSchema = Yup.object().shape({
 });
 
 export const isBookingExists = (bookings: Booking[], tourId: string) => {
-  return !!bookings.find((booking) => booking.tourId === tourId);
+  return !!bookings.find(booking => booking.tourId === tourId);
 };
 
 export const getBookingByTourId = (bookings: Booking[], tourId: string) => {
-  return bookings.find((booking) => booking.tourId === tourId);
+  return bookings.find(booking => booking.tourId === tourId);
 };
 
 export const removeBookingByTourId = (bookings: Booking[], tourId: string) => {
-  return bookings.filter((booking) => booking.tourId !== tourId);
+  return bookings.filter(booking => booking.tourId !== tourId);
 };
 
 export const formDefaultValues = {

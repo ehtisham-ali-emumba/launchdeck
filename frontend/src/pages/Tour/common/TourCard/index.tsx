@@ -72,10 +72,10 @@ const TourCard: React.FC<TourCardProps> = ({
                 message={conditionalText}
                 hideConfirmButton={!canDelete}
               >
-                {(onOpen) => (
+                {onOpen => (
                   <Button
                     variant="icon-transparent"
-                    onClick={(e) => deleteHandler(e, onOpen)}
+                    onClick={e => deleteHandler(e, onOpen)}
                     icon={<DeleteOutlined style={buttonIconStyles} />}
                   />
                 )}

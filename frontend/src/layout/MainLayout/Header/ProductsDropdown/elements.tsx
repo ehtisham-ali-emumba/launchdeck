@@ -47,7 +47,7 @@ export const CategoryTitle = styled.span<{ isActive: boolean }>`
   padding: 0px;
   margin: 0px;
   font-weight: 600;
-  color: ${(props) => (props.isActive ? "black" : colors.text.secondary)};
+  color: ${props => (props.isActive ? "black" : colors.text.secondary)};
   &:hover {
     color: black;
   }

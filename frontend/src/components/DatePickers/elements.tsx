@@ -13,5 +13,5 @@ export const datePickerStyles = {
 export const CustomText = styled(Text)<{ dateText?: boolean }>`
   font-size: 16px;
   font-weight: 400;
-  color: ${(props) => (props.dateText ? "black" : "#bfbfbf")};
+  color: ${props => (props.dateText ? "black" : "#bfbfbf")};
 `;

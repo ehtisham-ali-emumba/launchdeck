@@ -119,7 +119,7 @@ export const FlexCol = styled.div`
   `)};
 `;
 export const ImageTileLg = styled.div<{ image: string }>`
-  background-image: url(${(props) => props.image});
+  background-image: url(${props => props.image});
   background-size: cover;
   flex: 1;
   margin: 10px;
@@ -134,7 +134,7 @@ export const ImageTileLg = styled.div<{ image: string }>`
   `)};
 `;
 export const ImageTileSm = styled.div<{ image: string }>`
-  background-image: url(${(props) => props.image});
+  background-image: url(${props => props.image});
   background-size: cover;
   flex: 1;
   margin: 10px;

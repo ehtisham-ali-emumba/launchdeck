@@ -10,8 +10,8 @@ export const CenteredWrapper = styled.div<{
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  padding-top: ${(props) => props.paddingTop || "30px"};
-  margin-top: ${(props) => props.marginTop || "0px"};
+  padding-top: ${props => props.paddingTop || "30px"};
+  margin-top: ${props => props.marginTop || "0px"};
 `;
 
 export const OrangeSpin = styled(Spin)`

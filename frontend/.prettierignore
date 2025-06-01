@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+coverage/
+.env*
+package-lock.json
+yarn.lock
+*.min.js
+*.min.css
+public/
+vite.config.ts

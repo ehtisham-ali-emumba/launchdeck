@@ -8,7 +8,7 @@ export const useAutosAtom = () => {
 
   const deleteAuto = useCallback(
     (id: number) => {
-      const updatedAutos = autos.filter((auto) => auto.id !== id);
+      const updatedAutos = autos.filter(auto => auto.id !== id);
       setAutos(updatedAutos);
     },
     [autos]
@@ -16,7 +16,7 @@ export const useAutosAtom = () => {
 
   const deleteAutosByBrandId = useCallback(
     (brandId: number) => {
-      const updatedAutos = autos.filter((auto) => auto.brandId !== brandId);
+      const updatedAutos = autos.filter(auto => auto.brandId !== brandId);
       setAutos(updatedAutos);
     },
     [autos]
@@ -28,7 +28,7 @@ export const useAutosAtom = () => {
         console.error("Invalid brandId:", brandId);
         return;
       }
-      setAutos((prevAutos) => [
+      setAutos(prevAutos => [
         ...prevAutos,
         { ...autosMoreData[0], id: prevAutos.length + 1, brandId },
       ]);
@@ -38,8 +38,8 @@ export const useAutosAtom = () => {
 
   const updateAuto = useCallback(
     (updatedAuto: Partial<Auto>) => {
-      setAutos((prevAutos) =>
-        prevAutos.map((auto) =>
+      setAutos(prevAutos =>
+        prevAutos.map(auto =>
           auto.id === updatedAuto.id ? { ...auto, ...updatedAuto } : auto
         )
       );

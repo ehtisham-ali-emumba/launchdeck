@@ -49,8 +49,8 @@ export const BrandsGrid = memo(
             name={brand.name}
             imageSrc={brand.logoUrl}
             description={brand.description}
-            onEditClick={(brandId) => handleEditClick(brandId)}
-            onDeleteClick={(id) => handleDeleteClick(id)}
+            onEditClick={brandId => handleEditClick(brandId)}
+            onDeleteClick={id => handleDeleteClick(id)}
           />
         </div>
       );

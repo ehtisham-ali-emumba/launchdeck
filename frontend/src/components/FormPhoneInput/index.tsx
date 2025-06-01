@@ -32,7 +32,7 @@ export const FormPhoneInput = <T extends FormPhoneInputValues>({
               inputProps={{ ...field }}
               selectProps={{
                 value: countryCode,
-                onChange: (value) => setValue("countryCode", value),
+                onChange: value => setValue("countryCode", value),
               }}
             />
             {error && <ErrorText>{error.message}</ErrorText>}
