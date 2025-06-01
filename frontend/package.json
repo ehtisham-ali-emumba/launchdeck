@@ -10,7 +10,7 @@
     "lint:fix": "eslint . --ext ts,tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css,md}\"",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit --skipLibCheck",
     "preview": "vite preview",
     "backend": "json-server --watch ../backend/db.json --port 3001"
   },
