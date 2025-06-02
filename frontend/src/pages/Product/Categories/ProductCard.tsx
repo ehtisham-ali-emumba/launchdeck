@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { StyledTabs } from "~/styles";
+import { getRandomImageUrl } from "~/utils";
 
 import {
   StyledLink,
@@ -34,7 +35,7 @@ import { tabsArray } from "./utils";
 
 export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
   const { name, description, image, tags, _id } = product;
-  const [activeTab, setActiveTab] = useState("Overview");
+  const [activeTab, setActiveTab] = useState("overview");
 
   return (
     <StyledLink to={`/products/${_id}`}>
@@ -87,7 +88,6 @@ export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
         </ProductHeader>
 
         <StyledTabs
-          defaultActiveKey="overview"
           activeKey={activeTab}
           onChange={setActiveTab}
           onTabClick={(_, e) => {
@@ -100,7 +100,10 @@ export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
         <ImageGrid>
           {[1, 2, 3].map(item => (
             <ImageCard key={item}>
-              <CardImg src={image} />
+              <CardImg
+                src={getRandomImageUrl(item)}
+                alt={`Product Image ${item}`}
+              />
             </ImageCard>
           ))}
         </ImageGrid>
