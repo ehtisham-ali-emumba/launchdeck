@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { CloseOutlined, PlusCircleOutlined } from "@ant-design/icons";
 
+import { routeConstants } from "~/routes/routeConstants";
 import { ContentWrapper } from "~/styles";
 
 import { LogoSvg } from "../../../assets";
@@ -47,7 +48,7 @@ export const Header: React.FC<HeaderProps> = () => {
         }}
       >
         <Row>
-          <LogoLink to="/">
+          <LogoLink to={routeConstants.HOME}>
             <LogoSvg />
           </LogoLink>
           <SearchBar />
@@ -59,12 +60,12 @@ export const Header: React.FC<HeaderProps> = () => {
           </HamburgerMenu>
         </Row>
         <NavMenu>
-          <Link to="/analytics">
+          <Link to={routeConstants.ANALYTICS}>
             <Button variant="secondary" id={getActiveButtonClass("/analytics")}>
               {uiStrings.analytics}
             </Button>
           </Link>
-          <Link to="/landscapes">
+          <Link to={routeConstants.LANDSCAPES}>
             <Button
               variant="secondary"
               id={getActiveButtonClass("/landscapes")}
@@ -74,7 +75,7 @@ export const Header: React.FC<HeaderProps> = () => {
           </Link>
           <ProductsDropdown />
         </NavMenu>
-        <SubmitButtonLink to="/products/create">
+        <SubmitButtonLink to={routeConstants.PRODUCTS_CREATE}>
           <SubmitButton variant="outlined">
             <PlusCircleOutlined /> {uiStrings.submit}
           </SubmitButton>
@@ -83,7 +84,7 @@ export const Header: React.FC<HeaderProps> = () => {
         {/* Mobile Menu Modal */}
         <MobileMenu isOpen={isMobileMenuOpen}>
           <div className="menu-header">
-            <LogoLink to="/">
+            <LogoLink to={routeConstants.HOME}>
               <LogoSvg />
             </LogoLink>
             <Button variant="icon-transparent" onClick={toggleMobileMenu}>
@@ -92,28 +93,28 @@ export const Header: React.FC<HeaderProps> = () => {
           </div>
           <div className="menu-links">
             <Link
-              to="/landscapes"
+              to={routeConstants.LANDSCAPES}
               onClick={toggleMobileMenu}
               id={getActiveButtonClass("/landscapes")}
             >
               {uiStrings.landscapes}
             </Link>
             <Link
-              to="/tours"
+              to={routeConstants.TOURS}
               onClick={toggleMobileMenu}
               id={getActiveButtonClass("/tours")}
             >
               {uiStrings.bookTour}
             </Link>
             <Link
-              to="/my-tours"
+              to={routeConstants.MY_TOURS}
               onClick={toggleMobileMenu}
               id={getActiveButtonClass("/my-tours")}
             >
               {uiStrings.myTours}
             </Link>
             <Link
-              to="/products/create"
+              to={routeConstants.PRODUCTS_CREATE}
               onClick={toggleMobileMenu}
               id={getActiveButtonClass("/my-tours")}
             >
