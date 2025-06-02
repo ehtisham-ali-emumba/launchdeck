@@ -1,12 +1,7 @@
 export const routeConstants = {
   HOME: "/",
   CATEGORIES: "/categories",
-  CATEGORY: (categoryId: string) => `/categories/${categoryId}`,
   PRODUCTS_CREATE: "/products/create",
-  BRANDS_AUTOS: (brandId: string) => `/brands/${brandId}/autos`,
-  AUTO_DETAILS: (brandId: string, autoId: string) =>
-    `/brands/${brandId}/autos/${autoId}`,
-  TOUR_DETAILS: (tourId: string) => `/tour/${tourId}`,
   TOURS: "/tours",
   MY_TOURS: "/my-tours",
   LANDSCAPES: "/landscapes",
@@ -15,4 +10,8 @@ export const routeConstants = {
   PRODUCT_DETAILS: "/products/:productId",
   PRODUCTS: "/products",
   ANALYTICS: "/analytics",
+  BRANDS_AUTOS: "/brands/:brandId/autos",
+  BRANDS_AUTOS_DETAILS: "/brands/:brandId/autos/:autoId",
+  TOUR_DETAILS: "/tour/:tourId",
+  BOOK_TOUR: "/book/tour/:tourId",
 };

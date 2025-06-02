@@ -79,7 +79,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/brands/:brandId/autos",
+    path: routeConstants.BRANDS_AUTOS,
     element: (
       <MainLayout>
         <Autos />
@@ -87,7 +87,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/brands/:brandId/autos/:autoId",
+    path: routeConstants.BRANDS_AUTOS_DETAILS,
     element: (
       <MainLayout>
         <AutoDetails />
@@ -95,7 +95,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/tour/:tourId",
+    path: routeConstants.TOUR_DETAILS,
     element: (
       <MainLayout>
         <TourDetails />
@@ -103,7 +103,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/book/tour/:tourId",
+    path: routeConstants.BOOK_TOUR,
     element: (
       <MainLayout>
         <BookTour />
