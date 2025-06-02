@@ -1,12 +1,16 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { Input } from "~/components";
 import { colors } from "~/constants";
+import { sizeMobile } from "~/utils";
 
 export const SearchBarContainer = styled.div`
   border-radius: 6px;
   width: 280px;
   position: relative;
+  ${sizeMobile(css`
+    width: 200px;
+  `)}
 `;
 
 export const SearchIcon = styled.div`

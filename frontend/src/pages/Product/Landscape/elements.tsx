@@ -1,5 +1,7 @@
 import { Typography } from "antd";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+import { sizeMobile } from "~/utils";
 
 import { Wrapper } from "../../../styles";
 
@@ -70,6 +72,10 @@ export const LandscapeTitle = styled.h1`
   color: #1a202c; /* Dark gray */
   margin-bottom: 0px;
   text-align: left;
+  padding: 0px 16px;
+  ${sizeMobile(css`
+    font-size: 24px;
+  `)}
 `;
 
 export const LandscapeDivider = styled.hr`

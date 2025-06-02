@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
-import styled from "styled-components";
+import { Typography } from "antd";
+import styled, { css } from "styled-components";
+
+import { hideScrollBarCss } from "~/styles";
+import { sizeMobile } from "~/utils";
 
 export const Box = styled.div`
   width: 100%;
@@ -11,8 +15,16 @@ export const Box = styled.div`
   margin: 0 auto;
 `;
 
+export const HeaderTitle = styled(Typography.Text)`
+  margin-top: 40px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 26px;
+  font-weight: 500;
+  padding: 0px 12px;
+`;
 export const Container = styled.div`
-  padding: 8px;
+  padding: 12px;
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
 `;
@@ -55,9 +67,16 @@ export const ProductTitle = styled.h1`
   display: flex;
   align-items: center;
   gap: 8px;
+  ${sizeMobile(css`
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  `)}
 `;
 
-export const ProductNumber = styled.span``;
+export const ProductNumber = styled.span`
+  margin-right: 4px;
+`;
 
 export const CompanyName = styled.span`
   color: #666;
@@ -92,6 +111,7 @@ export const UsageStats = styled.div`
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+  padding-top: 6px;
 `;
 
 export const UsageItem = styled.div`
@@ -148,6 +168,9 @@ export const ViewAllLink = styled.a`
 
 export const TabContainer = styled.div`
   border-bottom: 1px solid #e5e7eb;
+  ${sizeMobile(css`
+    margin-top: 24px;
+  `)}
 `;
 
 export const TabList = styled.div`
@@ -176,12 +199,13 @@ export const Description = styled.p`
   line-height: 1.6;
   color: #171717;
   max-width: 800px;
+  margin-top: 24px;
 `;
 
 export const TagContainer = styled.div`
   display: flex;
   gap: 8px;
-  margin-bottom: 12px;
+  padding: 8px 0px;
 `;
 
 export const Tag = styled.span`
@@ -202,19 +226,20 @@ export const Tag = styled.span`
 
 export const ImageGrid = styled.div`
   display: flex;
-  gap: 24px;
+  flex-direction: row;
+  gap: 12px;
   margin-bottom: 20px;
+  overflow-x: auto;
+  ${hideScrollBarCss}
 `;
 
 export const ImageCard = styled.div`
-  width: 230px;
+  min-width: 250px;
   height: 150px;
   border-radius: 12px;
   overflow: hidden;
   background: #f3f4f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow-x: auto;
 `;
 
 export const CardImg = styled.img`

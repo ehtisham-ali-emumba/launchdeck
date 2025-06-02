@@ -106,6 +106,7 @@ export const uiStrings = {
   landscapes: "Landscapes",
   noDataFound: "Sorry, We didn’t found any data right now",
   submit: "Submit",
+  submitProduct: "Submit Product",
   enterName: "Enter product name",
   enterSlug: "Enter product slug",
   productDesc: "Enter product description",

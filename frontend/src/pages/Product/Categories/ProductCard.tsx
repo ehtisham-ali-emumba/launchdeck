@@ -36,7 +36,7 @@ export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
   const { name, description, image, tags, _id } = product;
   const [activeTab, setActiveTab] = useState("Overview");
 
-  const tabs = ["Overview", "Comments", "Reviews", "Launches"];
+  const tabs = ["Overview", "Comments", "Reviews"];
 
   return (
     <StyledLink to={`/products/${_id}`}>
@@ -47,9 +47,10 @@ export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
           </ProductIcon>
           <ProductInfo>
             <ProductTitle>
-              <ProductNumber>{index}.</ProductNumber>
-              <span>{name}</span>
-              <span>—</span>
+              <span>
+                <ProductNumber>{index}.</ProductNumber>
+                <span>{name}</span>
+              </span>
               <CompanyName>{description}</CompanyName>
             </ProductTitle>
 

@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { CloseOutlined, PlusCircleOutlined } from "@ant-design/icons";
-import { Space } from "antd";
 
 import { ContentWrapper } from "~/styles";
 
@@ -20,6 +19,7 @@ import {
   LogoLink,
   SubmitButton,
   Row,
+  SubmitButtonLink,
 } from "./elements";
 import { ProductsDropdown } from "./ProductsDropdown";
 import { SearchBar } from "./SearchBar";
@@ -50,34 +50,30 @@ export const Header: React.FC<HeaderProps> = () => {
           <LogoLink to="/">
             <LogoSvg />
           </LogoLink>
-          {/* search bar in header here right beside logo */}
           <SearchBar />
+          {/* Hamburger Menu for Mobile */}
+          <HamburgerMenu onClick={toggleMobileMenu}>
+            <span />
+            <span />
+            <span />
+          </HamburgerMenu>
         </Row>
         <NavMenu>
-          <Space size={36}>
-            <Link to="/landscapes">
-              <Button
-                variant="secondary"
-                id={getActiveButtonClass("/landscapes")}
-              >
-                {uiStrings.landscapes}
-              </Button>
-            </Link>
-            <ProductsDropdown />
-          </Space>
+          <Link to="/landscapes">
+            <Button
+              variant="secondary"
+              id={getActiveButtonClass("/landscapes")}
+            >
+              {uiStrings.landscapes}
+            </Button>
+          </Link>
+          <ProductsDropdown />
         </NavMenu>
-        <Link to="/products/create">
+        <SubmitButtonLink to="/products/create">
           <SubmitButton variant="outlined">
             <PlusCircleOutlined /> {uiStrings.submit}
           </SubmitButton>
-        </Link>
-
-        {/* Hamburger Menu for Mobile */}
-        <HamburgerMenu onClick={toggleMobileMenu}>
-          <span />
-          <span />
-          <span />
-        </HamburgerMenu>
+        </SubmitButtonLink>
 
         {/* Mobile Menu Modal */}
         <MobileMenu isOpen={isMobileMenuOpen}>
@@ -117,6 +113,13 @@ export const Header: React.FC<HeaderProps> = () => {
               id={getActiveButtonClass("/my-tours")}
             >
               {uiStrings.myTours}
+            </Link>
+            <Link
+              to="/products/create"
+              onClick={toggleMobileMenu}
+              id={getActiveButtonClass("/my-tours")}
+            >
+              {uiStrings.submitProduct}
             </Link>
           </div>
         </MobileMenu>

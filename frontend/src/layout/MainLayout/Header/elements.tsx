@@ -17,6 +17,9 @@ export const StyledHeader = styled(Layout.Header)`
   right: 0;
   border-bottom: 2px solid ${colors.lightborder};
   z-index: ${zIndex.navBar};
+  &&.ant-layout-header {
+    padding: 0 16px;
+  }
 `;
 
 export const LogoLink = styled(Link)`
@@ -103,8 +106,19 @@ export const SubmitButton = styled(Button)`
   height: 42px;
 `;
 
+export const SubmitButtonLink = styled(Link)`
+  ${sizeTablet(css`
+    display: none;
+  `)}
+`;
+
 export const Row = styled.div`
   display: flex;
   align-items: center;
   gap: 32px;
+  ${sizeTablet(css`
+    gap: 0px 8px;
+    flex: 1;
+    justify-content: space-between;
+  `)}
 `;

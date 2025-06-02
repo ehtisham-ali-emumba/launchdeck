@@ -31,14 +31,14 @@ export const Header = styled(Header_)`
 
 export const Flex1 = styled(Flex)`
   flex: 1;
-  width: 550px;
   margin: 0 auto;
+  width: 550px;
   ${sizeLg(css`
-    margin-top: 20px;
     width: 450px;
   `)} ${sizeMobile(css`
     flex-direction: column;
-    width: 300px;
+    align-items: center;
+    width: 100%;
   `)};
 `;
 
@@ -59,3 +59,13 @@ export const ColBox = styled.div({
   display: "flex",
   flexDirection: "column",
 });
+
+export const hideScrollBarCss = css`
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+`;

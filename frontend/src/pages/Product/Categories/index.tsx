@@ -2,8 +2,6 @@ import { useEffect, useMemo } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { Typography } from "antd";
-
 import { Loader } from "~/components";
 import { Spacer } from "~/components";
 import { BlankSlate } from "~/components/BlankSlate";
@@ -12,10 +10,8 @@ import { uiStrings } from "~/constants";
 import { useInfiniteProductQuery } from "~/hooks/queries/useInfiniteProductQuery";
 import { Container, ContentWrapper } from "~/styles";
 
-import { Box } from "./elements";
+import { Box, HeaderTitle } from "./elements";
 import { ProductCard } from "./ProductCard";
-
-const { Text } = Typography;
 
 export const CategoriesPage = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
@@ -66,17 +62,7 @@ export const CategoriesPage = () => {
     <Container>
       <ContentWrapper>
         <Box>
-          <Text
-            style={{
-              marginTop: "40px",
-              marginBottom: "10px",
-              display: "block",
-              fontSize: "24px",
-              fontWeight: "500",
-            }}
-          >
-            {uiStrings.theBestToTryIn2024}
-          </Text>
+          <HeaderTitle>{uiStrings.theBestToTryIn2024}</HeaderTitle>
 
           {isInitialLoading ? (
             <Loader />
