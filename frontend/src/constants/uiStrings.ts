@@ -104,6 +104,7 @@ export const uiStrings = {
   // launchdeck
   products: "Products",
   landscapes: "Landscapes",
+  analytics: "Analytics",
   noDataFound: "Sorry, We didn’t found any data right now",
   submit: "Submit",
   submitProduct: "Submit Product",

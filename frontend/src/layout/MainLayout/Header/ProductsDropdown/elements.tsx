@@ -18,46 +18,45 @@ export const DropdownMenu = styled.div`
   border: 1px solid #e8e8e8;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  min-width: 500px;
-  max-height: 300px;
-  overflow: scroll;
+  min-width: 440px;
+  min-height: 550px;
+  min-height: 250px;
+  overflow: auto;
 `;
 
 export const CategoryList = styled.div`
   min-width: 200px;
-  display: flex;
-  flex-direction: column;
   border-right: 1px solid #f0f0f0;
   padding: 4px 8px;
 `;
 
 export const SubCategoryList = styled.div`
-  min-width: 250px;
+  min-width: 210px;
   max-height: 400px;
   overflow-y: auto;
   padding: 4px 8px;
 `;
 
 export const CategoryItemContainer = styled.div`
-  display: block;
-  color: inherit;
-  cursor: pointer;
+  margin-top: 1px;
+  & {
+    line-height: 38px;
+  }
 `;
 export const CategoryTitle = styled.span<{ isActive: boolean }>`
   font-size: 14px;
-  padding: 0px;
-  margin: 0px;
   font-weight: 600;
   color: ${props => (props.isActive ? "black" : colors.text.secondary)};
   &:hover {
     color: black;
   }
+  cursor: pointer;
 `;
 
 export const SubCategoryItemContainer = styled(Link)`
-  display: block;
-  color: inherit;
+  & {
+    line-height: 38px;
+  }
 `;
 
 export const SubCategoryTitle = styled.div`
@@ -67,6 +66,7 @@ export const SubCategoryTitle = styled.div`
   &:hover {
     color: black;
   }
+  cursor: pointer;
 `;
 
 export const SubCategoryDescription = styled.div`

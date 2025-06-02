@@ -1,5 +1,6 @@
 import { type RouteObject } from "react-router-dom";
 
+import { AnalyticsPage } from "~/pages/Product";
 import { CategoriesPage } from "~/pages/Product/Categories";
 import { CreateProductPage } from "~/pages/Product/CreateProduct";
 import { ProductDetailsPage } from "~/pages/Product/ProductDetails";
@@ -10,9 +11,11 @@ import { LandscapePage } from "../pages/Product/Landscape";
 import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
 import { AutoDetails, Autos } from "../pages/Vehicles";
 
+import { routeConstants } from "./routeConstants";
+
 const routes: RouteObject[] = [
   {
-    path: "/",
+    path: routeConstants.HOME,
     element: (
       <MainLayout showFooter>
         <Home />
@@ -20,7 +23,15 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/tours",
+    path: routeConstants.ANALYTICS,
+    element: (
+      <MainLayout>
+        <AnalyticsPage />
+      </MainLayout>
+    ),
+  },
+  {
+    path: routeConstants.TOURS,
     element: (
       <MainLayout>
         <Tours />
@@ -28,7 +39,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/my-tours",
+    path: routeConstants.MY_TOURS,
     element: (
       <MainLayout>
         <MyTours />
@@ -36,7 +47,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/landscapes",
+    path: routeConstants.LANDSCAPES,
     element: (
       <MainLayout>
         <LandscapePage />
@@ -44,7 +55,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/categories/:categoryId",
+    path: routeConstants.CATEGORY_PAGE,
     element: (
       <MainLayout>
         <CategoriesPage />
@@ -52,7 +63,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/products/create",
+    path: routeConstants.CREATE_PRODUCT,
     element: (
       <MainLayout showFooter>
         <CreateProductPage />
@@ -60,7 +71,7 @@ const routes: RouteObject[] = [
     ),
   },
   {
-    path: "/products/:productId",
+    path: routeConstants.PRODUCT_DETAILS,
     element: (
       <MainLayout showFooter>
         <ProductDetailsPage />

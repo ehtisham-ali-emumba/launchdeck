@@ -59,6 +59,11 @@ export const Header: React.FC<HeaderProps> = () => {
           </HamburgerMenu>
         </Row>
         <NavMenu>
+          <Link to="/analytics">
+            <Button variant="secondary" id={getActiveButtonClass("/analytics")}>
+              {uiStrings.analytics}
+            </Button>
+          </Link>
           <Link to="/landscapes">
             <Button
               variant="secondary"
@@ -92,13 +97,6 @@ export const Header: React.FC<HeaderProps> = () => {
               id={getActiveButtonClass("/landscapes")}
             >
               {uiStrings.landscapes}
-            </Link>
-            <Link
-              to="/categories/dummy"
-              onClick={toggleMobileMenu}
-              id={getActiveButtonClass("/categories/dummy")}
-            >
-              {uiStrings.products}
             </Link>
             <Link
               to="/tours"
