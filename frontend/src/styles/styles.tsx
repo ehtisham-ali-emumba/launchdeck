@@ -1,4 +1,4 @@
-import { Flex, Layout as Layout_ } from "antd";
+import { Flex, Layout as Layout_, Tabs } from "antd";
 import { Header as Header_ } from "antd/es/layout/layout";
 import styled, { css } from "styled-components";
 
@@ -68,4 +68,11 @@ export const hideScrollBarCss = css`
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+`;
+
+export const StyledTabs = styled(Tabs)`
+  margin: 24px 12px;
+  .ant-tabs-nav-list {
+    gap: 32px;
+  }
 `;

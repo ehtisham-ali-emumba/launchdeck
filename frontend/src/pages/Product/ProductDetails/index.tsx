@@ -29,6 +29,7 @@ export const ProductDetailsPage = () => {
             <ErrorContainer message={`Error: ${(error as Error).message}`} />
           ) : hasData ? (
             <>
+              <Spacer marginTop="40px" />
               <ProductDetailsCard product={data} />
               <Spacer marginTop="50px" />
             </>

@@ -173,27 +173,6 @@ export const TabContainer = styled.div`
   `)}
 `;
 
-export const TabList = styled.div`
-  display: flex;
-  gap: 32px;
-`;
-
-export const Tab = styled.button<{ active: boolean }>`
-  background: none;
-  border: none;
-  padding: 12px 0;
-  font-size: 16px;
-  color: ${props => (props.active ? "#171717" : "#666")};
-  cursor: pointer;
-  border-bottom: 2px solid
-    ${props => (props.active ? "#171717" : "transparent")};
-  font-weight: ${props => (props.active ? "500" : "400")};
-
-  &:hover {
-    color: #171717;
-  }
-`;
-
 export const Description = styled.p`
   font-size: 16px;
   line-height: 1.6;

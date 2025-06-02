@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { StyledTabs } from "~/styles";
+
 import {
   StyledLink,
   Container,
@@ -20,9 +22,6 @@ import {
   AIBadge,
   InfoBadge,
   ViewAllLink,
-  TabContainer,
-  TabList,
-  Tab,
   Description,
   ImageGrid,
   ImageCard,
@@ -31,12 +30,11 @@ import {
   Tag,
 } from "./elements";
 import type { ProductCardType } from "./type";
+import { tabsArray } from "./utils";
 
 export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
   const { name, description, image, tags, _id } = product;
   const [activeTab, setActiveTab] = useState("Overview");
-
-  const tabs = ["Overview", "Comments", "Reviews"];
 
   return (
     <StyledLink to={`/products/${_id}`}>
@@ -88,22 +86,16 @@ export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
           </ProductInfo>
         </ProductHeader>
 
-        <TabContainer>
-          <TabList>
-            {tabs.map(tab => (
-              <Tab
-                key={tab}
-                active={activeTab === tab}
-                onClick={e => {
-                  e.preventDefault();
-                  setActiveTab(tab);
-                }}
-              >
-                {tab}
-              </Tab>
-            ))}
-          </TabList>
-        </TabContainer>
+        <StyledTabs
+          defaultActiveKey="overview"
+          activeKey={activeTab}
+          onChange={setActiveTab}
+          onTabClick={(_, e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          items={tabsArray}
+        />
         <Description>{description}</Description>
         <ImageGrid>
           {[1, 2, 3].map(item => (
