@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 import { CloseOutlined, HeartOutlined } from "@ant-design/icons";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+import { sizeMobile } from "~/utils";
 
 import { Button } from "../../components";
 import { colors } from "../../constants";
@@ -14,7 +16,11 @@ const BannerWrapper = styled.div`
   padding: 24px 32px;
   gap: 20px;
   position: relative;
-  margin: 32px 0;
+  margin: 32px 12px;
+  ${sizeMobile(css`
+    align-items: flex-start;
+    padding: 24px 16px;
+  `)}
 `;
 
 const IconBox = styled.div`
@@ -26,10 +32,14 @@ const IconBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${sizeMobile(css`
+    display: none;
+  `)}
 `;
 
 const BannerContent = styled.div`
   flex: 1;
+  justify-content: space-between;
 `;
 
 const BannerTitle = styled.div`
@@ -42,6 +52,9 @@ const BannerSubtitle = styled.div`
   color: #6f6f6f;
   font-size: 18px;
   margin-top: 2px;
+  ${sizeMobile(css`
+    margin-top: 12px;
+  `)}
 `;
 
 const TourLink = styled.span`
@@ -53,6 +66,10 @@ const TourLink = styled.span`
   &:hover {
     text-decoration: underline;
   }
+  ${sizeMobile(css`
+    display: block;
+    margin-top: 8px;
+  `)}
 `;
 
 const CloseBtn = styled(props => (
@@ -61,21 +78,37 @@ const CloseBtn = styled(props => (
   background: ${colors.white};
 `;
 
+const TextBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+
+  ${sizeMobile(css`
+    flex-direction: column;
+    align-items: flex-start;
+  `)}
+`;
+
 export const WelcomeBanner = () => {
   const [show, setShow] = useState(true);
   if (!show) return null;
 
   return (
     <BannerWrapper>
-      <IconBox>
-        <HeartOutlined />
-      </IconBox>
       <BannerContent>
-        <BannerTitle>Welcome to Launch Deck!</BannerTitle>
-        <BannerSubtitle>
-          The place to launch and discover new tech products.
-          <TourLink>Take a tour.</TourLink>
-        </BannerSubtitle>
+        <TextBox>
+          <IconBox>
+            <HeartOutlined />
+          </IconBox>
+          <div>
+            <BannerTitle>Welcome to Launch Deck!</BannerTitle>
+            <BannerSubtitle>
+              The place to launch and discover new tech products.
+              <TourLink>Take a tour.</TourLink>
+            </BannerSubtitle>
+          </div>
+        </TextBox>
       </BannerContent>
       <CloseBtn onClick={() => setShow(false)}>
         <CloseOutlined />

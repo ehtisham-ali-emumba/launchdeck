@@ -215,7 +215,12 @@ export const Row = styled.div`
   display: flex;
   align-items: flex-start;
   padding: 20px 0;
+  gap: 16px;
   border-bottom: 1px solid #f0f0f0;
+  padding-left: 16px;
+  ${sizeMobile(css`
+    padding-left: 0px;
+  `)};
 `;
 
 export const Index = styled.span`
@@ -226,14 +231,16 @@ export const AppIcon = styled.img`
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  margin-right: 16px;
   background: #f5f5f5;
   object-fit: cover;
 `;
 
 export const Info = styled.div`
-  flex: 1;
-  min-width: 0;
+  min-width: 450px;
+
+  ${sizeMobile(css`
+    min-width: auto;
+  `)};
 `;
 
 export const TitleProductRow = styled.div`
@@ -244,12 +251,9 @@ export const TitleProductRow = styled.div`
 `;
 
 export const Description = styled.div`
-  color: #6f6f6f;
+  color: rgb(14, 13, 13);
   font-size: 15px;
   margin-bottom: 6px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 export const Tags = styled.div`
@@ -273,7 +277,6 @@ export const Stats = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: 16px;
 `;
 
 export const StatBox = styled.div`
@@ -289,15 +292,32 @@ export const StatBox = styled.div`
   gap: 6px;
 `;
 
+export const ProductRowContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  ${sizeMobile(css`
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  `)}
+`;
+
 // productlisting
 
 export const ProductListingSectionTitle = styled.h2`
   font-size: 22px;
   font-weight: 700;
-  margin: 32px 0 16px 0;
+  margin: 16px 0 16px 0;
   color: #232629;
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+`;
+
+export const BoxListing = styled.div`
+  padding: 0px 16px;
+  background: #fff;
+  margin-bottom: 12px;
 `;

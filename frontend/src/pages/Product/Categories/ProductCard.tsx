@@ -42,7 +42,11 @@ export const ProductCard: React.FC<ProductCardType> = ({ product, index }) => {
       <Container>
         <ProductHeader>
           <ProductIcon>
-            <ProductIconImg src={image} alt={name} />
+            <ProductIconImg
+              src={image}
+              alt={name}
+              onError={e => (e.currentTarget.src = getRandomImageUrl(0))}
+            />
           </ProductIcon>
           <ProductInfo>
             <ProductTitle>

@@ -38,7 +38,7 @@ export const ProductDetailsCard: React.FC<ProductDetailsCardType> = ({
         <HeaderRow>
           <Logo
             src={image}
-            alt="Next.js"
+            alt={`${name} logo`}
             onError={e => (e.currentTarget.src = getRandomImageUrl(0))}
           />
           <HeaderInfo>

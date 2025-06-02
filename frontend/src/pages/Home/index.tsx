@@ -10,7 +10,7 @@ export const Home = () => {
     <HomeContainer>
       <ContentWrapper>
         <WelcomeBanner />
-        <Spacer marginTop="80px" />
+        <Spacer marginTop="50px" />
         <ProductList filter="today" />
         <Spacer marginTop="50px" />
         <ProductList filter="lastWeek" />

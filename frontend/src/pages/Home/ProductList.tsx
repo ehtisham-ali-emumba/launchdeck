@@ -2,7 +2,7 @@ import { useProductQuery } from "~/hooks/queries/useProductQuery";
 
 import { BlankSlate, Loader } from "../../components";
 
-import { ProductListingSectionTitle } from "./elements";
+import { BoxListing, ProductListingSectionTitle } from "./elements";
 import { ProductListRow } from "./ProductListRow";
 import type { ProductListFilterType } from "./type";
 import { sectionTitles } from "./utils";
@@ -17,7 +17,7 @@ export const ProductList = ({ filter }: { filter: ProductListFilterType }) => {
 
   const products = data?.data ?? [];
   return (
-    <div>
+    <BoxListing>
       <ProductListingSectionTitle>
         {sectionTitles[filter]}
       </ProductListingSectionTitle>
@@ -30,7 +30,7 @@ export const ProductList = ({ filter }: { filter: ProductListFilterType }) => {
       ) : (
         <BlankSlate />
       )}
-    </div>
+    </BoxListing>
   );
 };
 
