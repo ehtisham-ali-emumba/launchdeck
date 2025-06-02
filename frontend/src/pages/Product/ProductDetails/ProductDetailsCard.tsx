@@ -36,7 +36,11 @@ export const ProductDetailsCard: React.FC<ProductDetailsCardType> = ({
     <>
       <CardContainer>
         <HeaderRow>
-          <Logo src={image} alt="Next.js" />
+          <Logo
+            src={image}
+            alt="Next.js"
+            onError={e => (e.currentTarget.src = getRandomImageUrl(0))}
+          />
           <HeaderInfo>
             <Title level={3} style={{ margin: 0 }}>
               {name}
