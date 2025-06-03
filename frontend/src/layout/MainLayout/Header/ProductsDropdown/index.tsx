@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 import { Button } from "~/components";
 import { Loader } from "~/components";
@@ -19,7 +19,9 @@ import { SubCategoryItem } from "./SubCategoryItem";
 
 export const ProductsDropdown = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<Category | null>(null);
+  const [activeCategory, setActiveCategory] = useState<Category | undefined>(
+    undefined
+  );
   const { isRouteActive } = useIsActiveRoute();
   const {
     data: categories = [],
@@ -32,23 +34,14 @@ export const ProductsDropdown = memo(() => {
     return isRouteActive(path) ? "active-button" : "";
   };
 
-  const handleMouseEnter = () => {
-    setIsOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsOpen(false);
-    setActiveCategory(null);
-  };
-
-  const handleCategoryHover = (category: Category) => {
-    setActiveCategory(category);
-  };
+  useEffect(() => {
+    setActiveCategory(categories?.[0]);
+  }, [categories]);
 
   return (
     <DropdownContainer
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
     >
       <Button variant="secondary" id={getActiveButtonClass("/categories")}>
         {uiStrings.products}
@@ -70,7 +63,7 @@ export const ProductsDropdown = memo(() => {
                     key={category._id}
                     category={category}
                     isActive={activeCategory?._id === category._id}
-                    onHover={() => handleCategoryHover(category)}
+                    onHover={() => setActiveCategory(category)}
                   />
                 ))}
               </CategoryList>

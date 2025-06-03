@@ -60,11 +60,7 @@ export const Header: React.FC<HeaderProps> = () => {
           </HamburgerMenu>
         </Row>
         <NavMenu>
-          <Link to={routeConstants.ANALYTICS}>
-            <Button variant="secondary" id={getActiveButtonClass("/analytics")}>
-              {uiStrings.analytics}
-            </Button>
-          </Link>
+          <ProductsDropdown />
           <Link to={routeConstants.LANDSCAPES}>
             <Button
               variant="secondary"
@@ -73,7 +69,11 @@ export const Header: React.FC<HeaderProps> = () => {
               {uiStrings.landscapes}
             </Button>
           </Link>
-          <ProductsDropdown />
+          <Link to={routeConstants.ANALYTICS}>
+            <Button variant="secondary" id={getActiveButtonClass("/analytics")}>
+              {uiStrings.analytics}
+            </Button>
+          </Link>
         </NavMenu>
         <SubmitButtonLink to={routeConstants.PRODUCTS_CREATE}>
           <SubmitButton variant="outlined">
