@@ -11,6 +11,7 @@ import {
   landscapeRoutes,
   productRoutes,
   tourRoutes,
+  analyticsRoutes,
 } from "./routes";
 
 const app = express();
@@ -27,6 +28,7 @@ app.use("/api/tours", tourRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/landscapes", landscapeRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/analytics", analyticsRoutes);
 
 // Start the server
 app.listen(PORT, () => {
