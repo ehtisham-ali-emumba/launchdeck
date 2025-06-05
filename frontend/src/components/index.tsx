@@ -10,3 +10,5 @@ export * from "./Card";
 export * from "./FormInput";
 export * from "./FormPhoneInput";
 export * from "./FormSelect";
+export * from "./Chart";
+export * from "./Table";

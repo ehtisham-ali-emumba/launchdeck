@@ -1,3 +1,4 @@
+export * from "./analytics";
 export * from "./tour";
 export * from "./product";
 export * from "./category";

@@ -6,4 +6,5 @@ export const QUERY_KEYS = {
   LANDSCAPES: "landscapes",
   CATEGORY: "category",
   LLM_PRODUCT_SEARCH: "llmProductSearch",
+  ANALYTICS: "analytics",
 } as const;

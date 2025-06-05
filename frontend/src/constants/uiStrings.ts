@@ -123,4 +123,6 @@ export const uiStrings = {
   failedToLoadCategories: "Failed to load categories",
   theBestToTryIn2024: "The best to try in 2024",
   cofounderAt: "Cofounder at",
+  askAI:
+    "Ask AI about your data... (e.g., 'show me popular health products', 'recent launches')",
 };

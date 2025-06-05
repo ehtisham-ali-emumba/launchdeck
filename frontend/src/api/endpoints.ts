@@ -4,4 +4,5 @@ export const apiEndpoints = {
   landscapes: "landscapes",
   categories: "categories",
   productSearch: "products/search",
+  analytics: "analytics",
 } as const;
