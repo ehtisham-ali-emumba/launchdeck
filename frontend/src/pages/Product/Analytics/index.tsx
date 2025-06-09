@@ -1,14 +1,19 @@
 import { useState } from "react";
-import { Row, Col, Spin, Typography, Space } from "antd";
+
 import { BulbOutlined } from "@ant-design/icons";
+import { Row, Col, Spin, Typography, Space } from "antd";
 
 import { Spacer } from "~/components";
+import ErrorContainer from "~/components/ErrorContainer";
+import { uiStrings } from "~/constants";
 import { useAnalyticsQuery } from "~/hooks/queries/useAnalyticsQuery";
+import { ContentWrapper as RootWrapper } from "~/styles";
+
 import { AnalyticsChart } from "./AnalyticsChart";
-import { getChartTitle, getTableTitle } from "./utils";
+import type { AnalyticsChartType } from "./AnalyticsChart/types";
 import { AnalyticsSearchBar } from "./AnalyticsSearchBar";
-import { StatsCards } from "./StatsCards";
 import { AnalyticsTable } from "./AnalyticsTable";
+import type { AnalyticsTableType } from "./AnalyticsTable/types";
 import {
   HeadingWrapper,
   PaddDiv,
@@ -20,11 +25,8 @@ import {
   LoadingText,
   ContentWrapper,
 } from "./elements";
-import ErrorContainer from "~/components/ErrorContainer";
-import { uiStrings } from "~/constants";
-import type { AnalyticsTableType } from "./AnalyticsTable/types";
-import type { AnalyticsChartType } from "./AnalyticsChart/types";
-import { ContentWrapper as RootWrapper } from "~/styles";
+import { StatsCards } from "./StatsCards";
+import { getChartTitle, getTableTitle } from "./utils";
 
 const { Title } = Typography;
 

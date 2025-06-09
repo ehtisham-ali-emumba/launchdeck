@@ -1,11 +1,14 @@
 import React, { useCallback, useState } from "react";
-import { Space, Tag } from "antd";
+
 import { SearchOutlined, ClearOutlined } from "@ant-design/icons";
+import { Space, Tag } from "antd";
+
 import { Button, Input, Spacer } from "~/components";
+import { uiStrings } from "~/constants";
+
+import { TryTheseText } from "./elements";
 import type { AnalyticsSearchBarProps } from "./type";
 import { spacerStyles, suggestedQueries, tagStyles } from "./utils";
-import { uiStrings } from "~/constants";
-import { TryTheseText } from "./elements";
 
 export const AnalyticsSearchBar: React.FC<AnalyticsSearchBarProps> = ({
   onSearch,

@@ -1,3 +1,5 @@
+import type { TSFixMe } from "~/types";
+
 export const createPagination = (pageSize = 10, showSizeChanger = false) => {
   return {
     pageSize,
@@ -8,7 +10,7 @@ export const createPagination = (pageSize = 10, showSizeChanger = false) => {
 };
 
 export const getDateSorter = (dateField: string) => {
-  return (a: Record<string, any>, b: Record<string, any>) => {
+  return (a: Record<string, TSFixMe>, b: Record<string, TSFixMe>) => {
     const dateA = a[dateField] ? new Date(a[dateField]).getTime() : 0;
     const dateB = b[dateField] ? new Date(b[dateField]).getTime() : 0;
     return dateA - dateB;
@@ -16,7 +18,7 @@ export const getDateSorter = (dateField: string) => {
 };
 
 export const getNumberSorter = (numField: string) => {
-  return (a: Record<string, any>, b: Record<string, any>) => {
+  return (a: Record<string, TSFixMe>, b: Record<string, TSFixMe>) => {
     const numA = a[numField] || 0;
     const numB = b[numField] || 0;
     return numA - numB;
@@ -24,7 +26,7 @@ export const getNumberSorter = (numField: string) => {
 };
 
 export const getStringSorter = (strField: string) => {
-  return (a: Record<string, any>, b: Record<string, any>) => {
+  return (a: Record<string, TSFixMe>, b: Record<string, TSFixMe>) => {
     const strA = a[strField] || "";
     const strB = b[strField] || "";
     return strA.localeCompare(strB);
@@ -47,5 +49,5 @@ export const renderNumericValue = (value: number, highlight = false) => (
   <span style={{ fontWeight: highlight ? "600" : "normal" }}>{value}</span>
 );
 
-export const getDefaultRowKey = (record: any, index?: number) =>
+export const getDefaultRowKey = (record: TSFixMe, index?: number) =>
   record.id || record._id || index;

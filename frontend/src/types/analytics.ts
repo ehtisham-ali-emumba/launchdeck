@@ -1,6 +1,8 @@
+import type { TSFixMe } from "./tour";
+
 export interface AnalyticsData {
   query: string;
-  products: any[];
+  products: TSFixMe[];
   analysis: {
     queryType: string;
     suggestedCharts: string[];
@@ -10,10 +12,10 @@ export interface AnalyticsData {
   };
   visualizations: {
     charts: {
-      [key: string]: any;
+      [key: string]: TSFixMe;
     };
     tables: {
-      [key: string]: any;
+      [key: string]: TSFixMe;
     };
   };
   stats: {

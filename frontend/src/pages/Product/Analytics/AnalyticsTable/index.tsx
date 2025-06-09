@@ -1,6 +1,8 @@
 import React from "react";
+
 import { Table } from "~/components";
 import { TableContainer } from "~/components/Table/TableContainer";
+
 import type { AnalyticsTableProps } from "./types";
 import { getColumnsByType } from "./utils";
 

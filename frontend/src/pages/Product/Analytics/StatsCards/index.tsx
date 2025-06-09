@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Statistic } from "antd";
+
 import {
   TrophyOutlined,
   AppstoreOutlined,
@@ -7,9 +7,12 @@ import {
   CalendarOutlined,
   RiseOutlined,
 } from "@ant-design/icons";
-import type { StatsCardsProps } from "./type";
+import { Row, Statistic } from "antd";
+
 import { uiStrings } from "~/constants";
+
 import { StatsCardUI } from "./elements";
+import type { StatsCardsProps } from "./type";
 import { formatLaunchDate } from "./utils";
 
 export const StatsCards: React.FC<StatsCardsProps> = ({ stats }) => {

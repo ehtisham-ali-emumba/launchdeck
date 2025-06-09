@@ -1,9 +1,10 @@
 import React from "react";
+
 import { Chart } from "~/components/Chart";
+import { ChartContainer } from "~/components/Chart/ChartContainer";
 
 import { type AnalyticsChartProps } from "./types";
 import { getChartConfig } from "./utils";
-import { ChartContainer } from "~/components/Chart/ChartContainer";
 
 export const AnalyticsChart: React.FC<AnalyticsChartProps> = ({
   data,

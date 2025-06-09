@@ -1,4 +1,6 @@
 import { type ChartData, type ChartOptions } from "chart.js";
+
+import { CHART_COLORS } from "~/components/Chart/elements";
 import {
   defaultBarOptions,
   defaultPieOptions,
@@ -7,6 +9,8 @@ import {
   createPieChartData,
   createLineChartData,
 } from "~/components/Chart/utils";
+import type { TSFixMe } from "~/types";
+
 import {
   type PopularityChartData,
   type CategoryChartData,
@@ -14,7 +18,6 @@ import {
   type AnalyticsChartType,
   type AnalyticsChartData,
 } from "./types";
-import { CHART_COLORS } from "~/components/Chart/elements";
 
 export const generatePopularityChartData = (
   data: PopularityChartData[]
@@ -87,7 +90,7 @@ export const getCategoryChartOptions = (): ChartOptions<"pie"> => {
             size: 12,
           },
           color: "#666",
-          generateLabels: (chart: any) => {
+          generateLabels: (chart: TSFixMe) => {
             const data = chart.data;
             if (data.labels.length && data.datasets.length) {
               return data.labels.map((label: string, i: number) => {
@@ -115,7 +118,7 @@ export const getCategoryChartOptions = (): ChartOptions<"pie"> => {
       tooltip: {
         ...(defaultPieOptions.plugins?.tooltip || {}),
         callbacks: {
-          label: (context: any) => {
+          label: (context: TSFixMe) => {
             const total = context.dataset.data.reduce(
               (a: number, b: number) => a + b,
               0
@@ -182,14 +185,14 @@ export const getChartConfig = (
   type: AnalyticsChartType,
   data: AnalyticsChartData
 ): {
-  chartData: ChartData<any>;
-  chartOptions: ChartOptions<any>;
+  chartData: ChartData<TSFixMe>;
+  chartOptions: ChartOptions<TSFixMe>;
   chartType: "bar" | "pie" | "line";
 } => {
   switch (type) {
     case "popularity":
       return {
-        chartData: generatePopularityChartData(data as any[]),
+        chartData: generatePopularityChartData(data as TSFixMe[]),
         chartOptions: getPopularityChartOptions(),
         chartType: "bar",
       };

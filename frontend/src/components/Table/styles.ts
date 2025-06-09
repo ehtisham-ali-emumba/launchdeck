@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import { Table as AntTable } from "antd";
+import styled from "styled-components";
+
 import { sizeMobile } from "../../utils/styles";
 
 export const TableWrapper = styled.div<{

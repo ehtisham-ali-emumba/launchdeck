@@ -1,4 +1,7 @@
 import type { ChartData, ChartOptions } from "chart.js";
+
+import type { TSFixMe } from "~/types";
+
 import { CHART_COLORS } from "./elements";
 
 export const generateColors = (count: number, alpha?: number): string[] => {
@@ -238,7 +241,7 @@ export const defaultRadarOptions: ChartOptions<"radar"> = {
   },
 };
 
-export const getDefaultOptions = (type: string): ChartOptions<any> => {
+export const getDefaultOptions = (type: string): ChartOptions<TSFixMe> => {
   switch (type) {
     case "bar":
       return defaultBarOptions;
@@ -257,8 +260,8 @@ export const getDefaultOptions = (type: string): ChartOptions<any> => {
 
 export const mergeChartOptions = (
   type: string,
-  options?: ChartOptions<any>
-): ChartOptions<any> => {
+  options?: ChartOptions<TSFixMe>
+): ChartOptions<TSFixMe> => {
   const defaultOptions = getDefaultOptions(type);
   return {
     ...defaultOptions,

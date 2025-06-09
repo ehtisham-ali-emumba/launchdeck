@@ -1,9 +1,11 @@
-import { type BaseTableProps } from "./types";
-import { TableWrapper, StyledTable, EmptyStateMessage } from "./elements";
-import { getDefaultRowKey } from "./utils";
 import { uiStrings } from "~/constants";
+import type { TSFixMe } from "~/types";
 
-export const Table = <T extends object = any>(props: BaseTableProps<T>) => {
+import { TableWrapper, StyledTable, EmptyStateMessage } from "./elements";
+import { type BaseTableProps } from "./types";
+import { getDefaultRowKey } from "./utils";
+
+export const Table = <T extends object = TSFixMe>(props: BaseTableProps<T>) => {
   const {
     data,
     columns,

@@ -1,5 +1,6 @@
-import styled, { css } from "styled-components";
 import { Typography, Space, Alert, Divider } from "antd";
+import styled, { css } from "styled-components";
+
 import { sizeMobile } from "~/utils/styles";
 
 export const TryTheseText = styled.span`

@@ -6,6 +6,7 @@ import {
   getNumberSorter,
   renderNumericValue,
 } from "~/components/Table/utils";
+import type { TSFixMe } from "~/types";
 
 import type {
   AnalyticsTableType,
@@ -15,7 +16,7 @@ import type {
 
 export const getColumnsByType = (
   type: AnalyticsTableType
-): ColumnsType<any> => {
+): ColumnsType<TSFixMe> => {
   switch (type) {
     case "leaderboard":
       return getLeaderboardColumns();
@@ -133,7 +134,7 @@ const getDetailedColumns = (): ColumnsType<DetailedProductData> => {
       key: "category",
       ellipsis: true,
       width: 180,
-      render: (category: any) => category?.name || "Unknown",
+      render: (category: TSFixMe) => category?.name || "Unknown",
     },
     {
       title: "Votes",

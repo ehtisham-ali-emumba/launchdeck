@@ -1,4 +1,16 @@
 import React from "react";
+
+import {
+  Bar,
+  Pie,
+  Line,
+  Doughnut,
+  PolarArea,
+  Radar,
+  Bubble,
+  Scatter,
+} from "react-chartjs-2";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -17,21 +29,12 @@ import {
   RadarController,
   type ChartData,
 } from "chart.js";
-import {
-  Bar,
-  Pie,
-  Line,
-  Doughnut,
-  PolarArea,
-  Radar,
-  Bubble,
-  Scatter,
-} from "react-chartjs-2";
 
-import { type BaseChartProps } from "./types";
-import { ChartWrapper, FallbackMessage } from "./elements";
-import { mergeChartOptions } from "./utils";
 import { uiStrings } from "~/constants";
+
+import { ChartWrapper, FallbackMessage } from "./elements";
+import { type BaseChartProps } from "./types";
+import { mergeChartOptions } from "./utils";
 
 ChartJS.register(
   CategoryScale,

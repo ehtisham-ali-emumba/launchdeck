@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
+
 import type { AnalyticsData } from "~/types";
+
 import { getAnalyticsData } from "../../api/services";
 import { QUERY_KEYS } from "../../constants/reactQueryKeys";
 

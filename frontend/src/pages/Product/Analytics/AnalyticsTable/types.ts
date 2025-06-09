@@ -1,4 +1,5 @@
 import type { BaseTableProps } from "~/components/Table/types";
+import type { TSFixMe } from "~/types";
 
 export type AnalyticsTableType = "leaderboard" | "recent" | "detailed";
 
@@ -25,9 +26,9 @@ export interface DetailedProductData {
   description: string;
   category?: {
     name: string;
-    [key: string]: any;
+    [key: string]: TSFixMe;
   };
   votesCount: number;
   launchDate: string;
-  [key: string]: any;
+  [key: string]: TSFixMe;
 }

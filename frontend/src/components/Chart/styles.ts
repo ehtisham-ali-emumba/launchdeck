@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { colors } from "../../constants/colors";
 
-// Chart specific color constants
+import { colors } from "~/constants";
+import { sizeMobile } from "~/utils";
+
 export const CHART_COLORS = {
   primary: colors.primary,
   accentOrange: colors.accentOrange,
@@ -37,8 +38,6 @@ export const CHART_COLORS = {
     pointBorder: "#fff",
   },
 };
-
-import { sizeMobile } from "../../utils/styles";
 
 export const ChartContainerDiv = styled.div`
   background-color: #fff;

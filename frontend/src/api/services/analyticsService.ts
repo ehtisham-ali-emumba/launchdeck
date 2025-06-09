@@ -1,4 +1,5 @@
 import type { AnalyticsData } from "~/types";
+
 import { ApiClient } from "../client";
 import { apiEndpoints } from "../endpoints";
 

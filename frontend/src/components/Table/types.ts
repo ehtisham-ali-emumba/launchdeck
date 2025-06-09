@@ -1,7 +1,10 @@
 import React from "react";
+
 import type { TableProps as AntTableProps, ColumnsType } from "antd/es/table";
 
-export interface BaseTableProps<T extends object = any> {
+import type { TSFixMe } from "~/types";
+
+export interface BaseTableProps<T extends object = TSFixMe> {
   data: T[];
   columns: ColumnsType<T>;
   rowKey?: string | ((record: T, index?: number) => React.Key);
