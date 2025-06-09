@@ -1,11 +1,5 @@
 import type { ChartData, ChartOptions } from "chart.js";
-import { CHART_COLORS } from "./styles";
-
-/**
- * Generates a color array for chart datasets
- * @param count Number of colors needed
- * @param alpha Optional opacity value (0-1)
- */
+import { CHART_COLORS } from "./elements";
 
 export const generateColors = (count: number, alpha?: number): string[] => {
   const colors = CHART_COLORS.defaultColors;
@@ -37,12 +31,6 @@ export const generateColors = (count: number, alpha?: number): string[] => {
   return result;
 };
 
-/**
- * Creates a basic bar chart data object
- * @param labels Chart labels
- * @param data Chart data points
- * @param label Dataset label
- */
 export const createBarChartData = (
   labels: string[],
   data: number[],
@@ -63,11 +51,6 @@ export const createBarChartData = (
   };
 };
 
-/**
- * Creates a basic pie chart data object
- * @param labels Chart labels
- * @param data Chart data points
- */
 export const createPieChartData = (
   labels: string[],
   data: number[]
@@ -85,12 +68,6 @@ export const createPieChartData = (
   };
 };
 
-/**
- * Creates a basic line chart data object
- * @param labels Chart labels
- * @param data Chart data points
- * @param label Dataset label
- */
 export const createLineChartData = (
   labels: string[],
   data: number[],
@@ -210,9 +187,8 @@ export const defaultPieOptions: ChartOptions<"pie"> = {
   },
 };
 
-// @ts-ignore
 export const defaultDoughnutOptions: ChartOptions<"doughnut"> = {
-  ...defaultPieOptions,
+  ...(defaultPieOptions as ChartOptions<"doughnut">),
   cutout: "70%",
 };
 
@@ -279,11 +255,6 @@ export const getDefaultOptions = (type: string): ChartOptions<any> => {
   }
 };
 
-/**
- * Merges default chart options with user-provided options
- * @param type Chart type to get default options for
- * @param options User-provided options to merge with defaults
- */
 export const mergeChartOptions = (
   type: string,
   options?: ChartOptions<any>

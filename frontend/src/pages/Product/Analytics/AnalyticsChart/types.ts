@@ -19,24 +19,9 @@ export type AnalyticsChartData =
   | TimelineChartData;
 
 export interface AnalyticsChartProps {
-  /**
-   * Chart data which could be one of multiple formats based on chart type
-   */
   data: AnalyticsChartData;
-  /**
-   * Type of analytics chart to display
-   */
   type: AnalyticsChartType;
-  /**
-   * Chart title
-   */
   title: string;
-  /**
-   * Optional description for the chart
-   */
   description?: string;
-  /**
-   * Custom class name
-   */
   className?: string;
 }

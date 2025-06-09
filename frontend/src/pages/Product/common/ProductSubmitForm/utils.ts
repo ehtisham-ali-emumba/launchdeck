@@ -22,7 +22,7 @@ export const formDefaultValues = {
   slug: "",
   description: "",
   image: "https://cdn.pixabay.com/photo/2015/05/29/07/47/stone-789012_1280.jpg",
-  categoryId: 0,
+  categoryId: 1,
   tags: ["health", "science"],
   website: "",
 };

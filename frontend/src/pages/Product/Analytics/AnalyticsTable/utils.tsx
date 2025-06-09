@@ -13,10 +13,6 @@ import type {
   LeaderboardData,
 } from "./types";
 
-/**
- * Generates the columns configuration based on the table type
- * @param type The type of analytics table
- */
 export const getColumnsByType = (
   type: AnalyticsTableType
 ): ColumnsType<any> => {
@@ -31,9 +27,6 @@ export const getColumnsByType = (
   }
 };
 
-/**
- * Generates columns for the leaderboard table
- */
 const getLeaderboardColumns = (): ColumnsType<LeaderboardData> => {
   return [
     {
@@ -57,31 +50,33 @@ const getLeaderboardColumns = (): ColumnsType<LeaderboardData> => {
       dataIndex: "name",
       key: "name",
       ellipsis: true,
+      width: 160,
     },
     {
       title: "Category",
       dataIndex: "category",
       key: "category",
+      width: 180,
+      ellipsis: true,
     },
     {
       title: "Votes",
       dataIndex: "votes",
       key: "votes",
       sorter: getNumberSorter("votes"),
+      width: 90,
       render: (votes: number) => renderNumericValue(votes, true),
     },
     {
       title: "Launch Date",
       dataIndex: "launchDate",
       key: "launchDate",
+      width: 140,
       render: (date: string) => formatDate(date),
     },
   ];
 };
 
-/**
- * Generates columns for the recent products table
- */
 const getRecentColumns = (): ColumnsType<LeaderboardData> => {
   return [
     {
@@ -89,31 +84,33 @@ const getRecentColumns = (): ColumnsType<LeaderboardData> => {
       dataIndex: "name",
       key: "name",
       ellipsis: true,
+      width: 160,
     },
     {
       title: "Category",
       dataIndex: "category",
       key: "category",
+      width: 180,
+      ellipsis: true,
     },
     {
       title: "Votes",
       dataIndex: "votes",
       key: "votes",
+      width: 90,
       sorter: getNumberSorter("votes"),
     },
     {
       title: "Launch Date",
       dataIndex: "launchDate",
       key: "launchDate",
+      width: 140,
       sorter: getDateSorter("launchDate"),
       render: (date: string) => formatDate(date),
     },
   ];
 };
 
-/**
- * Generates columns for the detailed products table
- */
 const getDetailedColumns = (): ColumnsType<DetailedProductData> => {
   return [
     {
@@ -121,6 +118,7 @@ const getDetailedColumns = (): ColumnsType<DetailedProductData> => {
       dataIndex: "name",
       key: "name",
       ellipsis: true,
+      width: 160,
     },
     {
       title: "Description",
@@ -133,18 +131,22 @@ const getDetailedColumns = (): ColumnsType<DetailedProductData> => {
       title: "Category",
       dataIndex: "category",
       key: "category",
+      ellipsis: true,
+      width: 180,
       render: (category: any) => category?.name || "Unknown",
     },
     {
       title: "Votes",
       dataIndex: "votesCount",
       key: "votesCount",
+      width: 90,
       sorter: getNumberSorter("votesCount"),
     },
     {
       title: "Launch Date",
       dataIndex: "launchDate",
       key: "launchDate",
+      width: 140,
       render: (date: string) => formatDate(date),
       sorter: getDateSorter("launchDate"),
     },

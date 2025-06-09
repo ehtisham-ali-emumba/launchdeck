@@ -1,13 +1,12 @@
 import { type ChartData, type ChartOptions } from "chart.js";
 import {
-  CHART_COLORS,
   defaultBarOptions,
   defaultPieOptions,
   defaultLineOptions,
   createBarChartData,
   createPieChartData,
   createLineChartData,
-} from "~/components/Chart";
+} from "~/components/Chart/utils";
 import {
   type PopularityChartData,
   type CategoryChartData,
@@ -15,10 +14,8 @@ import {
   type AnalyticsChartType,
   type AnalyticsChartData,
 } from "./types";
+import { CHART_COLORS } from "~/components/Chart/elements";
 
-/**
- * Generate chart data for popularity chart
- */
 export const generatePopularityChartData = (
   data: PopularityChartData[]
 ): ChartData<"bar"> => {
@@ -34,9 +31,6 @@ export const generatePopularityChartData = (
   return chartData;
 };
 
-/**
- * Generate chart options for popularity chart
- */
 export const getPopularityChartOptions = (): ChartOptions<"bar"> => {
   return {
     ...defaultBarOptions,
@@ -62,9 +56,6 @@ export const getPopularityChartOptions = (): ChartOptions<"bar"> => {
   };
 };
 
-/**
- * Generate chart data for category chart
- */
 export const generateCategoryChartData = (
   data: CategoryChartData
 ): ChartData<"pie"> => {
@@ -81,9 +72,6 @@ export const generateCategoryChartData = (
   return chartData;
 };
 
-/**
- * Generate chart options for category chart
- */
 export const getCategoryChartOptions = (): ChartOptions<"pie"> => {
   return {
     ...defaultPieOptions,
@@ -141,9 +129,6 @@ export const getCategoryChartOptions = (): ChartOptions<"pie"> => {
   };
 };
 
-/**
- * Generate chart data for timeline chart
- */
 export const generateTimelineChartData = (
   data: TimelineChartData
 ): ChartData<"line"> => {
@@ -172,9 +157,6 @@ export const generateTimelineChartData = (
   return chartData;
 };
 
-/**
- * Generate chart options for timeline chart
- */
 export const getTimelineChartOptions = (): ChartOptions<"line"> => {
   return {
     ...defaultLineOptions,
@@ -196,7 +178,6 @@ export const getTimelineChartOptions = (): ChartOptions<"line"> => {
   };
 };
 
-// Prepare chart data and options based on chart type
 export const getChartConfig = (
   type: AnalyticsChartType,
   data: AnalyticsChartData

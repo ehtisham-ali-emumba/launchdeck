@@ -114,6 +114,7 @@ export const uiStrings = {
   productWebsite: "Enter product website",
   website: "Website",
   category: "Category",
+  categories: "Categories",
   selectProductCategory: "Select Product Category",
   selectProductTags: "Select Product Tags",
   tags: "Tags",
@@ -125,4 +126,28 @@ export const uiStrings = {
   cofounderAt: "Cofounder at",
   askAI:
     "Ask AI about your data... (e.g., 'show me popular health products', 'recent launches')",
+  totalProducts: "Total Products",
+  avgVotes: "Avg Votes",
+  totalVotes: "Total Votes",
+  latestLaunch: "Latest Launch",
+  analyze: "Analyze",
+  clear: "Clear",
+  tryThese: "Try these:",
+  aiPoweredAnalytics: "AI-Powered Analytics",
+  analyticsDiscoverInsights:
+    "Discover insights about your product data using natural language queries",
+  aiAnalyzingData: "AI is analyzing your data...",
+  aiInsights: "AI Insights",
+  visualAnalytics: "📊 Visual Analytics",
+  dataTables: "📋 Data Tables",
+  filteredProducts: (count: number) =>
+    `🎯 Filtered Products (${count} results)`,
+  allMatchingProducts: "All Matching Products",
+  welcomeToAIAnalytics: "Welcome to AI Analytics! 👋",
+  startBySearching:
+    "Start by searching above to explore your product data with AI-powered insights.",
+  askAIAnalyticsPlaceholder:
+    "Ask AI about your data... (e.g., 'show me popular products', 'ai tools for product analysis')",
+  noDataAvailable: "No data available",
+  chartTypeNotSupported: "Chart type not supported",
 };

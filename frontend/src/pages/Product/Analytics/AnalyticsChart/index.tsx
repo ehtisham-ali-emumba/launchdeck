@@ -1,14 +1,10 @@
 import React from "react";
-import { ChartContainer, Chart } from "~/components/Chart";
+import { Chart } from "~/components/Chart";
 
 import { type AnalyticsChartProps } from "./types";
 import { getChartConfig } from "./utils";
+import { ChartContainer } from "~/components/Chart/ChartContainer";
 
-/**
- * AnalyticsChart component that renders a chart based on the provided data and type
- * @param {AnalyticsChartProps} props - The properties for the AnalyticsChart component
- * @returns {JSX.Element | null} - The rendered chart or null if no valid data is provided
- */
 export const AnalyticsChart: React.FC<AnalyticsChartProps> = ({
   data,
   type,

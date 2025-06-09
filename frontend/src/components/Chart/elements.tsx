@@ -38,8 +38,6 @@ export const CHART_COLORS = {
   },
 };
 
-import { sizeMobile } from "../../utils/styles";
-
 export const ChartContainerDiv = styled.div`
   background-color: #fff;
   padding: 24px;
@@ -47,20 +45,10 @@ export const ChartContainerDiv = styled.div`
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
-
-  ${sizeMobile`
-    padding: 16px;
-    border-radius: 8px;
-  `}
 `;
 
 export const ChartTitle = styled.h3`
   margin-bottom: 20px;
-
-  ${sizeMobile`
-    margin-bottom: 12px;
-    font-size: 16px;
-  `}
   font-size: 18px;
   font-weight: 600;
   color: #333;
@@ -72,27 +60,11 @@ export const ChartDescription = styled.p`
   font-size: 14px;
   color: #666;
   text-align: center;
-
-  ${sizeMobile`
-    margin-bottom: 12px;
-    font-size: 12px;
-  `}
 `;
 
 export const ChartWrapper = styled.div<{ height?: string; width?: string }>`
   height: ${({ height }) => height || "350px"};
   width: ${({ width }) => width || "100%"};
-
-  ${sizeMobile`
-    height: ${({ height }) => {
-      if (typeof height === "number") return `${height * 0.8}px`;
-      if (height?.endsWith("px")) {
-        const numericValue = parseInt(height.replace("px", ""));
-        return `${numericValue * 0.8}px`;
-      }
-      return "280px";
-    }}
-  `}
 `;
 
 export const FallbackMessage = styled.div`
@@ -102,9 +74,4 @@ export const FallbackMessage = styled.div`
   justify-content: center;
   color: #666;
   font-size: 16px;
-
-  ${sizeMobile`
-    height: 280px;
-    font-size: 14px;
-  `}
 `;

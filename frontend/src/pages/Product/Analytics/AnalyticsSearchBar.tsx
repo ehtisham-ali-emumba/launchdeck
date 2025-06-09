@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from "react";
 import { Space, Tag } from "antd";
 import { SearchOutlined, ClearOutlined } from "@ant-design/icons";
-import { Button, Input } from "~/components";
+import { Button, Input, Spacer } from "~/components";
 import type { AnalyticsSearchBarProps } from "./type";
-import { suggestedQueries } from "./utils";
+import { spacerStyles, suggestedQueries, tagStyles } from "./utils";
 import { uiStrings } from "~/constants";
+import { TryTheseText } from "./elements";
 
 export const AnalyticsSearchBar: React.FC<AnalyticsSearchBarProps> = ({
   onSearch,
@@ -12,27 +13,23 @@ export const AnalyticsSearchBar: React.FC<AnalyticsSearchBarProps> = ({
   placeholder = uiStrings.askAI,
 }) => {
   const [query, setQuery] = useState("");
-
   const handleSearch = () => {
     if (query.trim()) {
       onSearch(query.trim());
     }
   };
-
   const handleClear = useCallback(() => {
     setQuery("");
     onSearch("");
   }, []);
-
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
       handleSearch();
     }
   };
-
   return (
-    <div style={{ marginBottom: "24px" }}>
-      <Space.Compact style={{ width: "100%", marginBottom: "12px" }}>
+    <div>
+      <Space.Compact style={spacerStyles}>
         <Input
           inputProps={{
             size: "large",
@@ -48,30 +45,29 @@ export const AnalyticsSearchBar: React.FC<AnalyticsSearchBarProps> = ({
           loading={loading}
           disabled={!query.trim()}
         >
-          Analyze
+          {uiStrings.analyze}
         </Button>
         {query ? (
           <Button onClick={handleClear} icon={<ClearOutlined />}>
-            Clear
+            {uiStrings.clear}
           </Button>
         ) : null}
       </Space.Compact>
 
       <div>
-        <span style={{ marginRight: "8px", color: "#666", fontSize: "12px" }}>
-          Try these:
-        </span>
+        <TryTheseText>{uiStrings.tryThese}</TryTheseText>
         {suggestedQueries.map((suggestion, index) => (
           <Tag
             key={index}
-            style={{ cursor: "pointer", margin: "2px" }}
+            style={tagStyles}
             onClick={() => setQuery(suggestion)}
-            color="blue"
+            color={query.trim() === suggestion ? "orange" : "blue"}
           >
             {suggestion}
           </Tag>
         ))}
       </div>
+      <Spacer top="20px" />
     </div>
   );
 };

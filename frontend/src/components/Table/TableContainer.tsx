@@ -4,7 +4,7 @@ import {
   TableHeader,
   TableTitle,
   HeaderContent,
-} from "./styles";
+} from "./elements";
 import type { TableContainerProps } from "./types";
 
 export const TableContainer: React.FC<TableContainerProps> = ({

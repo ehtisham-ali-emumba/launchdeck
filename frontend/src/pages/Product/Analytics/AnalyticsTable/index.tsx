@@ -18,8 +18,12 @@ export const AnalyticsTable: React.FC<AnalyticsTableProps> = ({
         data={data}
         columns={columns}
         rowKey={(record, index) => record.id || record._id || index}
-        pagination={{ pageSize: 10, showSizeChanger: false }}
-        scroll={{ x: true }}
+        pagination={{
+          pageSize: 10,
+          showSizeChanger: false,
+          hideOnSinglePage: true,
+          responsive: true,
+        }}
         size="small"
         {...tableProps}
       />
