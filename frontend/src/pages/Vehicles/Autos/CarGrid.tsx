@@ -5,7 +5,7 @@ import { FixedSizeGrid as Grid } from "react-window";
 
 import { BlankSlate } from "../../../components/BlankSlate";
 import { uiStrings } from "../../../constants";
-import { useHandleResize } from "../../../hooks/useHandleResize";
+import { useHandleResize } from "../../../hooks";
 import { AutoCard } from "../common/AutoCard";
 
 import { GridWrapper, ListContainer } from "./elements";

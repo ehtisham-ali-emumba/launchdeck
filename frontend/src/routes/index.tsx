@@ -1,11 +1,11 @@
 import { type RouteObject } from "react-router-dom";
 
+import { MainLayout } from "~/layout";
 import { AnalyticsPage } from "~/pages/Product";
 import { CategoriesPage } from "~/pages/Product/Categories";
 import { CreateProductPage } from "~/pages/Product/CreateProduct";
 import { ProductDetailsPage } from "~/pages/Product/ProductDetails";
 
-import { MainLayout } from "../layout/MainLayout";
 import { Home } from "../pages/Home";
 import { LandscapePage } from "../pages/Product/Landscape";
 import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";

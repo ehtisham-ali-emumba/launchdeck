@@ -12,8 +12,8 @@ import { Loader } from "~/components";
 import { BlankSlate } from "~/components/BlankSlate";
 import ErrorContainer from "~/components/ErrorContainer";
 import { uiStrings } from "~/constants";
+import { useHandleResize } from "~/hooks";
 import { useLandscapeQuery } from "~/hooks/queries";
-import { useHandleResize } from "~/hooks/useHandleResize";
 import { ContentWrapper } from "~/styles";
 
 import { Box, Container, GridWrapper, ListContainer } from "./elements";
