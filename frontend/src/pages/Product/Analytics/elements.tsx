@@ -1,4 +1,4 @@
-import { Typography, Space, Alert, Divider } from "antd";
+import { Typography, Alert, Divider } from "antd";
 import styled, { css } from "styled-components";
 
 import { sizeMobile } from "~/utils/styles";
@@ -98,14 +98,6 @@ export const StyledDivider = styled(Divider)`
 
   ${sizeMobile(css`
     margin: 16px 0;
-  `)}
-`;
-
-export const StyledSpace = styled(Space)`
-  margin-bottom: 24px;
-
-  ${sizeMobile(css`
-    margin-bottom: 16px;
   `)}
 `;
 

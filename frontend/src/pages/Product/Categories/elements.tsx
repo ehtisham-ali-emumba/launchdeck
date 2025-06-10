@@ -166,13 +166,6 @@ export const ViewAllLink = styled.a`
   }
 `;
 
-export const TabContainer = styled.div`
-  border-bottom: 1px solid #e5e7eb;
-  ${sizeMobile(css`
-    margin-top: 24px;
-  `)}
-`;
-
 export const Description = styled.p`
   font-size: 16px;
   line-height: 1.6;

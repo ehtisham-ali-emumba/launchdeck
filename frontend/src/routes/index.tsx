@@ -6,10 +6,11 @@ import { CategoriesPage } from "~/pages/Product/Categories";
 import { CreateProductPage } from "~/pages/Product/CreateProduct";
 import { ProductDetailsPage } from "~/pages/Product/ProductDetails";
 
+import FallbackPage from "../pages/Fallback";
 import { Home } from "../pages/Home";
 import { LandscapePage } from "../pages/Product/Landscape";
 import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
-import { AutoDetails, Autos } from "../pages/Vehicles";
+import { AutoDetails, Autos, Brands } from "../pages/Vehicles";
 
 import { routeConstants } from "./routeConstants";
 
@@ -87,6 +88,14 @@ const routes: RouteObject[] = [
     ),
   },
   {
+    path: routeConstants.BRANDS,
+    element: (
+      <MainLayout>
+        <Brands />
+      </MainLayout>
+    ),
+  },
+  {
     path: routeConstants.BRANDS_AUTOS_DETAILS,
     element: (
       <MainLayout>
@@ -107,6 +116,14 @@ const routes: RouteObject[] = [
     element: (
       <MainLayout>
         <BookTour />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <MainLayout>
+        <FallbackPage />
       </MainLayout>
     ),
   },

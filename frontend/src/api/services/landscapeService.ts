@@ -1,4 +1,4 @@
-import type { GetLandscapesResponse } from "~/types/landscape";
+import type { GetLandscapesResponse } from "~/types";
 
 import { ApiClient } from "../client";
 import { apiEndpoints } from "../endpoints";

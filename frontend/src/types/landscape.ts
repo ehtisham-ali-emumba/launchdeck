@@ -22,7 +22,7 @@ export interface Landscape {
   createdAt: Date;
   updatedAt: Date;
 }
-export type LandscapesResponse = Landscape[];
+type LandscapesResponse = Landscape[];
 export type GetLandscapesResponse = {
   data: LandscapesResponse;
   total: number;

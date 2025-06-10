@@ -1,6 +1,6 @@
 import type { ChartOptions, ChartData } from "chart.js";
 
-export type ChartType =
+type ChartType =
   | "bar"
   | "pie"
   | "line"

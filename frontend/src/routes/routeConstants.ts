@@ -11,6 +11,7 @@ export const routeConstants = {
   PRODUCTS: "/products",
   ANALYTICS: "/analytics",
   BRANDS_AUTOS: "/brands/:brandId/autos",
+  BRANDS: "/brands",
   BRANDS_AUTOS_DETAILS: "/brands/:brandId/autos/:autoId",
   TOUR_DETAILS: "/tour/:tourId",
   BOOK_TOUR: "/book/tour/:tourId",

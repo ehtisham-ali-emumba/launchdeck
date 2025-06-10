@@ -22,7 +22,7 @@ export interface Product {
   };
 }
 
-export type ProductsResponse = Product[];
+type ProductsResponse = Product[];
 export type GetProductsResponse = {
   data: ProductsResponse;
   total: number;

@@ -20,10 +20,3 @@ export interface Category {
 }
 
 export type CategoryResponse = Category[];
-export type GetCategoriesResponse = {
-  data: CategoryResponse;
-  total: number;
-  page: number;
-  pageSize: number;
-  totalPages: number;
-};

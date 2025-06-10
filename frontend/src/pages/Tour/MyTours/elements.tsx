@@ -6,7 +6,7 @@ export const MyTourContainer = styled(Wrapper)`
   justify-content: flex-start;
 `;
 
-export const Title = styled.h1`
+const Title = styled.h1`
   font-size: 2rem;
   font-weight: 700;
   color: #333;
