@@ -7,11 +7,11 @@ import {
   CalendarOutlined,
   RiseOutlined,
 } from "@ant-design/icons";
-import { Row, Statistic } from "antd";
+import { Statistic } from "antd";
 
 import { uiStrings } from "~/constants";
 
-import { StatsCardUI } from "./elements";
+import { StatsCardUI, StatsWrapper } from "./elements";
 import type { StatsCardsProps } from "./type";
 import { formatLaunchDate } from "./utils";
 
@@ -20,7 +20,31 @@ export const StatsCards: React.FC<StatsCardsProps> = ({ stats }) => {
     stats;
 
   return (
-    <Row gutter={[16, 16]} style={{ marginBottom: "24px" }}>
+    <StatsWrapper>
+      <StatsCardUI>
+        <Statistic
+          title={uiStrings.totalProducts}
+          value={totalResults}
+          prefix={<AppstoreOutlined style={{ color: "#1890ff" }} />}
+          valueStyle={{ color: "#1890ff" }}
+        />
+      </StatsCardUI>
+      <StatsCardUI>
+        <Statistic
+          title={uiStrings.totalProducts}
+          value={totalResults}
+          prefix={<AppstoreOutlined style={{ color: "#1890ff" }} />}
+          valueStyle={{ color: "#1890ff" }}
+        />
+      </StatsCardUI>
+      <StatsCardUI>
+        <Statistic
+          title={uiStrings.totalProducts}
+          value={totalResults}
+          prefix={<AppstoreOutlined style={{ color: "#1890ff" }} />}
+          valueStyle={{ color: "#1890ff" }}
+        />
+      </StatsCardUI>
       <StatsCardUI>
         <Statistic
           title={uiStrings.totalProducts}
@@ -67,6 +91,6 @@ export const StatsCards: React.FC<StatsCardsProps> = ({ stats }) => {
           />
         </StatsCardUI>
       )}
-    </Row>
+    </StatsWrapper>
   );
 };
