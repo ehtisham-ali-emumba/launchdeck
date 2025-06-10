@@ -4,6 +4,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import importPlugin from "eslint-plugin-import";
+import unusedImportsPlugin from "eslint-plugin-unused-imports";
 
 export default tseslint.config(
   { ignores: ["dist", "vite.config.ts"] },
@@ -22,6 +23,7 @@ export default tseslint.config(
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
       import: importPlugin,
+      "unused-imports": unusedImportsPlugin,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -112,6 +114,11 @@ export default tseslint.config(
           },
         },
       ],
+      "no-unused-vars": [
+        "warn",
+        { args: "after-used", ignoreRestSiblings: true },
+      ],
+      "unused-imports/no-unused-imports": "warn",
     },
     settings: {
       "import/resolver": {
