@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button > matches snapshot 1`] = `
+<div>
+  <button
+    class="ant-btn css-dev-only-do-not-override-1m63z2v ant-btn-default ant-btn-color-default ant-btn-variant-outlined sc-Qotzb covoMe"
+    type="button"
+  >
+    <span>
+      Click me
+    </span>
+  </button>
+</div>
+`;

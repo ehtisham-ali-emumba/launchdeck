@@ -9,6 +9,10 @@ function getButtonStyles(element: HTMLElement) {
 }
 
 describe("Button", () => {
+  it("matches snapshot", () => {
+    const { container } = render(<Button>Click me</Button>);
+    expect(container).toMatchSnapshot();
+  });
   it("renders with children", () => {
     render(<Button>Click me</Button>);
     expect(screen.getByRole("button")).toHaveTextContent("Click me");
