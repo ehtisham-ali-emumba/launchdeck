@@ -64,13 +64,16 @@ export const Header: React.FC<HeaderProps> = () => {
           <Link to={routeConstants.LANDSCAPES}>
             <Button
               variant="secondary"
-              id={getActiveButtonClass("/landscapes")}
+              id={getActiveButtonClass(routeConstants.LANDSCAPES)}
             >
               {uiStrings.landscapes}
             </Button>
           </Link>
           <Link to={routeConstants.ANALYTICS}>
-            <Button variant="secondary" id={getActiveButtonClass("/analytics")}>
+            <Button
+              variant="secondary"
+              id={getActiveButtonClass(routeConstants.ANALYTICS)}
+            >
               {uiStrings.analytics}
             </Button>
           </Link>
@@ -95,28 +98,21 @@ export const Header: React.FC<HeaderProps> = () => {
             <Link
               to={routeConstants.LANDSCAPES}
               onClick={toggleMobileMenu}
-              id={getActiveButtonClass("/landscapes")}
+              id={getActiveButtonClass(routeConstants.LANDSCAPES)}
             >
               {uiStrings.landscapes}
             </Link>
             <Link
-              to={routeConstants.TOURS}
+              to={routeConstants.ANALYTICS}
               onClick={toggleMobileMenu}
-              id={getActiveButtonClass("/tours")}
+              id={getActiveButtonClass(routeConstants.ANALYTICS)}
             >
-              {uiStrings.bookTour}
-            </Link>
-            <Link
-              to={routeConstants.MY_TOURS}
-              onClick={toggleMobileMenu}
-              id={getActiveButtonClass("/my-tours")}
-            >
-              {uiStrings.myTours}
+              {uiStrings.analytics}
             </Link>
             <Link
               to={routeConstants.PRODUCTS_CREATE}
               onClick={toggleMobileMenu}
-              id={getActiveButtonClass("/my-tours")}
+              id={getActiveButtonClass(routeConstants.PRODUCTS_CREATE)}
             >
               {uiStrings.submitProduct}
             </Link>
