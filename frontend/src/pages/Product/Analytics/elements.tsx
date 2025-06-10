@@ -3,6 +3,11 @@ import styled, { css } from "styled-components";
 
 import { sizeMobile } from "~/utils/styles";
 
+export const RootWrapper = styled.div`
+  max-width: 1380px;
+  width: 100%;
+  margin: 0 auto;
+`;
 export const TryTheseText = styled.span`
   margin-right: 8px;
   color: #666;

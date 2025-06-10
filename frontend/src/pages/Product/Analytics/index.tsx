@@ -7,7 +7,6 @@ import { Spacer } from "~/components";
 import ErrorContainer from "~/components/ErrorContainer";
 import { uiStrings } from "~/constants";
 import { useAnalyticsQuery } from "~/hooks/queries/useAnalyticsQuery";
-import { ContentWrapper as RootWrapper } from "~/styles";
 
 import { AnalyticsChart } from "./AnalyticsChart";
 import type { AnalyticsChartType } from "./AnalyticsChart/types";
@@ -24,6 +23,7 @@ import {
   StyledDivider,
   LoadingText,
   ContentWrapper,
+  RootWrapper,
 } from "./elements";
 import { StatsCards } from "./StatsCards";
 import { getChartTitle, getTableTitle } from "./utils";
