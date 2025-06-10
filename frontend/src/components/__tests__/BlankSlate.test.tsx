@@ -17,6 +17,7 @@ describe("BlankSlate", () => {
 
   it("matches snapshot", () => {
     const { container } = render(<BlankSlate />);
+    console.log("🚀 ~ it ~ container:", container);
     expect(container).toMatchSnapshot();
   });
 });

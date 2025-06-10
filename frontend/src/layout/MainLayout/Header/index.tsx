@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-import { CloseOutlined, PlusCircleOutlined } from "@ant-design/icons";
+import { CloseOutlined } from "@ant-design/icons";
 
 import { routeConstants } from "~/routes/routeConstants";
 import { ContentWrapper } from "~/styles";
@@ -79,9 +79,7 @@ export const Header: React.FC<HeaderProps> = () => {
           </Link>
         </NavMenu>
         <SubmitButtonLink to={routeConstants.PRODUCTS_CREATE}>
-          <SubmitButton variant="outlined">
-            <PlusCircleOutlined /> {uiStrings.submit}
-          </SubmitButton>
+          <SubmitButton />
         </SubmitButtonLink>
 
         {/* Mobile Menu Modal */}

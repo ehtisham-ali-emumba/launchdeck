@@ -20,11 +20,11 @@
   "lint-staged": {
     "frontend/**/*.{js,jsx,ts,tsx}": [
       "npm run format:frontend",
-      "npm run lint:fix:frontend",
-      "npm run test:frontend"
+      "npm run lint:fix:frontend"
     ],
     "*": [
-      "node -e \"process.exit(require('child_process').spawnSync('npm', ['run', 'type-check:frontend'], {stdio: 'inherit'}).status)\""
+      "node -e \"process.exit(require('child_process').spawnSync('npm', ['run', 'type-check:frontend'], {stdio: 'inherit'}).status)\"",
+      "node -e \"process.exit(require('child_process').spawnSync('npm', ['run', 'test:frontend'], {stdio: 'inherit'}).status)\""
     ]
   },
   "keywords": [],

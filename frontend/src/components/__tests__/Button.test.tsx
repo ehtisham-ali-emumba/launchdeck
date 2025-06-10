@@ -37,6 +37,7 @@ describe("Button", () => {
     const { rerender } = render(<Button size="large">Large</Button>);
     let btn = screen.getByRole("button");
     let styles = getButtonStyles(btn);
+    console.log("🚀 ~ it ~ styles:", styles);
     expect(styles.height).toBe("56px");
     expect(styles.fontSize).toBe("18px");
     expect(styles.paddingLeft).toBe("32px");

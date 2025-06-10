@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 
+import { PlusCircleOutlined } from "@ant-design/icons";
 import { Layout } from "antd";
 import styled, { css } from "styled-components";
 
 import { Button } from "~/components";
 
-import { colors } from "../../../constants";
+import { colors, uiStrings } from "../../../constants";
 import { sizeTablet, zIndex } from "../../../utils";
 
 export const StyledHeader = styled(Layout.Header)`
@@ -101,11 +102,6 @@ export const MobileMenu = styled.div<{ isOpen: boolean }>`
   }
 `;
 
-export const SubmitButton = styled(Button)`
-  border-radius: 24px;
-  height: 42px;
-`;
-
 export const SubmitButtonLink = styled(Link)`
   ${sizeTablet(css`
     display: none;
@@ -122,3 +118,58 @@ export const Row = styled.div`
     justify-content: space-between;
   `)}
 `;
+
+export const SubmitButton_ = styled(Button)`
+  border-radius: 24px;
+  height: 42px;
+  margin: 2px 4px;
+  &&.ant-btn {
+    background-color: ${colors.btnHover.primary};
+  }
+`;
+
+const SubmitButtonWrapper = styled.div.attrs({
+  className: "SubmitButtonWrapper",
+})`
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  line-height: 54px;
+  border-radius: 24px;
+  &:hover .button-gradient {
+    animation: rotate 3s linear infinite;
+    opacity: 0.8;
+  }
+`;
+
+const ButtonGradient = styled.div.attrs({ className: "button-gradient" })`
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  top: -80px;
+  background: conic-gradient(red, orange, green, blue, indigo, violet, red);
+  z-index: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    box-shadow 0.3s;
+  opacity: 0.5;
+  animation: none;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+export const SubmitButton = () => {
+  return (
+    <SubmitButtonWrapper>
+      <ButtonGradient />
+      <SubmitButton_ variant="primary">
+        <PlusCircleOutlined /> {uiStrings.submit}
+      </SubmitButton_>
+    </SubmitButtonWrapper>
+  );
+};

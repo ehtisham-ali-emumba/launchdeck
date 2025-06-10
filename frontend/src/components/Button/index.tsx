@@ -36,8 +36,8 @@ const primaryStyles = css`
     border: none;
     &:hover,
     &:focus {
-      background-color: #e56e50;
-      border-color: #e56e50;
+      background-color: ${colors.btnHover.primary};
+      border-color: ${colors.btnHover.primary};
       color: white;
     }
   }
