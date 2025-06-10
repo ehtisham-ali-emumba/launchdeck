@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
 
 import { uiStrings } from "../../constants";
-
-import { BlankSlate } from ".";
+import { BlankSlate } from "../BlankSlate";
 
 describe("BlankSlate", () => {
   it("renders with the default message", () => {

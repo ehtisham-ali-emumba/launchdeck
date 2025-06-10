@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 
-import { Button } from "./index";
+import { Button } from "../Button";
 
 function getButtonStyles(element: HTMLElement) {
   return window.getComputedStyle(element);
