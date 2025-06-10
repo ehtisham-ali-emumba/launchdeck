@@ -43,13 +43,12 @@ export const CategoryItemContainer = styled.div`
     line-height: 38px;
   }
 `;
+
 export const CategoryTitle = styled.span<{ isActive: boolean }>`
   font-size: 14px;
   font-weight: 600;
-  color: ${props => (props.isActive ? "black" : colors.text.secondary)};
-  &:hover {
-    color: black;
-  }
+  color: ${props =>
+    props.isActive ? colors.accentOrange : colors.text.secondary};
   cursor: pointer;
 `;
 
@@ -59,16 +58,17 @@ export const SubCategoryItemContainer = styled(Link)`
   }
 `;
 
-export const SubCategoryTitle = styled.div`
+export const SubCategoryTitle = styled.div<{ isActive?: boolean }>`
   font-size: 14px;
-  font-weight: 500;
-  color: ${colors.text.secondary};
-  &:hover {
-    color: black;
-  }
+  font-weight: ${props => (props.isActive ? "600" : "500")};
+  color: ${props =>
+    props.isActive ? colors.accentOrange : colors.text.secondary};
   cursor: pointer;
+  &:hover {
+    color: ${colors.accentOrange};
+    font-weight: 600;
+  }
 `;
-
 export const SubCategoryDescription = styled.div`
   font-size: 12px;
   color: #8c8c8c;

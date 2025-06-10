@@ -1,4 +1,6 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useMemo, useState } from "react";
+
+import { useParams } from "react-router-dom";
 
 import { Button } from "~/components";
 import { Loader } from "~/components";
@@ -19,24 +21,34 @@ import { SubCategoryItem } from "./SubCategoryItem";
 
 export const ProductsDropdown = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<Category | undefined>(
-    undefined
-  );
+  const [activeCategoryHoverState, setActiveCategoryHoverState] = useState<
+    Category | undefined
+  >(undefined);
   const { isRouteActive } = useIsActiveRoute();
+  const { categoryId } = useParams<{ categoryId: string }>();
   const {
-    data: categories = [],
+    data: categories_ = [],
     isLoading,
     isError,
     error,
   } = useCategoryQuery();
 
+  // Filter out categories without subCategories
+  const categories = useMemo(
+    () => categories_.filter(category => category.subCategories?.length),
+    [categories_]
+  );
+
   const getActiveButtonClass = (path: string) => {
     return isRouteActive(path) ? "active-button" : "";
   };
 
-  useEffect(() => {
-    setActiveCategory(categories?.[0]);
-  }, [categories]);
+  // Find the active category based on subcategoryId in the URL
+  const activeSubCategoryId = categoryId;
+  const activeCategoryId =
+    categories.find(cat =>
+      cat.subCategories?.some(sub => sub._id === activeSubCategoryId)
+    ) || categories[0];
 
   return (
     <DropdownContainer
@@ -62,20 +74,26 @@ export const ProductsDropdown = memo(() => {
                   <CategoryItem
                     key={category._id}
                     category={category}
-                    isActive={activeCategory?._id === category._id}
-                    onHover={() => setActiveCategory(category)}
+                    isActive={
+                      category._id === activeCategoryHoverState?._id ||
+                      category._id === activeCategoryId._id
+                    }
+                    onHover={() => setActiveCategoryHoverState(category)}
                   />
                 ))}
               </CategoryList>
 
-              {activeCategory && (
+              {activeCategoryHoverState && (
                 <SubCategoryList>
-                  {activeCategory.subCategories?.map?.(subCategory => (
-                    <SubCategoryItem
-                      key={subCategory._id}
-                      subCategory={subCategory}
-                    />
-                  ))}
+                  {activeCategoryHoverState.subCategories?.map?.(
+                    subCategory => (
+                      <SubCategoryItem
+                        key={subCategory._id}
+                        subCategory={subCategory}
+                        isActive={subCategory._id === activeSubCategoryId}
+                      />
+                    )
+                  )}
                 </SubCategoryList>
               )}
             </>
