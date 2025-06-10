@@ -14,15 +14,23 @@
     "lint:fix:frontend": "cd frontend && npm run lint:fix",
     "format:frontend": "cd frontend && npm run format",
     "type-check:frontend": "cd frontend && npm run type-check",
+    "test:frontend": "cd frontend && npm run test",
     "dev:frontend": "cd frontend && npm run dev"
   },
   "lint-staged": {
     "frontend/**/*.{js,jsx,ts,tsx}": [
+      "npm run format:frontend",
       "npm run lint:fix:frontend",
-      "npm run format:frontend"
+      "npm run test:frontend"
+    ],
+    "*": [
+      "node -e \"process.exit(require('child_process').spawnSync('npm', ['run', 'type-check:frontend'], {stdio: 'inherit'}).status)\""
     ]
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.6.3"
+  }
 }
