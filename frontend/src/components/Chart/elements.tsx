@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { colors } from "../../constants/colors";
+import { colors } from "~/constants";
 
 // Chart specific color constants
 export const CHART_COLORS = {

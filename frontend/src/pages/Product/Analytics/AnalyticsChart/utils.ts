@@ -19,7 +19,7 @@ import {
   type AnalyticsChartData,
 } from "./types";
 
-export const generatePopularityChartData = (
+const generatePopularityChartData = (
   data: PopularityChartData[]
 ): ChartData<"bar"> => {
   const labels = data.map(item => item.name);
@@ -34,7 +34,7 @@ export const generatePopularityChartData = (
   return chartData;
 };
 
-export const getPopularityChartOptions = (): ChartOptions<"bar"> => {
+const getPopularityChartOptions = (): ChartOptions<"bar"> => {
   return {
     ...defaultBarOptions,
     plugins: {
@@ -59,7 +59,7 @@ export const getPopularityChartOptions = (): ChartOptions<"bar"> => {
   };
 };
 
-export const generateCategoryChartData = (
+const generateCategoryChartData = (
   data: CategoryChartData
 ): ChartData<"pie"> => {
   const categoryEntries = Object.entries(data);
@@ -75,7 +75,7 @@ export const generateCategoryChartData = (
   return chartData;
 };
 
-export const getCategoryChartOptions = (): ChartOptions<"pie"> => {
+const getCategoryChartOptions = (): ChartOptions<"pie"> => {
   return {
     ...defaultPieOptions,
     plugins: {
@@ -132,7 +132,7 @@ export const getCategoryChartOptions = (): ChartOptions<"pie"> => {
   };
 };
 
-export const generateTimelineChartData = (
+const generateTimelineChartData = (
   data: TimelineChartData
 ): ChartData<"line"> => {
   const timelineEntries = Object.entries(data);
@@ -160,7 +160,7 @@ export const generateTimelineChartData = (
   return chartData;
 };
 
-export const getTimelineChartOptions = (): ChartOptions<"line"> => {
+const getTimelineChartOptions = (): ChartOptions<"line"> => {
   return {
     ...defaultLineOptions,
     plugins: {

@@ -1,7 +1,7 @@
 import { Spin } from "antd";
 import styled from "styled-components";
 
-import { colors } from "../../constants";
+import { colors } from "~/constants";
 
 export const CenteredWrapper = styled.div<{
   marginTop?: string;

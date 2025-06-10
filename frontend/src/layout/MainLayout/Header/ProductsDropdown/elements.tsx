@@ -69,19 +69,3 @@ export const SubCategoryTitle = styled.div<{ isActive?: boolean }>`
     font-weight: 600;
   }
 `;
-export const SubCategoryDescription = styled.div`
-  font-size: 12px;
-  color: #8c8c8c;
-`;
-
-export const SubCategoryIcon = styled.div`
-  width: 32px;
-  height: 32px;
-  background: #f0f5ff;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-  font-size: 16px;
-`;

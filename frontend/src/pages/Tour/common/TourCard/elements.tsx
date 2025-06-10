@@ -5,7 +5,7 @@ import { Button } from "../../../../components";
 import { StyledBaseCard } from "../../../../components/Card/elements";
 import { colors } from "../../../../constants";
 
-export const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 export const CardWrapper = styled.div`
   display: flex;

@@ -1,4 +1,4 @@
-export interface SearchResult {
+interface SearchResult {
   _id: number;
   name: string;
   description: string;

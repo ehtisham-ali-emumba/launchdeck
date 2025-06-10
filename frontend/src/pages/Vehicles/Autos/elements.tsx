@@ -1,4 +1,4 @@
-import { Modal, Form, Typography } from "antd";
+import { Modal, Form } from "antd";
 import styled, { css } from "styled-components";
 
 import { Wrapper } from "../../../styles";
@@ -14,11 +14,6 @@ export const Box = styled.div({
   height: "100%",
   display: "flex",
   flexDirection: "column",
-});
-
-export const Heading = styled(Typography.Title)({
-  textAlign: "center",
-  marginBottom: "40px",
 });
 
 export const InputContainer = styled.div`

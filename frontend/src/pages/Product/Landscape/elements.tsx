@@ -1,9 +1,7 @@
-import { Typography } from "antd";
 import styled, { css } from "styled-components";
 
+import { Wrapper } from "~/styles";
 import { sizeMobile } from "~/utils";
-
-import { Wrapper } from "../../../styles";
 
 export const Container = styled(Wrapper)`
   justify-content: flex-start;
@@ -15,19 +13,6 @@ export const Box = styled.div({
   height: "100%",
   display: "flex",
   flexDirection: "column",
-});
-
-export const Heading = styled(Typography.Title)({
-  textAlign: "center",
-  marginBottom: "40px",
-});
-
-export const InputContainer = styled.div({
-  display: "flex",
-  justifyContent: "center",
-  margin: "20px 0px 25px 0px",
-  width: "100%",
-  gap: "10px",
 });
 
 export const GridWrapper = styled.div<{ width?: number }>`
@@ -43,21 +28,6 @@ export const ListContainer = styled.div`
   flex-direction: column;
   height: 100%;
 `;
-
-export const UserImage = styled.img`
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 16px;
-`;
-
-export const UserDetailsContainer = styled.div`
-  padding: 24px;
-  min-width: 320px;
-  text-align: center;
-`;
-
-// landscape
 
 export const LandscapeHeader = styled.div`
   display: flex;
@@ -78,19 +48,6 @@ export const LandscapeTitle = styled.h1`
   `)}
 `;
 
-export const LandscapeDivider = styled.hr`
-  width: 100%;
-  border: none;
-  border-top: 2px solid #e2e8f0; /* Light gray */
-  margin: 8px 0 16px 0;
-`;
-
-export const LandscapeSubtitle = styled.p`
-  font-size: 20px;
-  font-weight: 400;
-  color: #4a5568; /* Medium gray */
-  margin: 0;
-`;
 export const ContentBox = styled.div`
   margin-top: -10px;
 `;

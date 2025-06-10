@@ -13,12 +13,6 @@ export const SearchBarContainer = styled.div`
   `)}
 `;
 
-export const SearchIcon = styled.div`
-  color: #8c8c8c;
-  margin-right: 8px;
-  font-size: 16px;
-`;
-
 export const SearchInput = styled(props => (
   <Input
     {...props}

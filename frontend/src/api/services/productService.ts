@@ -37,13 +37,3 @@ export const doLLMProductSearch = async (search: string): Promise<Product> => {
   );
   return response.data;
 };
-
-export const createProduct = async (
-  productData: Omit<Product, "id">
-): Promise<Product> => {
-  const response = await apiClient.post<Product>(
-    apiEndpoints.products,
-    productData
-  );
-  return response.data;
-};

@@ -4,7 +4,7 @@ import type { TSFixMe } from "~/types";
 
 import { CHART_COLORS } from "./elements";
 
-export const generateColors = (count: number, alpha?: number): string[] => {
+const generateColors = (count: number, alpha?: number): string[] => {
   const colors = CHART_COLORS.defaultColors;
   const result: string[] = [];
 
@@ -190,12 +190,12 @@ export const defaultPieOptions: ChartOptions<"pie"> = {
   },
 };
 
-export const defaultDoughnutOptions: ChartOptions<"doughnut"> = {
+const defaultDoughnutOptions: ChartOptions<"doughnut"> = {
   ...(defaultPieOptions as ChartOptions<"doughnut">),
   cutout: "70%",
 };
 
-export const defaultRadarOptions: ChartOptions<"radar"> = {
+const defaultRadarOptions: ChartOptions<"radar"> = {
   responsive: true,
   maintainAspectRatio: false,
   elements: {
@@ -241,7 +241,7 @@ export const defaultRadarOptions: ChartOptions<"radar"> = {
   },
 };
 
-export const getDefaultOptions = (type: string): ChartOptions<TSFixMe> => {
+const getDefaultOptions = (type: string): ChartOptions<TSFixMe> => {
   switch (type) {
     case "bar":
       return defaultBarOptions;

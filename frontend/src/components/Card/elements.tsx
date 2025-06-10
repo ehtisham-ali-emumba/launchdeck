@@ -1,32 +1,7 @@
-import { Card, Typography } from "antd";
+import { Card } from "antd";
 import styled, { css } from "styled-components";
 
-import { colors } from "../../constants";
-
 import type { StyledBaseCardType } from "./type";
-
-export const { Title, Paragraph, Text } = Typography;
-
-export const AutoMetaInfo = styled.div`
-  display: flex;
-  background-color: ${colors.background.badge};
-  padding: 3px 16px;
-  border-radius: 100px;
-`;
-
-export const CarChip = styled.div`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: red;
-  color: #fff;
-  padding: 2px 12px;
-  border-radius: 16px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  z-index: 2;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-`;
 
 export const StyledBaseCard = styled(Card)<StyledBaseCardType>`
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
@@ -88,11 +63,4 @@ export const FooterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
-
-export const AutoCardPriceWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: olive;
 `;

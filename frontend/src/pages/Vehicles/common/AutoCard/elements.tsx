@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { colors } from "../../../../constants";
 
-export const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 export const AutoCardTitle = styled(Title)`
   &.ant-typography {

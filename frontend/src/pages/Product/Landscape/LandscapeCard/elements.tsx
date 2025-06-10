@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { colors } from "../../../../constants";
 
-export const { Title, Paragraph, Text } = Typography;
+const { Text } = Typography;
 
 export const UserInfoContainer = styled.div`
   display: flex;

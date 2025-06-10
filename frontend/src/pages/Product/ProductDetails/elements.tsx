@@ -136,21 +136,3 @@ export const TagsRow = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
 `;
-
-export const Tag = styled.span`
-  background: #f3f4f6;
-  color: #374151;
-  padding: 4px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-  &::before {
-    content: "🏷️";
-    font-size: 12px;
-    margin-top: 4px;
-    margin-right: 2px;
-  }
-`;

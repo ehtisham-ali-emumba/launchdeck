@@ -29,7 +29,7 @@ import {
 import type { TourCardProps } from "./type";
 import { buttonIconStyles, cardDimensions, metaInfoIconStyles } from "./utils";
 
-const TourCard: React.FC<TourCardProps> = ({
+export const TourCard: React.FC<TourCardProps> = ({
   imageSrc,
   id,
   title,
@@ -124,5 +124,3 @@ const TourCard: React.FC<TourCardProps> = ({
     />
   );
 };
-
-export { TourCard };

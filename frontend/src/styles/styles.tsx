@@ -11,16 +11,6 @@ export const Wrapper = styled.div`
   justify-content: center;
 `;
 
-export const ContentSection = styled.div`
-  flex: 1;
-  display: flex;
-  margin-top: 150px;
-  justify-content: center;
-  ${sizeMobile(css`
-    margin-top: 100px;
-  `)}
-`;
-
 export const Layout = styled(Layout_)`
   background-color: transparent;
 `;
@@ -52,13 +42,6 @@ export const Container = styled(Wrapper)`
   justify-content: flex-start;
   height: calc(100vh - 90px);
 `;
-
-export const ColBox = styled.div({
-  width: "100%",
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
-});
 
 export const hideScrollBarCss = css`
   /* Hide scrollbar for Chrome, Safari and Opera */
