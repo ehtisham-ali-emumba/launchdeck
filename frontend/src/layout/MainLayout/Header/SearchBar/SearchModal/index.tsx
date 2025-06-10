@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { SearchOutlined } from "@ant-design/icons";
 import { Modal } from "antd";
 
-import { useLLMProductSearch } from "~/hooks/queries/useLLMProductSearch";
+import { useLLMProductSearchMutation } from "~/hooks/mutations";
 import type { TSFixMe } from "~/types";
 
 import { ModalSearchInput, NoResults } from "./elements";
@@ -23,7 +23,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   const [hasSearched, setHasSearched] = useState(false);
 
   const { mutate: searchProducts, isPending: isLoading } =
-    useLLMProductSearch();
+    useLLMProductSearchMutation();
 
   useEffect(() => {
     if (!searchQuery.trim()) {
