@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`InlineSpacer > matches snapshot 1`] = `
+<div>
+  <span
+    class="sc-fYsHOw eidifT"
+    marginleft="2rem"
+    paddingright="1rem"
+  />
+</div>
+`;
+
+exports[`Spacer > matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-Qotzb fTRIdJ"
+    margintop="1rem"
+    paddingbottom="2rem"
+  />
+</div>
+`;
