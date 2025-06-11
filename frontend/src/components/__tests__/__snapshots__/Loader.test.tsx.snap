@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Loader > matches snapshot 1`] = `
+<div>
+  <div
+    class="sc-Qotzb kPZXnj"
+  >
+    <div
+      aria-busy="true"
+      aria-live="polite"
+      class="ant-spin ant-spin-lg ant-spin-spinning sc-fYsHOw fnXBHL css-dev-only-do-not-override-1m63z2v"
+      data-testid="loader-spin"
+    >
+      <span
+        class="ant-spin-dot-holder"
+      >
+        <span
+          class="ant-spin-dot ant-spin-dot-spin"
+        >
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+          <i
+            class="ant-spin-dot-item"
+          />
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
