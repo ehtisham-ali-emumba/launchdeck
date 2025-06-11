@@ -6,6 +6,27 @@ import { visualizer } from "rollup-plugin-visualizer";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), visualizer({ open: true })],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom", "antd"],
+          home: ["./src/pages/Home/index.tsx"],
+          products: [
+            "./src/pages/Product/index.ts",
+            "./src/pages/Product/Categories/index.ts",
+            "./src/pages/Product/CreateProduct/index.ts",
+            "./src/pages/Product/ProductDetails/index.ts",
+            "./src/pages/Product/Landscape/index.ts",
+          ],
+          tours: ["./src/pages/Tour/index.ts"],
+          vehicles: ["./src/pages/Vehicles/index.ts"],
+        },
+      },
+    },
+    sourcemap: true,
+    chunkSizeWarningLimit: 1000,
+  },
   resolve: {
     alias: {
       "~/components": path.resolve(__dirname, "src/components"),

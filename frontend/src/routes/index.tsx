@@ -1,130 +1,193 @@
+import { lazy } from "react";
+
 import { type RouteObject } from "react-router-dom";
 
+import { LazyComponent } from "~/components";
 import { MainLayout } from "~/layout";
-import { AnalyticsPage } from "~/pages/Product";
-import { CategoriesPage } from "~/pages/Product/Categories";
-import { CreateProductPage } from "~/pages/Product/CreateProduct";
-import { ProductDetailsPage } from "~/pages/Product/ProductDetails";
-
-import FallbackPage from "../pages/Fallback";
-import { Home } from "../pages/Home";
-import { LandscapePage } from "../pages/Product/Landscape";
-import { Tours, MyTours, TourDetails, BookTour } from "../pages/Tour";
-import { AutoDetails, Autos, Brands } from "../pages/Vehicles";
 
 import { routeConstants } from "./routeConstants";
+
+// Lazy loaded components
+const Home = lazy(() =>
+  import("~/pages/Home").then(module => ({ default: module.Home }))
+);
+const AnalyticsPage = lazy(() =>
+  import("~/pages/Product").then(module => ({ default: module.AnalyticsPage }))
+);
+const CategoriesPage = lazy(() =>
+  import("~/pages/Product/Categories").then(module => ({
+    default: module.CategoriesPage,
+  }))
+);
+const CreateProductPage = lazy(() =>
+  import("~/pages/Product/CreateProduct").then(module => ({
+    default: module.CreateProductPage,
+  }))
+);
+const ProductDetailsPage = lazy(() =>
+  import("~/pages/Product/ProductDetails").then(module => ({
+    default: module.ProductDetailsPage,
+  }))
+);
+const FallbackPage = lazy(() =>
+  import("~/pages/Fallback").then(module => ({ default: module.default }))
+);
+const LandscapePage = lazy(() =>
+  import("~/pages/Product/Landscape").then(module => ({
+    default: module.LandscapePage,
+  }))
+);
+
+// Tour pages
+const Tours = lazy(() =>
+  import("~/pages/Tour").then(module => ({ default: module.Tours }))
+);
+const MyTours = lazy(() =>
+  import("~/pages/Tour").then(module => ({ default: module.MyTours }))
+);
+const TourDetails = lazy(() =>
+  import("~/pages/Tour").then(module => ({ default: module.TourDetails }))
+);
+const BookTour = lazy(() =>
+  import("~/pages/Tour").then(module => ({ default: module.BookTour }))
+);
+
+// Vehicle pages
+const Autos = lazy(() =>
+  import("~/pages/Vehicles").then(module => ({ default: module.Autos }))
+);
+const Brands = lazy(() =>
+  import("~/pages/Vehicles").then(module => ({ default: module.Brands }))
+);
+const AutoDetails = lazy(() =>
+  import("~/pages/Vehicles").then(module => ({ default: module.AutoDetails }))
+);
+
+function RouteWrapper({
+  children,
+  showFooter,
+}: {
+  children: React.ReactNode;
+  showFooter?: boolean;
+}) {
+  return (
+    <MainLayout showFooter={showFooter}>
+      <LazyComponent>{children}</LazyComponent>
+    </MainLayout>
+  );
+}
 
 const routes: RouteObject[] = [
   {
     path: routeConstants.HOME,
     element: (
-      <MainLayout showFooter>
+      <RouteWrapper showFooter>
         <Home />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.ANALYTICS,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <AnalyticsPage />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.TOURS,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <Tours />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.MY_TOURS,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <MyTours />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.LANDSCAPES,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <LandscapePage />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.CATEGORY_PAGE,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <CategoriesPage />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.CREATE_PRODUCT,
     element: (
-      <MainLayout showFooter>
+      <RouteWrapper showFooter>
         <CreateProductPage />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.PRODUCT_DETAILS,
     element: (
-      <MainLayout showFooter>
+      <RouteWrapper showFooter>
         <ProductDetailsPage />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.BRANDS_AUTOS,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <Autos />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.BRANDS,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <Brands />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.BRANDS_AUTOS_DETAILS,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <AutoDetails />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.TOUR_DETAILS,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <TourDetails />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: routeConstants.BOOK_TOUR,
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <BookTour />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
   {
     path: "*",
     element: (
-      <MainLayout>
+      <RouteWrapper>
         <FallbackPage />
-      </MainLayout>
+      </RouteWrapper>
     ),
   },
 ];
