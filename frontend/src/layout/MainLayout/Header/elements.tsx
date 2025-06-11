@@ -128,6 +128,21 @@ export const SubmitButton_ = styled(Button)`
   }
 `;
 
+const ShadowContainer = styled.div`
+  position: relative;
+  border-radius: 24px;
+
+  &:hover {
+    filter: drop-shadow(0 2px 6px red) /* Red */ drop-shadow(0 2px 6px white)
+      /* White */ drop-shadow(0 2px 6px rgba(255, 165, 0, 0.4)) /* Orange */
+      drop-shadow(0 2px 6px rgba(0, 255, 0, 0.3)) /* Green */
+      drop-shadow(0 2px 6px rgba(0, 0, 255, 0.3)) /* Blue */
+      drop-shadow(0 2px 6px rgba(75, 0, 130, 0.2)) /* Indigo */
+      drop-shadow(0 2px 6px rgba(238, 130, 238, 0.2)); /* Violet */
+  }
+  transition: filter 0.3s ease;
+`;
+
 const SubmitButtonWrapper = styled.div.attrs({
   className: "SubmitButtonWrapper",
 })`
@@ -165,11 +180,13 @@ const ButtonGradient = styled.div.attrs({ className: "button-gradient" })`
 
 export const SubmitButton = () => {
   return (
-    <SubmitButtonWrapper>
-      <ButtonGradient />
-      <SubmitButton_ variant="primary">
-        <PlusCircleOutlined /> {uiStrings.submit}
-      </SubmitButton_>
-    </SubmitButtonWrapper>
+    <ShadowContainer>
+      <SubmitButtonWrapper>
+        <ButtonGradient />
+        <SubmitButton_ variant="primary">
+          <PlusCircleOutlined /> {uiStrings.submit}
+        </SubmitButton_>
+      </SubmitButtonWrapper>
+    </ShadowContainer>
   );
 };
