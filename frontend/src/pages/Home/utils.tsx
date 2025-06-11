@@ -157,3 +157,20 @@ export const productListDummyData: Record<
     },
   ],
 };
+
+export const getProductListPageSize = (filter: ProductListFilterType) => {
+  switch (filter) {
+    case "today":
+      return 1;
+    case "lastWeek":
+      return 2;
+    case "nextWeek":
+      return 3;
+    case "lastMonth":
+      return 4;
+    case "nextMonth":
+      return 5;
+    default:
+      return 1;
+  }
+};

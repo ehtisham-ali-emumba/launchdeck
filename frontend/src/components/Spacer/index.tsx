@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-import type { SpacerProps } from "./type";
+import type { SpacerAttrs, SpacerProps } from "./type";
 
-export const Spacer = styled.div<SpacerProps>`
+export const Spacer = styled.div.attrs<SpacerProps, SpacerAttrs>({
+  "data-testid": "spacer",
+})<SpacerProps>`
   margin-top: ${props => props.marginTop || "0"};
   margin-bottom: ${props => props.marginBottom || "0"};
   margin-left: ${props => props.marginLeft || "0"};
@@ -14,7 +16,9 @@ export const Spacer = styled.div<SpacerProps>`
   height: ${props => props.top || "0"};
 `;
 
-export const InlineSpacer = styled.span<SpacerProps>`
+export const InlineSpacer = styled.div.attrs<SpacerProps, SpacerAttrs>({
+  "data-testid": "spacer",
+})<SpacerProps>`
   margin-top: ${props => props.marginTop || "0"};
   margin-bottom: ${props => props.marginBottom || "0"};
   margin-left: ${props => props.marginLeft || "0"};

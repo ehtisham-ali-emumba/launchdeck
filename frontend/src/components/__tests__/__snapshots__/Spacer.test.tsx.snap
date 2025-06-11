@@ -2,8 +2,9 @@
 
 exports[`InlineSpacer > matches snapshot 1`] = `
 <div>
-  <span
+  <div
     class="sc-fYsHOw eidifT"
+    data-testid="spacer"
     marginleft="2rem"
     paddingright="1rem"
   />
@@ -14,6 +15,7 @@ exports[`Spacer > matches snapshot 1`] = `
 <div>
   <div
     class="sc-Qotzb fTRIdJ"
+    data-testid="spacer"
     margintop="1rem"
     paddingbottom="2rem"
   />

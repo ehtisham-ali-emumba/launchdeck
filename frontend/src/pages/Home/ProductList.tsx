@@ -5,10 +5,10 @@ import { BlankSlate, Loader } from "../../components";
 import { BoxListing, ProductListingSectionTitle } from "./elements";
 import { ProductListRow } from "./ProductListRow";
 import type { ProductListFilterType } from "./type";
-import { sectionTitles } from "./utils";
+import { getProductListPageSize, sectionTitles } from "./utils";
 
 export const ProductList = ({ filter }: { filter: ProductListFilterType }) => {
-  const pageSize = getPageSize(filter);
+  const pageSize = getProductListPageSize(filter);
 
   const { data, isLoading } = useProductQuery({
     page: pageSize,
@@ -32,21 +32,4 @@ export const ProductList = ({ filter }: { filter: ProductListFilterType }) => {
       )}
     </BoxListing>
   );
-};
-
-const getPageSize = (filter: ProductListFilterType) => {
-  switch (filter) {
-    case "today":
-      return 1;
-    case "lastWeek":
-      return 2;
-    case "nextWeek":
-      return 3;
-    case "lastMonth":
-      return 4;
-    case "nextMonth":
-      return 5;
-    default:
-      return 1;
-  }
 };

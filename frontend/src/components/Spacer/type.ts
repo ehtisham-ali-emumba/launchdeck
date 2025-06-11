@@ -8,4 +8,9 @@ export type SpacerProps = {
   paddingLeft?: string;
   paddingRight?: string;
   top?: string;
+  "data-testid"?: string;
 };
+
+export interface SpacerAttrs {
+  "data-testid": string;
+}

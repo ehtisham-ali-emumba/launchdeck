@@ -15,7 +15,7 @@ interface QueryOptions {
 export const useProductQuery = (options: QueryOptions = {}) => {
   const { page, limit } = options;
   return useQuery<GetProductsResponse, Error>({
-    queryKey: [QUERY_KEYS.PRODUCTS],
+    queryKey: [QUERY_KEYS.PRODUCTS, page, limit],
     queryFn: () => getProducts({ page, limit }),
     ...options,
   });

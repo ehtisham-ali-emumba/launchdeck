@@ -110,7 +110,10 @@ export const WelcomeBanner = () => {
           </div>
         </TextBox>
       </BannerContent>
-      <CloseBtn onClick={() => setShow(false)}>
+      <CloseBtn
+        onClick={() => setShow(false)}
+        data-testid="welcome-banner-close"
+      >
         <CloseOutlined />
       </CloseBtn>
     </BannerWrapper>
