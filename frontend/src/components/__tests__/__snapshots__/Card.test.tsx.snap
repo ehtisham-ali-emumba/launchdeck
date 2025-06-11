@@ -1,0 +1,47 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Card > matches snapshot 1`] = `
+<div>
+  <a
+    class="sc-fYsHOw jQoQIn"
+    data-discover="true"
+    href="/test-url"
+  >
+    <div
+      class="ant-card ant-card-bordered sc-fWnslK kPhQvw css-dev-only-do-not-override-1m63z2v"
+      dimensions="[object Object]"
+      imageheight="200"
+    >
+      <div
+        class="ant-card-cover"
+      >
+        <div
+          class="sc-dIMoHT btnOzl"
+          imageheight="200"
+        >
+          <img
+            class="sc-iQQCXo cnOgwE"
+            src="test-image.jpg"
+          />
+        </div>
+      </div>
+      <div
+        class="ant-card-body"
+      >
+        <div
+          class="sc-gDpztx"
+        />
+        <div
+          class="sc-kpOvIu huDXwc"
+        />
+        <div
+          class="sc-icnseD hPcLor"
+        />
+        <div
+          class="sc-jMsorb foHhwn"
+        />
+      </div>
+    </div>
+  </a>
+</div>
+`;
